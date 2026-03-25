@@ -1,0 +1,1436 @@
+schema: token-scope-export/v1
+note: Semantic tokens come from VS Code built-in semantic-token commands. TextMate scopes are re-tokenized from the contributed grammar.
+positionEncoding: { lines: 1-based, columns: 0-based, endColumn: exclusive }
+exportedAt: 2026-03-20T22:03:00.994Z
+source:
+  languageId: java
+  version: 13
+grammar: source.java
+semanticLegend:
+  tokenTypes:
+    - namespace
+    - class
+    - enum
+    - interface
+    - struct
+    - typeParameter
+    - type
+    - parameter
+    - variable
+    - property
+    - enumMember
+    - event
+    - function
+    - method
+    - macro
+    - keyword
+    - modifier
+    - comment
+    - string
+    - number
+    - regexp
+    - operator
+    - decorator
+  tokenModifiers:
+    - declaration
+    - definition
+    - readonly
+    - static
+    - deprecated
+    - abstract
+    - async
+    - modification
+    - documentation
+    - defaultLibrary
+stats: { lineCount: 85, semanticTokenCount: 131, textmateTokenCount: 734, exportedSegmentCount: 509 }
+lines:
+  - lineNumber: 1
+    sourceText: package examples;
+    segments:
+      - text: package
+        textmate: { scope: keyword.other.package.java, rest: [ source.java, meta.package.java ] }
+      - text: examples
+        textmate: { scope: storage.modifier.package.java, rest: [ source.java, meta.package.java ] }
+        semantic: { type: namespace }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.package.java ] }
+  - lineNumber: 3
+    sourceText: import java.util.*;
+    segments:
+      - text: import
+        textmate: { scope: keyword.other.import.java, rest: [ source.java, meta.import.java ] }
+      - text: java
+        textmate: { scope: storage.modifier.import.java, rest: [ source.java, meta.import.java ] }
+        semantic: { type: namespace, modifiers: &a1 [ defaultLibrary ] }
+      - text: .
+        textmate: { scope: punctuation.separator.java, rest: [ source.java, meta.import.java, storage.modifier.import.java ] }
+        semantic: { type: namespace, modifiers: *a1 }
+      - text: util
+        textmate: { scope: storage.modifier.import.java, rest: [ source.java, meta.import.java ] }
+        semantic: { type: namespace, modifiers: *a1 }
+      - text: .
+        textmate: { scope: punctuation.separator.java, rest: [ source.java, meta.import.java, storage.modifier.import.java ] }
+      - text: '*'
+        textmate: { scope: variable.language.wildcard.java, rest: [ source.java, meta.import.java, storage.modifier.import.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.import.java ] }
+  - lineNumber: 4
+    sourceText: import java.util.Optional;
+    segments:
+      - text: import
+        textmate: { scope: keyword.other.import.java, rest: [ source.java, meta.import.java ] }
+      - text: java
+        textmate: { scope: storage.modifier.import.java, rest: [ source.java, meta.import.java ] }
+        semantic: { type: class, modifiers: &a2 [ defaultLibrary ] }
+      - text: .
+        textmate: { scope: punctuation.separator.java, rest: [ source.java, meta.import.java, storage.modifier.import.java ] }
+        semantic: { type: class, modifiers: *a2 }
+      - text: util
+        textmate: { scope: storage.modifier.import.java, rest: [ source.java, meta.import.java ] }
+        semantic: { type: class, modifiers: *a2 }
+      - text: .
+        textmate: { scope: punctuation.separator.java, rest: [ source.java, meta.import.java, storage.modifier.import.java ] }
+        semantic: { type: class, modifiers: *a2 }
+      - text: Optional
+        textmate: { scope: storage.modifier.import.java, rest: [ source.java, meta.import.java ] }
+        semantic: { type: class, modifiers: *a2 }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.import.java ] }
+  - lineNumber: 6
+    sourceText: /** Generic syntax showcase for Java token scopes. */
+    segments:
+      - text: /**
+        textmate: { scope: punctuation.definition.comment.java, rest: [ source.java, comment.block.javadoc.java ] }
+      - text: ' Generic syntax showcase for Java token scopes. '
+        textmate: { scope: comment.block.javadoc.java, rest: [ source.java ] }
+      - text: '*/'
+        textmate: { scope: punctuation.definition.comment.java, rest: [ source.java, comment.block.javadoc.java ] }
+  - lineNumber: 7
+    sourceText: '@SuppressWarnings("unused")'
+    segments:
+      - text: '@'
+        textmate: { scope: punctuation.definition.annotation.java, rest: [ source.java, meta.declaration.annotation.java ] }
+      - text: SuppressWarnings
+        textmate: { scope: storage.type.annotation.java, rest: [ source.java, meta.declaration.annotation.java ] }
+        semantic: { type: decorator, modifiers: [ abstract, defaultLibrary ] }
+      - text: (
+        textmate: { scope: punctuation.definition.annotation-arguments.begin.bracket.round.java, rest: [ source.java, meta.declaration.annotation.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.java, rest: [ source.java, meta.declaration.annotation.java, string.quoted.double.java ] }
+      - text: unused
+        textmate: { scope: string.quoted.double.java, rest: [ source.java, meta.declaration.annotation.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.java, rest: [ source.java, meta.declaration.annotation.java, string.quoted.double.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.annotation-arguments.end.bracket.round.java, rest: [ source.java, meta.declaration.annotation.java ] }
+  - lineNumber: 8
+    sourceText: class Generic {
+    segments:
+      - text: class
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.identifier.java ] }
+      - text: Generic
+        textmate: { scope: entity.name.type.class.java, rest: [ source.java, meta.class.java, meta.class.identifier.java ] }
+        semantic: { type: class, modifiers: [ declaration ] }
+      - text: '{'
+        textmate: { scope: punctuation.section.class.begin.bracket.curly.java, rest: [ source.java, meta.class.java ] }
+  - lineNumber: 10
+    sourceText: '  static final int MAX_RETRIES = 3;'
+    segments:
+      - text: static
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java ] }
+      - text: final
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java ] }
+      - text: int
+        textmate: { scope: storage.type.primitive.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.definition.variable.java ] }
+      - text: MAX_RETRIES
+        textmate: { scope: variable.other.definition.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.definition.variable.java ] }
+        semantic: { type: property, modifiers: [ declaration, readonly, static ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.java, rest: [ source.java, meta.class.java, meta.class.body.java ] }
+      - text: '3'
+        textmate: { scope: constant.numeric.decimal.java, rest: [ source.java, meta.class.java, meta.class.body.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java ] }
+  - lineNumber: 12
+    sourceText: '  enum JvRole {'
+    segments:
+      - text: enum
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.enum.java ] }
+      - text: JvRole
+        textmate: { scope: entity.name.type.enum.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.enum.java ] }
+        semantic: { type: enum, modifiers: [ declaration, static ] }
+      - text: '{'
+        textmate: { scope: punctuation.section.enum.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.enum.java ] }
+  - lineNumber: 13
+    sourceText: '    ADMIN'
+    segments:
+      - text: ADMIN
+        textmate: { scope: constant.other.enum.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.enum.java ] }
+        semantic: { type: enumMember, modifiers: [ declaration, readonly, static ] }
+  - lineNumber: 14
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.enum.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.enum.java ] }
+  - lineNumber: 16
+    sourceText: '  interface JvRepository<T, ID> {'
+    segments:
+      - text: interface
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.identifier.java ] }
+      - text: JvRepository
+        textmate: { scope: entity.name.type.class.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.identifier.java ] }
+        semantic: { type: interface, modifiers: [ declaration, static, abstract ] }
+      - text: <
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+      - text: T
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.delimiter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+      - text: ID
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: '>'
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+      - text: '{'
+        textmate: { scope: punctuation.section.class.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+  - lineNumber: 17
+    sourceText: '    Optional<T> findById(ID id);'
+    segments:
+      - text: Optional
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: class, modifiers: &a3 [ defaultLibrary ] }
+      - text: <
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: class, modifiers: *a3 }
+      - text: T
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: class, modifiers: *a3 }
+      - text: '>'
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: class, modifiers: *a3 }
+      - text: findById
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: ID
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: typeParameter }
+      - text: id
+        textmate: { scope: variable.parameter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: parameter, modifiers: [ declaration, modification ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java ] }
+  - lineNumber: 18
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.class.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+  - lineNumber: 20
+    sourceText: '  record JvUser(long id, String name, Set<JvRole> roles) {'
+    segments:
+      - text: record
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+      - text: JvUser
+        textmate: { scope: entity.name.type.record.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+        semantic: { type: struct, modifiers: [ declaration, static ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+      - text: long
+        textmate: { scope: storage.type.primitive.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+      - text: ' id'
+        textmate: { scope: meta.record.identifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.delimiter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+      - text: String
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: ' name'
+        textmate: { scope: meta.record.identifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.delimiter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+      - text: Set
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+        semantic: { type: interface, modifiers: &a4 [ abstract, defaultLibrary ] }
+      - text: <
+        textmate: { scope: keyword.operator.comparison.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+        semantic: { type: interface, modifiers: *a4 }
+      - text: JvRole
+        textmate: { scope: meta.record.identifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java ] }
+        semantic: { type: interface, modifiers: *a4 }
+      - text: '>'
+        textmate: { scope: keyword.operator.comparison.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+        semantic: { type: interface, modifiers: *a4 }
+      - text: ' roles'
+        textmate: { scope: meta.record.identifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+      - text: '{'
+        textmate: { scope: punctuation.section.class.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java ] }
+  - lineNumber: 21
+    sourceText: '    JvUser(long id, String name) {'
+    segments:
+      - text: JvUser
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: long
+        textmate: { scope: storage.type.primitive.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: id
+        textmate: { scope: variable.parameter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: parameter, modifiers: [ declaration, modification ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.delimiter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: String
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: name
+        textmate: { scope: variable.parameter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: parameter, modifiers: [ declaration, modification ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: '{'
+        textmate: { scope: punctuation.section.method.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java ] }
+  - lineNumber: 22
+    sourceText: '      this(id, name, Set.of());'
+    segments:
+      - text: this
+        textmate: { scope: variable.language.this.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java ] }
+      - text: (
+        textmate: { scope: punctuation.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java ] }
+      - text: id
+        textmate: { scope: meta.method.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.delimiter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java ] }
+      - text: name
+        textmate: { scope: meta.method.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.delimiter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java ] }
+      - text: Set
+        textmate: { scope: variable.other.object.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: interface, modifiers: [ abstract, defaultLibrary ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: of
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: )
+        textmate: { scope: punctuation.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 23
+    sourceText: '    }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.method.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java ] }
+  - lineNumber: 25
+    sourceText: '    String displayName() {'
+    segments:
+      - text: String
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: displayName
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: '{'
+        textmate: { scope: punctuation.section.method.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java ] }
+  - lineNumber: 26
+    sourceText: '      return "%s (id=%d)".formatted(name, id);'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java, string.quoted.double.java ] }
+      - text: '%s (id=%d)'
+        textmate: { scope: string.quoted.double.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java, string.quoted.double.java ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: formatted
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: name
+        textmate: { scope: meta.method-call.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.delimiter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: id
+        textmate: { scope: meta.method-call.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 27
+    sourceText: '    }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.method.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java, meta.method.java ] }
+  - lineNumber: 28
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.class.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.record.java ] }
+  - lineNumber: 30
+    sourceText: '  sealed interface JvResult<T> permits JvResult.Ok {'
+    segments:
+      - text: sealed
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+      - text: interface
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.identifier.java ] }
+      - text: JvResult
+        textmate: { scope: entity.name.type.class.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.identifier.java ] }
+        semantic: { type: interface, modifiers: [ declaration, static, abstract ] }
+      - text: <
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+      - text: T
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: '>'
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+      - text: permits
+        textmate: { scope: storage.modifier.permits.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.definition.class.permits.classes.java ] }
+      - text: JvResult
+        textmate: { scope: entity.other.inherited-class.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.definition.class.permits.classes.java ] }
+        semantic: { type: struct, modifiers: &a5 [ static ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.definition.class.permits.classes.java, entity.other.inherited-class.java ] }
+        semantic: { type: struct, modifiers: *a5 }
+      - text: Ok
+        textmate: { scope: entity.other.inherited-class.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.definition.class.permits.classes.java ] }
+        semantic: { type: struct, modifiers: *a5 }
+      - text: '{'
+        textmate: { scope: punctuation.section.class.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+  - lineNumber: 31
+    sourceText: '    record Ok<T>(T value) implements JvResult<T> {}'
+    segments:
+      - text: record
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+      - text: Ok
+        textmate: { scope: entity.name.type.record.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+        semantic: { type: struct, modifiers: [ declaration, static ] }
+      - text: <
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+      - text: T
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: '>'
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+      - text: T
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+        semantic: { type: typeParameter }
+      - text: ' value'
+        textmate: { scope: meta.record.identifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.identifier.java ] }
+      - text: implements
+        textmate: { scope: storage.modifier.implements.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java, meta.definition.class.implemented.interfaces.java ] }
+      - text: JvResult
+        textmate: { scope: entity.other.inherited-class.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java, meta.definition.class.implemented.interfaces.java ] }
+        semantic: { type: interface, modifiers: &a6 [ static, abstract ] }
+      - text: <
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java, meta.definition.class.implemented.interfaces.java ] }
+        semantic: { type: interface, modifiers: *a6 }
+      - text: T
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java, meta.definition.class.implemented.interfaces.java ] }
+        semantic: { type: interface, modifiers: *a6 }
+      - text: '>'
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java, meta.definition.class.implemented.interfaces.java ] }
+        semantic: { type: interface, modifiers: *a6 }
+      - text: '{'
+        textmate: { scope: punctuation.section.class.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java, meta.record.body.java ] }
+      - text: '}'
+        textmate: { scope: punctuation.section.class.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.record.java ] }
+  - lineNumber: 32
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.class.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+  - lineNumber: 34
+    sourceText: '  static class JvUserRepository implements JvRepository<JvUser, Long> {'
+    segments:
+      - text: static
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+      - text: class
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.identifier.java ] }
+      - text: JvUserRepository
+        textmate: { scope: entity.name.type.class.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.identifier.java ] }
+        semantic: { type: class, modifiers: [ declaration, static ] }
+      - text: implements
+        textmate: { scope: storage.modifier.implements.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.definition.class.implemented.interfaces.java ] }
+      - text: JvRepository
+        textmate: { scope: entity.other.inherited-class.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.definition.class.implemented.interfaces.java ] }
+        semantic: { type: interface, modifiers: &a7 [ static, abstract ] }
+      - text: <
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.definition.class.implemented.interfaces.java ] }
+        semantic: { type: interface, modifiers: *a7 }
+      - text: JvUser
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.definition.class.implemented.interfaces.java ] }
+        semantic: { type: interface, modifiers: *a7 }
+      - text: ','
+        textmate: { scope: punctuation.separator.delimiter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.definition.class.implemented.interfaces.java ] }
+        semantic: { type: interface, modifiers: *a7 }
+      - text: Long
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.definition.class.implemented.interfaces.java ] }
+        semantic: { type: interface, modifiers: *a7 }
+      - text: '>'
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.definition.class.implemented.interfaces.java ] }
+        semantic: { type: interface, modifiers: *a7 }
+      - text: '{'
+        textmate: { scope: punctuation.section.class.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+  - lineNumber: 35
+    sourceText: '    private final Map<Long, JvUser> store = new HashMap<>();'
+    segments:
+      - text: private
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java ] }
+      - text: final
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java ] }
+      - text: Map
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.definition.variable.java ] }
+        semantic: { type: interface, modifiers: &a8 [ abstract, defaultLibrary ] }
+      - text: <
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.definition.variable.java ] }
+        semantic: { type: interface, modifiers: *a8 }
+      - text: Long
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.definition.variable.java ] }
+        semantic: { type: interface, modifiers: *a8 }
+      - text: ','
+        textmate: { scope: punctuation.separator.delimiter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.definition.variable.java ] }
+        semantic: { type: interface, modifiers: *a8 }
+      - text: JvUser
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.definition.variable.java ] }
+        semantic: { type: interface, modifiers: *a8 }
+      - text: '>'
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.definition.variable.java ] }
+        semantic: { type: interface, modifiers: *a8 }
+      - text: store
+        textmate: { scope: variable.other.definition.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.definition.variable.java ] }
+        semantic: { type: property, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java ] }
+      - text: new
+        textmate: { scope: keyword.control.new.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java ] }
+      - text: HashMap
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java ] }
+        semantic: { type: class, modifiers: &a9 [ defaultLibrary ] }
+      - text: <
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java ] }
+        semantic: { type: class, modifiers: *a9 }
+      - text: '>'
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java ] }
+        semantic: { type: class, modifiers: *a9 }
+      - text: (
+        textmate: { scope: punctuation.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java ] }
+      - text: )
+        textmate: { scope: punctuation.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java ] }
+  - lineNumber: 37
+    sourceText: '    @Override'
+    segments:
+      - text: '@'
+        textmate: { scope: punctuation.definition.annotation.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.declaration.annotation.java ] }
+      - text: Override
+        textmate: { scope: storage.type.annotation.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.declaration.annotation.java ] }
+        semantic: { type: decorator, modifiers: [ abstract, defaultLibrary ] }
+  - lineNumber: 38
+    sourceText: '    public Optional<JvUser> findById(Long id) {'
+    segments:
+      - text: public
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+      - text: Optional
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: class, modifiers: &a10 [ defaultLibrary ] }
+      - text: <
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: class, modifiers: *a10 }
+      - text: JvUser
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: class, modifiers: *a10 }
+      - text: '>'
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: class, modifiers: *a10 }
+      - text: findById
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: Long
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: id
+        textmate: { scope: variable.parameter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: parameter, modifiers: [ declaration, modification ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: '{'
+        textmate: { scope: punctuation.section.method.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+  - lineNumber: 39
+    sourceText: '      return Optional.ofNullable(store.get(id));'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: Optional
+        textmate: { scope: variable.other.object.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: ofNullable
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: store
+        textmate: { scope: variable.other.object.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java, meta.method-call.java ] }
+      - text: get
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java, meta.method-call.java ] }
+      - text: id
+        textmate: { scope: meta.method-call.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java, meta.method-call.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 40
+    sourceText: '    }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.method.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+  - lineNumber: 42
+    sourceText: '    JvResult<JvUser> save(JvUser user) {'
+    segments:
+      - text: JvResult
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: interface, modifiers: &a11 [ static, abstract ] }
+      - text: <
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: interface, modifiers: *a11 }
+      - text: JvUser
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: interface, modifiers: *a11 }
+      - text: '>'
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: interface, modifiers: *a11 }
+      - text: save
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: JvUser
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: struct, modifiers: [ static ] }
+      - text: user
+        textmate: { scope: variable.parameter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: parameter, modifiers: [ declaration, modification ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: '{'
+        textmate: { scope: punctuation.section.method.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+  - lineNumber: 43
+    sourceText: '      store.put(user.id(), user);'
+    segments:
+      - text: store
+        textmate: { scope: variable.other.object.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: put
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: user
+        textmate: { scope: variable.other.object.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java, meta.method-call.java ] }
+      - text: id
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java, meta.method-call.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java, meta.method-call.java ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.delimiter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: user
+        textmate: { scope: meta.method-call.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 44
+    sourceText: '      return new JvResult.Ok<>(user);'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: new
+        textmate: { scope: keyword.control.new.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: JvResult
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: struct, modifiers: &a12 [ static ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: struct, modifiers: *a12 }
+      - text: Ok
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: struct, modifiers: *a12 }
+      - text: <
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: struct, modifiers: *a12 }
+      - text: '>'
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: struct, modifiers: *a12 }
+      - text: (
+        textmate: { scope: punctuation.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: user
+        textmate: { scope: meta.method.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: )
+        textmate: { scope: punctuation.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 45
+    sourceText: '    }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.method.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+  - lineNumber: 46
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.class.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+  - lineNumber: 48
+    sourceText: '  @FunctionalInterface'
+    segments:
+      - text: '@'
+        textmate: { scope: punctuation.definition.annotation.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.declaration.annotation.java ] }
+      - text: FunctionalInterface
+        textmate: { scope: storage.type.annotation.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.declaration.annotation.java ] }
+        semantic: { type: decorator, modifiers: [ abstract, defaultLibrary ] }
+  - lineNumber: 49
+    sourceText: '  interface JvSupplier<T> {'
+    segments:
+      - text: interface
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.identifier.java ] }
+      - text: JvSupplier
+        textmate: { scope: entity.name.type.class.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.identifier.java ] }
+        semantic: { type: interface, modifiers: [ declaration, static, abstract ] }
+      - text: <
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+      - text: T
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: '>'
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+      - text: '{'
+        textmate: { scope: punctuation.section.class.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+  - lineNumber: 50
+    sourceText: '    T get() throws Exception;'
+    segments:
+      - text: T
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: typeParameter }
+      - text: get
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: throws
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.throwables.java ] }
+      - text: Exception
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java, meta.method.java, meta.throwables.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java, meta.class.body.java ] }
+  - lineNumber: 51
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.class.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.class.java ] }
+  - lineNumber: 53
+    sourceText: '  static <T> T jvRetry(JvSupplier<T> block) throws Exception {'
+    segments:
+      - text: static
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java ] }
+      - text: <
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java ] }
+      - text: T
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java ] }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: '>'
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java ] }
+      - text: T
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: typeParameter }
+      - text: jvRetry
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: JvSupplier
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: interface, modifiers: &a13 [ static, abstract ] }
+      - text: <
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: interface, modifiers: *a13 }
+      - text: T
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: interface, modifiers: *a13 }
+      - text: '>'
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: interface, modifiers: *a13 }
+      - text: block
+        textmate: { scope: variable.parameter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: parameter, modifiers: [ declaration, modification ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: throws
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.throwables.java ] }
+      - text: Exception
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.throwables.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: '{'
+        textmate: { scope: punctuation.section.method.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+  - lineNumber: 54
+    sourceText: '    Exception last = null;'
+    segments:
+      - text: Exception
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: last
+        textmate: { scope: variable.other.definition.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+        semantic: { type: variable, modifiers: [ declaration, modification ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: 'null'
+        textmate: { scope: constant.language.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 55
+    sourceText: '    for (int i = 0; i < MAX_RETRIES; i++) {'
+    segments:
+      - text: for
+        textmate: { scope: keyword.control.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: (
+        textmate: { scope: punctuation.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: int
+        textmate: { scope: storage.type.primitive.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+      - text: i
+        textmate: { scope: variable.other.definition.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+        semantic: { type: variable, modifiers: [ declaration, modification ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '0'
+        textmate: { scope: constant.numeric.decimal.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: i
+        textmate: { scope: meta.method.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+        semantic: { type: variable, modifiers: [ modification ] }
+      - text: <
+        textmate: { scope: keyword.operator.comparison.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: MAX_RETRIES
+        textmate: { scope: meta.method.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+        semantic: { type: property, modifiers: [ readonly, static ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: i
+        textmate: { scope: meta.method.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+        semantic: { type: variable, modifiers: [ modification ] }
+      - text: ++
+        textmate: { scope: keyword.operator.increment-decrement.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: )
+        textmate: { scope: punctuation.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '{'
+        textmate: { scope: punctuation.section.block.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 56
+    sourceText: '      try {'
+    segments:
+      - text: try
+        textmate: { scope: keyword.control.try.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.try.java ] }
+      - text: '{'
+        textmate: { scope: punctuation.section.try.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.try.java ] }
+  - lineNumber: 57
+    sourceText: '        return block.get();'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.try.java, meta.try.body.java ] }
+      - text: block
+        textmate: { scope: variable.other.object.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.try.java, meta.try.body.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.try.java, meta.try.body.java, meta.method-call.java ] }
+      - text: get
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.try.java, meta.try.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.try.java, meta.try.body.java, meta.method-call.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.try.java, meta.try.body.java, meta.method-call.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.try.java, meta.try.body.java ] }
+  - lineNumber: 58
+    sourceText: '      } catch (Exception e) {'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.try.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.try.java ] }
+      - text: catch
+        textmate: { scope: keyword.control.catch.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.catch.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.catch.java ] }
+      - text: Exception
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.catch.java, meta.catch.parameters.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: e
+        textmate: { scope: variable.parameter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.catch.java, meta.catch.parameters.java ] }
+        semantic: { type: parameter, modifiers: [ declaration, modification ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.catch.java ] }
+      - text: '{'
+        textmate: { scope: punctuation.section.catch.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.catch.java ] }
+  - lineNumber: 59
+    sourceText: '        last = e;'
+    segments:
+      - text: last
+        textmate: { scope: meta.catch.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.catch.java ] }
+        semantic: { type: variable, modifiers: [ modification ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.catch.java, meta.catch.body.java ] }
+      - text: e
+        textmate: { scope: meta.catch.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.catch.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.catch.java, meta.catch.body.java ] }
+  - lineNumber: 60
+    sourceText: '      }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.catch.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.catch.java ] }
+  - lineNumber: 61
+    sourceText: '    }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.block.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 62
+    sourceText: '    throw Objects.requireNonNullElse(last, new IllegalStateException("failed after " + MAX_RETRIES));'
+    segments:
+      - text: throw
+        textmate: { scope: keyword.control.throw.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: Objects
+        textmate: { scope: variable.other.object.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: requireNonNullElse
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: last
+        textmate: { scope: meta.method-call.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: variable, modifiers: [ modification ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.delimiter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: new
+        textmate: { scope: keyword.control.new.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: IllegalStateException
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java, meta.function-call.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java, meta.function-call.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java, meta.function-call.java, string.quoted.double.java ] }
+      - text: 'failed after '
+        textmate: { scope: string.quoted.double.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java, meta.function-call.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java, meta.function-call.java, string.quoted.double.java ] }
+      - text: +
+        textmate: { scope: keyword.operator.arithmetic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java, meta.function-call.java ] }
+      - text: MAX_RETRIES
+        textmate: { scope: meta.function-call.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+        semantic: { type: property, modifiers: [ readonly, static ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java, meta.function-call.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 63
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.method.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+  - lineNumber: 65
+    sourceText: '  // switch expr, text block, instanceof pattern, streams, var, literals'
+    segments:
+      - text: //
+        textmate: { scope: punctuation.definition.comment.java, rest: [ source.java, meta.class.java, meta.class.body.java, comment.line.double-slash.java ] }
+      - text: ' switch expr, text block, instanceof pattern, streams, var, literals'
+        textmate: { scope: comment.line.double-slash.java, rest: [ source.java, meta.class.java, meta.class.body.java ] }
+  - lineNumber: 66
+    sourceText: '  static String jvShowcase(Object obj, List<JvUser> users) {'
+    segments:
+      - text: static
+        textmate: { scope: storage.modifier.java, rest: [ source.java, meta.class.java, meta.class.body.java ] }
+      - text: String
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.return-type.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: jvShowcase
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: Object
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: obj
+        textmate: { scope: variable.parameter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: parameter, modifiers: [ declaration, modification ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.delimiter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: List
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: interface, modifiers: &a14 [ abstract, defaultLibrary ] }
+      - text: <
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: interface, modifiers: *a14 }
+      - text: JvUser
+        textmate: { scope: storage.type.generic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: interface, modifiers: *a14 }
+      - text: '>'
+        textmate: { scope: punctuation.bracket.angle.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: interface, modifiers: *a14 }
+      - text: users
+        textmate: { scope: variable.parameter.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+        semantic: { type: parameter, modifiers: [ declaration, modification ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.identifier.java ] }
+      - text: '{'
+        textmate: { scope: punctuation.section.method.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+  - lineNumber: 67
+    sourceText: '    String kind = switch (obj) {'
+    segments:
+      - text: String
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: kind
+        textmate: { scope: variable.other.definition.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+        semantic: { type: variable, modifiers: [ declaration, modification ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: switch
+        textmate: { scope: keyword.control.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: (
+        textmate: { scope: punctuation.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: obj
+        textmate: { scope: meta.method.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: )
+        textmate: { scope: punctuation.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '{'
+        textmate: { scope: punctuation.section.block.begin.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 68
+    sourceText: '      case JvUser u when u.roles().contains(JvRole.ADMIN) -> "admin:" + u.name();'
+    segments:
+      - text: case
+        textmate: { scope: keyword.control.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: JvUser
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: struct, modifiers: [ static ] }
+      - text: u
+        textmate: { scope: meta.method.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+        semantic: { type: parameter, modifiers: [ declaration, modification ] }
+      - text: ' when '
+        textmate: { scope: meta.method.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+      - text: u
+        textmate: { scope: variable.other.object.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: roles
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: contains
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: JvRole
+        textmate: { scope: variable.other.object.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+        semantic: { type: enumMember, modifiers: &a15 [ readonly, static ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+        semantic: { type: enumMember, modifiers: *a15 }
+      - text: ADMIN
+        textmate: { scope: variable.other.object.property.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+        semantic: { type: enumMember, modifiers: *a15 }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: ->
+        textmate: { scope: storage.type.function.arrow.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, string.quoted.double.java ] }
+      - text: 'admin:'
+        textmate: { scope: string.quoted.double.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, string.quoted.double.java ] }
+      - text: +
+        textmate: { scope: keyword.operator.arithmetic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: u
+        textmate: { scope: variable.other.object.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: name
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 69
+    sourceText: '      case JvUser u -> "user:" + u.name();'
+    segments:
+      - text: case
+        textmate: { scope: keyword.control.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: JvUser
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: struct, modifiers: [ static ] }
+      - text: u
+        textmate: { scope: meta.method.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+        semantic: { type: parameter, modifiers: [ declaration, modification ] }
+      - text: ->
+        textmate: { scope: storage.type.function.arrow.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, string.quoted.double.java ] }
+      - text: 'user:'
+        textmate: { scope: string.quoted.double.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, string.quoted.double.java ] }
+      - text: +
+        textmate: { scope: keyword.operator.arithmetic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: u
+        textmate: { scope: variable.other.object.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: name
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 70
+    sourceText: '      case Integer i -> "int:" + i;'
+    segments:
+      - text: case
+        textmate: { scope: keyword.control.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: Integer
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: i
+        textmate: { scope: meta.method.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+        semantic: { type: parameter, modifiers: [ declaration, modification ] }
+      - text: ->
+        textmate: { scope: storage.type.function.arrow.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, string.quoted.double.java ] }
+      - text: 'int:'
+        textmate: { scope: string.quoted.double.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, string.quoted.double.java ] }
+      - text: +
+        textmate: { scope: keyword.operator.arithmetic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: i
+        textmate: { scope: meta.method.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 71
+    sourceText: '      case null -> "null";'
+    segments:
+      - text: case
+        textmate: { scope: keyword.control.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: 'null'
+        textmate: { scope: constant.language.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: ->
+        textmate: { scope: storage.type.function.arrow.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, string.quoted.double.java ] }
+      - text: 'null'
+        textmate: { scope: string.quoted.double.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, string.quoted.double.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 72
+    sourceText: '      default -> "other";'
+    segments:
+      - text: default
+        textmate: { scope: keyword.control.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: ->
+        textmate: { scope: storage.type.function.arrow.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, string.quoted.double.java ] }
+      - text: other
+        textmate: { scope: string.quoted.double.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, string.quoted.double.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 73
+    sourceText: '    };'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.block.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 74
+    sourceText: '    String json = """'
+    segments:
+      - text: String
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: json
+        textmate: { scope: variable.other.definition.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+        semantic: { type: variable, modifiers: [ declaration, modification ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '"""'
+        textmate: { scope: punctuation.definition.string.begin.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, string.quoted.triple.java ] }
+  - lineNumber: 75
+    sourceText: '        {"kind": "%s"}'
+    segments:
+      - text: '        {"kind": "%s"}'
+        textmate: { scope: string.quoted.triple.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 76
+    sourceText: '        """.formatted(kind);'
+    segments:
+      - text: '"""'
+        textmate: { scope: punctuation.definition.string.end.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, string.quoted.triple.java ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: formatted
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: kind
+        textmate: { scope: meta.method-call.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: variable, modifiers: [ modification ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 77
+    sourceText: '    boolean isAdmin = obj instanceof JvUser u && u.roles().contains(JvRole.ADMIN);'
+    segments:
+      - text: boolean
+        textmate: { scope: storage.type.primitive.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+      - text: isAdmin
+        textmate: { scope: variable.other.definition.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+        semantic: { type: variable, modifiers: [ declaration, modification ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: obj
+        textmate: { scope: meta.method.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: instanceof
+        textmate: { scope: keyword.operator.instanceof.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: JvUser
+        textmate: { scope: storage.type.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: struct, modifiers: [ static ] }
+      - text: u
+        textmate: { scope: meta.method.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+        semantic: { type: parameter, modifiers: [ declaration, modification ] }
+      - text: '&&'
+        textmate: { scope: keyword.operator.logical.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: u
+        textmate: { scope: variable.other.object.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: roles
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: contains
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: JvRole
+        textmate: { scope: variable.other.object.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+        semantic: { type: enumMember, modifiers: &a16 [ readonly, static ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+        semantic: { type: enumMember, modifiers: *a16 }
+      - text: ADMIN
+        textmate: { scope: variable.other.object.property.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+        semantic: { type: enumMember, modifiers: *a16 }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 78
+    sourceText: '    var names = users.stream().map(JvUser::name).toList();'
+    segments:
+      - text: var
+        textmate: { scope: storage.type.local.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.local.java ] }
+      - text: names
+        textmate: { scope: variable.other.definition.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.local.java ] }
+        semantic: { type: variable, modifiers: [ declaration, modification ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: users
+        textmate: { scope: variable.other.object.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: parameter, modifiers: [ modification ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: stream
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: map
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: JvUser
+        textmate: { scope: meta.method-call.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+        semantic: { type: struct, modifiers: [ static ] }
+      - text: ':'
+        textmate: { scope: keyword.control.ternary.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: ':'
+        textmate: { scope: keyword.control.ternary.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: name
+        textmate: { scope: meta.method-call.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: toList
+        textmate: { scope: entity.name.function.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.bracket.round.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.method-call.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 79
+    sourceText: '    int hex = 0xFF;'
+    segments:
+      - text: int
+        textmate: { scope: storage.type.primitive.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+      - text: hex
+        textmate: { scope: variable.other.definition.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+        semantic: { type: variable, modifiers: [ declaration, modification ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '0xFF'
+        textmate: { scope: constant.numeric.hex.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 80
+    sourceText: '    double fp = 3.14f + 1.234 + 1e4f + 1e5 + 1f + 112340L + 1234123;'
+    segments:
+      - text: double
+        textmate: { scope: storage.type.primitive.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+      - text: fp
+        textmate: { scope: variable.other.definition.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+        semantic: { type: variable, modifiers: [ declaration, modification ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: 3.14f
+        textmate: { scope: constant.numeric.decimal.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: +
+        textmate: { scope: keyword.operator.arithmetic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '1.234'
+        textmate: { scope: constant.numeric.decimal.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: +
+        textmate: { scope: keyword.operator.arithmetic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: 1e4f
+        textmate: { scope: constant.numeric.decimal.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: +
+        textmate: { scope: keyword.operator.arithmetic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '1e5'
+        textmate: { scope: constant.numeric.decimal.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: +
+        textmate: { scope: keyword.operator.arithmetic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: 1f
+        textmate: { scope: constant.numeric.decimal.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: +
+        textmate: { scope: keyword.operator.arithmetic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: 112340L
+        textmate: { scope: constant.numeric.decimal.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: +
+        textmate: { scope: keyword.operator.arithmetic.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: '1234123'
+        textmate: { scope: constant.numeric.decimal.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 81
+    sourceText: "    char ch = 'J';"
+    segments:
+      - text: char
+        textmate: { scope: storage.type.primitive.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+      - text: ch
+        textmate: { scope: variable.other.definition.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, meta.definition.variable.java ] }
+        semantic: { type: variable, modifiers: [ declaration, modification ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: "'"
+        textmate: { scope: punctuation.definition.string.begin.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, string.quoted.single.java ] }
+      - text: J
+        textmate: { scope: string.quoted.single.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: "'"
+        textmate: { scope: punctuation.definition.string.end.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java, string.quoted.single.java ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 82
+    sourceText: '    return json;'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+      - text: json
+        textmate: { scope: meta.method.body.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+        semantic: { type: variable, modifiers: [ modification ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java, meta.method.body.java ] }
+  - lineNumber: 83
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.method.end.bracket.curly.java, rest: [ source.java, meta.class.java, meta.class.body.java, meta.method.java ] }
+  - lineNumber: 84
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.section.class.end.bracket.curly.java, rest: [ source.java, meta.class.java ] }

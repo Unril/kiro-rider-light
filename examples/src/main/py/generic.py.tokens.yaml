@@ -1,0 +1,1594 @@
+schema: token-scope-export/v1
+note: Semantic tokens come from VS Code built-in semantic-token commands. TextMate scopes are re-tokenized from the contributed grammar.
+positionEncoding: { lines: 1-based, columns: 0-based, endColumn: exclusive }
+exportedAt: 2026-03-20T18:15:27.401Z
+source:
+  languageId: python
+  version: 30
+grammar: source.python
+semanticLegend:
+  tokenTypes:
+    - namespace
+    - type
+    - class
+    - enum
+    - typeParameter
+    - parameter
+    - variable
+    - property
+    - enumMember
+    - function
+    - method
+    - keyword
+    - decorator
+    - selfParameter
+    - clsParameter
+  tokenModifiers:
+    - declaration
+    - definition
+    - readonly
+    - static
+    - async
+    - defaultLibrary
+    - builtin
+    - classMember
+    - parameter
+stats: { lineCount: 96, semanticTokenCount: 200, textmateTokenCount: 834, exportedSegmentCount: 572 }
+lines:
+  - lineNumber: 1
+    sourceText: '"""Generic syntax showcase for Python token scopes."""'
+    segments:
+      - text: '"""'
+        textmate: { scope: punctuation.definition.string.begin.python, rest: [ source.python, string.quoted.docstring.multi.python ] }
+      - text: Generic syntax showcase for Python token scopes.
+        textmate: { scope: string.quoted.docstring.multi.python, rest: [ source.python ] }
+      - text: '"""'
+        textmate: { scope: punctuation.definition.string.end.python, rest: [ source.python, string.quoted.docstring.multi.python ] }
+  - lineNumber: 3
+    sourceText: import math
+    segments:
+      - text: import
+        textmate: { scope: keyword.control.import.python, rest: [ source.python ] }
+      - text: math
+        textmate: { scope: source.python }
+        semantic: { type: namespace }
+  - lineNumber: 4
+    sourceText: from abc import ABC, abstractmethod
+    segments:
+      - text: from
+        textmate: { scope: keyword.control.import.python, rest: [ source.python ] }
+      - text: abc
+        textmate: { scope: source.python }
+        semantic: { type: namespace }
+      - text: import
+        textmate: { scope: keyword.control.import.python, rest: [ source.python ] }
+      - text: ABC
+        textmate: { scope: constant.other.caps.python, rest: [ source.python ] }
+        semantic: { type: class }
+      - text: ','
+        textmate: { scope: punctuation.separator.element.python, rest: [ source.python ] }
+      - text: abstractmethod
+        textmate: { scope: source.python }
+        semantic: { type: function }
+  - lineNumber: 5
+    sourceText: from collections.abc import Callable, Iterator
+    segments:
+      - text: from
+        textmate: { scope: keyword.control.import.python, rest: [ source.python ] }
+      - text: collections
+        textmate: { scope: source.python }
+        semantic: { type: namespace }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python ] }
+      - text: abc
+        textmate: { scope: source.python }
+        semantic: { type: namespace }
+      - text: import
+        textmate: { scope: keyword.control.import.python, rest: [ source.python ] }
+      - text: Callable
+        textmate: { scope: source.python }
+        semantic: { type: class }
+      - text: ','
+        textmate: { scope: punctuation.separator.element.python, rest: [ source.python ] }
+      - text: Iterator
+        textmate: { scope: source.python }
+        semantic: { type: class }
+  - lineNumber: 6
+    sourceText: from dataclasses import dataclass, field
+    segments:
+      - text: from
+        textmate: { scope: keyword.control.import.python, rest: [ source.python ] }
+      - text: dataclasses
+        textmate: { scope: source.python }
+        semantic: { type: namespace }
+      - text: import
+        textmate: { scope: keyword.control.import.python, rest: [ source.python ] }
+      - text: dataclass
+        textmate: { scope: source.python }
+        semantic: { type: function }
+      - text: ','
+        textmate: { scope: punctuation.separator.element.python, rest: [ source.python ] }
+      - text: field
+        textmate: { scope: source.python }
+        semantic: { type: function }
+  - lineNumber: 7
+    sourceText: from enum import StrEnum
+    segments:
+      - text: from
+        textmate: { scope: keyword.control.import.python, rest: [ source.python ] }
+      - text: enum
+        textmate: { scope: source.python }
+        semantic: { type: namespace }
+      - text: import
+        textmate: { scope: keyword.control.import.python, rest: [ source.python ] }
+      - text: StrEnum
+        textmate: { scope: source.python }
+        semantic: { type: enum }
+  - lineNumber: 8
+    sourceText: from typing import Generic, NewType, TypeVar, override
+    segments:
+      - text: from
+        textmate: { scope: keyword.control.import.python, rest: [ source.python ] }
+      - text: typing
+        textmate: { scope: source.python }
+        semantic: { type: namespace }
+      - text: import
+        textmate: { scope: keyword.control.import.python, rest: [ source.python ] }
+      - text: Generic
+        textmate: { scope: source.python }
+        semantic: { type: class }
+      - text: ','
+        textmate: { scope: punctuation.separator.element.python, rest: [ source.python ] }
+      - text: NewType
+        textmate: { scope: source.python }
+        semantic: { type: class }
+      - text: ','
+        textmate: { scope: punctuation.separator.element.python, rest: [ source.python ] }
+      - text: TypeVar
+        textmate: { scope: source.python }
+        semantic: { type: class }
+      - text: ','
+        textmate: { scope: punctuation.separator.element.python, rest: [ source.python ] }
+      - text: override
+        textmate: { scope: source.python }
+        semantic: { type: function }
+  - lineNumber: 10
+    sourceText: T = TypeVar("T")
+    segments:
+      - text: T
+        textmate: { scope: source.python }
+        semantic: { type: typeParameter, modifiers: [ readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: TypeVar
+        textmate: { scope: meta.function-call.generic.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: class }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, string.quoted.single.python ] }
+      - text: T
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, string.quoted.single.python ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python ] }
+  - lineNumber: 11
+    sourceText: 'MAX_RETRIES: int = 3'
+    segments:
+      - text: MAX_RETRIES
+        textmate: { scope: constant.other.caps.python, rest: [ source.python ] }
+        semantic: { type: variable, modifiers: [ readonly ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+      - text: int
+        textmate: { scope: support.type.python, rest: [ source.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: '3'
+        textmate: { scope: constant.numeric.dec.python, rest: [ source.python ] }
+  - lineNumber: 12
+    sourceText: PyUserId = NewType("PyUserId", int)
+    segments:
+      - text: PyUserId
+        textmate: { scope: source.python }
+        semantic: { type: class }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: NewType
+        textmate: { scope: meta.function-call.generic.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: class }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, string.quoted.single.python ] }
+      - text: PyUserId
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, string.quoted.single.python ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.arguments.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+      - text: int
+        textmate: { scope: support.type.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python ] }
+  - lineNumber: 15
+    sourceText: 'class PyRepository(ABC, Generic[T]):'
+    segments:
+      - text: class
+        textmate: { scope: storage.type.class.python, rest: [ source.python, meta.class.python ] }
+      - text: PyRepository
+        textmate: { scope: entity.name.type.class.python, rest: [ source.python, meta.class.python ] }
+        semantic: { type: class, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: punctuation.definition.inheritance.begin.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python ] }
+      - text: ABC
+        textmate: { scope: constant.other.caps.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python ] }
+        semantic: { type: class }
+      - text: ','
+        textmate: { scope: punctuation.separator.inheritance.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python ] }
+      - text: Generic
+        textmate: { scope: meta.indexed-name.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python, meta.item-access.python ] }
+        semantic: { type: class }
+      - text: '['
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python, meta.item-access.python ] }
+      - text: T
+        textmate: { scope: meta.item-access.arguments.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python, meta.item-access.python ] }
+        semantic: { type: typeParameter, modifiers: [ readonly ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python, meta.item-access.python ] }
+      - text: )
+        textmate: { scope: punctuation.definition.inheritance.end.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python ] }
+      - text: ':'
+        textmate: { scope: punctuation.section.class.begin.python, rest: [ source.python, meta.class.python ] }
+  - lineNumber: 16
+    sourceText: '    """Generic repository interface."""'
+    segments:
+      - text: '"""'
+        textmate: { scope: punctuation.definition.string.begin.python, rest: [ source.python, string.quoted.docstring.multi.python ] }
+      - text: Generic repository interface.
+        textmate: { scope: string.quoted.docstring.multi.python, rest: [ source.python ] }
+      - text: '"""'
+        textmate: { scope: punctuation.definition.string.end.python, rest: [ source.python, string.quoted.docstring.multi.python ] }
+  - lineNumber: 18
+    sourceText: '    @abstractmethod'
+    segments:
+      - text: '@'
+        textmate: { scope: punctuation.definition.decorator.python, rest: [ source.python, meta.function.decorator.python, entity.name.function.decorator.python ] }
+        semantic: { type: decorator }
+      - text: abstractmethod
+        textmate: { scope: entity.name.function.decorator.python, rest: [ source.python, meta.function.decorator.python ] }
+        semantic: { type: decorator }
+  - lineNumber: 19
+    sourceText: '    def find_by_id(self, entity_id: int) -> T | None: ...'
+    segments:
+      - text: def
+        textmate: { scope: storage.type.function.python, rest: [ source.python, meta.function.python ] }
+      - text: find_by_id
+        textmate: { scope: entity.name.function.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: method, modifiers: [ declaration, classMember ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: self
+        textmate: { scope: variable.parameter.function.language.special.self.python, rest: [ source.python, meta.function.python, meta.function.parameters.python, variable.parameter.function.language.python ] }
+        semantic: { type: selfParameter, modifiers: [ declaration, parameter ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.parameters.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: entity_id
+        textmate: { scope: variable.parameter.function.language.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+        semantic: { type: parameter, modifiers: [ declaration, parameter ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.annotation.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: int
+        textmate: { scope: support.type.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: ->
+        textmate: { scope: punctuation.separator.annotation.result.python, rest: [ source.python, meta.function.python ] }
+      - text: T
+        textmate: { scope: meta.function.python, rest: [ source.python ] }
+        semantic: { type: typeParameter, modifiers: [ readonly ] }
+      - text: '|'
+        textmate: { scope: keyword.operator.bitwise.python, rest: [ source.python, meta.function.python ] }
+      - text: None
+        textmate: { scope: constant.language.python, rest: [ source.python, meta.function.python ] }
+      - text: ':'
+        textmate: { scope: punctuation.section.function.begin.python, rest: [ source.python, meta.function.python ] }
+      - text: ...
+        textmate: { scope: constant.other.ellipsis.python, rest: [ source.python ] }
+  - lineNumber: 22
+    sourceText: 'class PyRole(StrEnum):'
+    segments:
+      - text: class
+        textmate: { scope: storage.type.class.python, rest: [ source.python, meta.class.python ] }
+      - text: PyRole
+        textmate: { scope: entity.name.type.class.python, rest: [ source.python, meta.class.python ] }
+        semantic: { type: enum, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: punctuation.definition.inheritance.begin.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python ] }
+      - text: StrEnum
+        textmate: { scope: entity.other.inherited-class.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python ] }
+        semantic: { type: enum }
+      - text: )
+        textmate: { scope: punctuation.definition.inheritance.end.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python ] }
+      - text: ':'
+        textmate: { scope: punctuation.section.class.begin.python, rest: [ source.python, meta.class.python ] }
+  - lineNumber: 23
+    sourceText: '    ADMIN = "admin"'
+    segments:
+      - text: ADMIN
+        textmate: { scope: constant.other.caps.python, rest: [ source.python ] }
+        semantic: { type: enumMember }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.python, rest: [ source.python, string.quoted.single.python ] }
+      - text: admin
+        textmate: { scope: string.quoted.single.python, rest: [ source.python ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.python, rest: [ source.python, string.quoted.single.python ] }
+  - lineNumber: 26
+    sourceText: '@dataclass'
+    segments:
+      - text: '@'
+        textmate: { scope: punctuation.definition.decorator.python, rest: [ source.python, meta.function.decorator.python, entity.name.function.decorator.python ] }
+        semantic: { type: decorator }
+      - text: dataclass
+        textmate: { scope: entity.name.function.decorator.python, rest: [ source.python, meta.function.decorator.python ] }
+        semantic: { type: decorator }
+  - lineNumber: 27
+    sourceText: 'class PyUser:'
+    segments:
+      - text: class
+        textmate: { scope: storage.type.class.python, rest: [ source.python, meta.class.python ] }
+      - text: PyUser
+        textmate: { scope: entity.name.type.class.python, rest: [ source.python, meta.class.python ] }
+        semantic: { type: class, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: punctuation.section.class.begin.python, rest: [ source.python, meta.class.python ] }
+  - lineNumber: 28
+    sourceText: '    id: PyUserId'
+    segments:
+      - text: id
+        textmate: { scope: support.function.builtin.python, rest: [ source.python ] }
+        semantic: { type: property, modifiers: [ static, classMember ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+      - text: PyUserId
+        textmate: { scope: source.python }
+        semantic: { type: class }
+  - lineNumber: 29
+    sourceText: '    name: str'
+    segments:
+      - text: name
+        textmate: { scope: source.python }
+        semantic: { type: property, modifiers: [ static, classMember ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+      - text: str
+        textmate: { scope: support.type.python, rest: [ source.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+  - lineNumber: 30
+    sourceText: '    roles: set[PyRole] = field(default_factory=set)'
+    segments:
+      - text: roles
+        textmate: { scope: source.python }
+        semantic: { type: property, modifiers: [ static, classMember ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+      - text: set
+        textmate: { scope: meta.indexed-name.python, rest: [ source.python, meta.item-access.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.item-access.python ] }
+      - text: PyRole
+        textmate: { scope: meta.item-access.arguments.python, rest: [ source.python, meta.item-access.python ] }
+        semantic: { type: enum }
+      - text: ']'
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.item-access.python ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: field
+        textmate: { scope: meta.function-call.generic.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: function }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python ] }
+      - text: default_factory
+        textmate: { scope: variable.parameter.function-call.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+        semantic: { type: function, modifiers: [ parameter ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+      - text: set
+        textmate: { scope: support.type.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python ] }
+  - lineNumber: 32
+    sourceText: '    def display_name(self) -> str:'
+    segments:
+      - text: def
+        textmate: { scope: storage.type.function.python, rest: [ source.python, meta.function.python ] }
+      - text: display_name
+        textmate: { scope: entity.name.function.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: method, modifiers: [ declaration, classMember ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: self
+        textmate: { scope: variable.parameter.function.language.special.self.python, rest: [ source.python, meta.function.python, meta.function.parameters.python, variable.parameter.function.language.python ] }
+        semantic: { type: selfParameter, modifiers: [ declaration, parameter ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: ->
+        textmate: { scope: punctuation.separator.annotation.result.python, rest: [ source.python, meta.function.python ] }
+      - text: str
+        textmate: { scope: support.type.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: ':'
+        textmate: { scope: punctuation.section.function.begin.python, rest: [ source.python, meta.function.python ] }
+  - lineNumber: 33
+    sourceText: '        return f"{self.name} (id={self.id})"'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: f
+        textmate: { scope: storage.type.string.python, rest: [ source.python, meta.fstring.python, string.interpolated.python, string.quoted.single.python ] }
+      - text: '"'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.fstring.python, punctuation.definition.string.begin.python, string.interpolated.python ] }
+      - text: '{'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: self
+        textmate: { scope: variable.language.special.self.python, rest: [ source.python, meta.fstring.python ] }
+        semantic: { type: selfParameter, modifiers: [ parameter ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.fstring.python, meta.member.access.python ] }
+      - text: name
+        textmate: { scope: meta.attribute.python, rest: [ source.python, meta.fstring.python, meta.member.access.python ] }
+        semantic: { type: property, modifiers: [ static, classMember ] }
+      - text: '}'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: ' (id='
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.fstring.python, string.interpolated.python ] }
+      - text: '{'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: self
+        textmate: { scope: variable.language.special.self.python, rest: [ source.python, meta.fstring.python ] }
+        semantic: { type: selfParameter, modifiers: [ parameter ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.fstring.python, meta.member.access.python ] }
+      - text: id
+        textmate: { scope: meta.attribute.python, rest: [ source.python, meta.fstring.python, meta.member.access.python ] }
+        semantic: { type: property, modifiers: [ static, classMember ] }
+      - text: '}'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: )
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.fstring.python, string.interpolated.python ] }
+      - text: '"'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.fstring.python, punctuation.definition.string.end.python, string.interpolated.python ] }
+  - lineNumber: 35
+    sourceText: '    @property'
+    segments:
+      - text: '@'
+        textmate: { scope: punctuation.definition.decorator.python, rest: [ source.python, meta.function.decorator.python, entity.name.function.decorator.python ] }
+        semantic: { type: decorator }
+      - text: property
+        textmate: { scope: support.type.python, rest: [ source.python, meta.function.decorator.python ] }
+        semantic: { type: decorator }
+  - lineNumber: 36
+    sourceText: '    def is_admin(self) -> bool:'
+    segments:
+      - text: def
+        textmate: { scope: storage.type.function.python, rest: [ source.python, meta.function.python ] }
+      - text: is_admin
+        textmate: { scope: entity.name.function.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: property, modifiers: [ declaration, readonly, classMember ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: self
+        textmate: { scope: variable.parameter.function.language.special.self.python, rest: [ source.python, meta.function.python, meta.function.parameters.python, variable.parameter.function.language.python ] }
+        semantic: { type: selfParameter, modifiers: [ declaration, parameter ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: ->
+        textmate: { scope: punctuation.separator.annotation.result.python, rest: [ source.python, meta.function.python ] }
+      - text: bool
+        textmate: { scope: support.type.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: ':'
+        textmate: { scope: punctuation.section.function.begin.python, rest: [ source.python, meta.function.python ] }
+  - lineNumber: 37
+    sourceText: '        return PyRole.ADMIN in self.roles'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: PyRole
+        textmate: { scope: source.python }
+        semantic: { type: enum }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.member.access.python ] }
+      - text: ADMIN
+        textmate: { scope: constant.other.caps.python, rest: [ source.python, meta.member.access.python ] }
+        semantic: { type: enumMember }
+      - text: in
+        textmate: { scope: keyword.operator.logical.python, rest: [ source.python ] }
+      - text: self
+        textmate: { scope: variable.language.special.self.python, rest: [ source.python ] }
+        semantic: { type: selfParameter, modifiers: [ parameter ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.member.access.python ] }
+      - text: roles
+        textmate: { scope: meta.attribute.python, rest: [ source.python, meta.member.access.python ] }
+        semantic: { type: property, modifiers: [ static, classMember ] }
+  - lineNumber: 39
+    sourceText: '    @staticmethod'
+    segments:
+      - text: '@'
+        textmate: { scope: punctuation.definition.decorator.python, rest: [ source.python, meta.function.decorator.python, entity.name.function.decorator.python ] }
+        semantic: { type: decorator }
+      - text: staticmethod
+        textmate: { scope: support.type.python, rest: [ source.python, meta.function.decorator.python ] }
+        semantic: { type: decorator }
+  - lineNumber: 40
+    sourceText: '    def guest() -> "PyUser":'
+    segments:
+      - text: def
+        textmate: { scope: storage.type.function.python, rest: [ source.python, meta.function.python ] }
+      - text: guest
+        textmate: { scope: entity.name.function.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: method, modifiers: [ declaration, static, classMember ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: ->
+        textmate: { scope: punctuation.separator.annotation.result.python, rest: [ source.python, meta.function.python ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.python, rest: [ source.python, meta.function.python, string.quoted.single.python ] }
+      - text: PyUser
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: class }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.python, rest: [ source.python, meta.function.python, string.quoted.single.python ] }
+      - text: ':'
+        textmate: { scope: punctuation.section.function.begin.python, rest: [ source.python, meta.function.python ] }
+  - lineNumber: 41
+    sourceText: '        return PyUser(id=PyUserId(0), name="guest")'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: PyUser
+        textmate: { scope: meta.function-call.generic.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: class }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python ] }
+      - text: id
+        textmate: { scope: variable.parameter.function-call.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+        semantic: { type: property, modifiers: [ static, classMember, parameter ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+      - text: PyUserId
+        textmate: { scope: meta.function-call.generic.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.function-call.python ] }
+        semantic: { type: class }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.function-call.python ] }
+      - text: '0'
+        textmate: { scope: constant.numeric.dec.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.function-call.python, meta.function-call.arguments.python ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.function-call.python ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.arguments.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+      - text: name
+        textmate: { scope: variable.parameter.function-call.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+        semantic: { type: property, modifiers: [ static, classMember, parameter ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, string.quoted.single.python ] }
+      - text: guest
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, string.quoted.single.python ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python ] }
+  - lineNumber: 44
+    sourceText: 'class PyUserRepository(PyRepository[PyUser]):'
+    segments:
+      - text: class
+        textmate: { scope: storage.type.class.python, rest: [ source.python, meta.class.python ] }
+      - text: PyUserRepository
+        textmate: { scope: entity.name.type.class.python, rest: [ source.python, meta.class.python ] }
+        semantic: { type: class, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: punctuation.definition.inheritance.begin.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python ] }
+      - text: PyRepository
+        textmate: { scope: meta.indexed-name.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python, meta.item-access.python ] }
+        semantic: { type: class }
+      - text: '['
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python, meta.item-access.python ] }
+      - text: PyUser
+        textmate: { scope: meta.item-access.arguments.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python, meta.item-access.python ] }
+        semantic: { type: class }
+      - text: ']'
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python, meta.item-access.python ] }
+      - text: )
+        textmate: { scope: punctuation.definition.inheritance.end.python, rest: [ source.python, meta.class.python, meta.class.inheritance.python ] }
+      - text: ':'
+        textmate: { scope: punctuation.section.class.begin.python, rest: [ source.python, meta.class.python ] }
+  - lineNumber: 45
+    sourceText: '    def __init__(self) -> None:'
+    segments:
+      - text: def
+        textmate: { scope: storage.type.function.python, rest: [ source.python, meta.function.python ] }
+      - text: __init__
+        textmate: { scope: support.function.magic.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: method, modifiers: [ declaration, classMember ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: self
+        textmate: { scope: variable.parameter.function.language.special.self.python, rest: [ source.python, meta.function.python, meta.function.parameters.python, variable.parameter.function.language.python ] }
+        semantic: { type: selfParameter, modifiers: [ declaration, parameter ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: ->
+        textmate: { scope: punctuation.separator.annotation.result.python, rest: [ source.python, meta.function.python ] }
+      - text: None
+        textmate: { scope: constant.language.python, rest: [ source.python, meta.function.python ] }
+      - text: ':'
+        textmate: { scope: punctuation.section.function.begin.python, rest: [ source.python, meta.function.python ] }
+  - lineNumber: 46
+    sourceText: '        self._store: dict[PyUserId, PyUser] = {}'
+    segments:
+      - text: self
+        textmate: { scope: variable.language.special.self.python, rest: [ source.python ] }
+        semantic: { type: selfParameter, modifiers: [ parameter ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.member.access.python ] }
+      - text: _store
+        textmate: { scope: meta.attribute.python, rest: [ source.python, meta.member.access.python ] }
+        semantic: { type: property, modifiers: [ classMember ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+      - text: dict
+        textmate: { scope: meta.indexed-name.python, rest: [ source.python, meta.item-access.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.item-access.python ] }
+      - text: PyUserId
+        textmate: { scope: meta.item-access.arguments.python, rest: [ source.python, meta.item-access.python ] }
+        semantic: { type: class }
+      - text: ','
+        textmate: { scope: punctuation.separator.element.python, rest: [ source.python, meta.item-access.python, meta.item-access.arguments.python ] }
+      - text: PyUser
+        textmate: { scope: meta.item-access.arguments.python, rest: [ source.python, meta.item-access.python ] }
+        semantic: { type: class }
+      - text: ']'
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.item-access.python ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.dict.begin.python, rest: [ source.python ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.dict.end.python, rest: [ source.python ] }
+  - lineNumber: 48
+    sourceText: '    @override'
+    segments:
+      - text: '@'
+        textmate: { scope: punctuation.definition.decorator.python, rest: [ source.python, meta.function.decorator.python, entity.name.function.decorator.python ] }
+        semantic: { type: decorator }
+      - text: override
+        textmate: { scope: entity.name.function.decorator.python, rest: [ source.python, meta.function.decorator.python ] }
+        semantic: { type: decorator }
+  - lineNumber: 49
+    sourceText: '    def find_by_id(self, entity_id: int) -> PyUser | None:'
+    segments:
+      - text: def
+        textmate: { scope: storage.type.function.python, rest: [ source.python, meta.function.python ] }
+      - text: find_by_id
+        textmate: { scope: entity.name.function.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: method, modifiers: [ declaration, classMember ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: self
+        textmate: { scope: variable.parameter.function.language.special.self.python, rest: [ source.python, meta.function.python, meta.function.parameters.python, variable.parameter.function.language.python ] }
+        semantic: { type: selfParameter, modifiers: [ declaration, parameter ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.parameters.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: entity_id
+        textmate: { scope: variable.parameter.function.language.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+        semantic: { type: parameter, modifiers: [ declaration, parameter ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.annotation.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: int
+        textmate: { scope: support.type.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: ->
+        textmate: { scope: punctuation.separator.annotation.result.python, rest: [ source.python, meta.function.python ] }
+      - text: PyUser
+        textmate: { scope: meta.function.python, rest: [ source.python ] }
+        semantic: { type: class }
+      - text: '|'
+        textmate: { scope: keyword.operator.bitwise.python, rest: [ source.python, meta.function.python ] }
+      - text: None
+        textmate: { scope: constant.language.python, rest: [ source.python, meta.function.python ] }
+      - text: ':'
+        textmate: { scope: punctuation.section.function.begin.python, rest: [ source.python, meta.function.python ] }
+  - lineNumber: 50
+    sourceText: '        return self._store.get(PyUserId(entity_id))'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: self
+        textmate: { scope: variable.language.special.self.python, rest: [ source.python ] }
+        semantic: { type: selfParameter, modifiers: [ parameter ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.member.access.python ] }
+      - text: _store
+        textmate: { scope: meta.attribute.python, rest: [ source.python, meta.member.access.python ] }
+        semantic: { type: property, modifiers: [ classMember ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.member.access.python ] }
+      - text: get
+        textmate: { scope: meta.function-call.generic.python, rest: [ source.python, meta.member.access.python, meta.function-call.python ] }
+        semantic: { type: method, modifiers: [ defaultLibrary, builtin, classMember ] }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.member.access.python, meta.function-call.python ] }
+      - text: PyUserId
+        textmate: { scope: meta.function-call.generic.python, rest: [ source.python, meta.member.access.python, meta.function-call.python, meta.function-call.arguments.python, meta.function-call.python ] }
+        semantic: { type: class }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.member.access.python, meta.function-call.python, meta.function-call.arguments.python, meta.function-call.python ] }
+      - text: entity_id
+        textmate: { scope: meta.function-call.arguments.python, rest: [ source.python, meta.member.access.python, meta.function-call.python, meta.function-call.arguments.python, meta.function-call.python ] }
+        semantic: { type: parameter, modifiers: [ parameter ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.member.access.python, meta.function-call.python, meta.function-call.arguments.python, meta.function-call.python ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.member.access.python, meta.function-call.python ] }
+  - lineNumber: 52
+    sourceText: '    @classmethod'
+    segments:
+      - text: '@'
+        textmate: { scope: punctuation.definition.decorator.python, rest: [ source.python, meta.function.decorator.python, entity.name.function.decorator.python ] }
+        semantic: { type: decorator }
+      - text: classmethod
+        textmate: { scope: support.type.python, rest: [ source.python, meta.function.decorator.python ] }
+        semantic: { type: decorator }
+  - lineNumber: 53
+    sourceText: '    def create(cls) -> "PyUserRepository":'
+    segments:
+      - text: def
+        textmate: { scope: storage.type.function.python, rest: [ source.python, meta.function.python ] }
+      - text: create
+        textmate: { scope: entity.name.function.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: method, modifiers: [ declaration, classMember ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: cls
+        textmate: { scope: variable.parameter.function.language.special.cls.python, rest: [ source.python, meta.function.python, meta.function.parameters.python, variable.parameter.function.language.python ] }
+        semantic: { type: clsParameter, modifiers: [ declaration, parameter ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: ->
+        textmate: { scope: punctuation.separator.annotation.result.python, rest: [ source.python, meta.function.python ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.python, rest: [ source.python, meta.function.python, string.quoted.single.python ] }
+      - text: PyUserRepository
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: class }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.python, rest: [ source.python, meta.function.python, string.quoted.single.python ] }
+      - text: ':'
+        textmate: { scope: punctuation.section.function.begin.python, rest: [ source.python, meta.function.python ] }
+  - lineNumber: 54
+    sourceText: '        return cls()'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: cls
+        textmate: { scope: variable.language.special.cls.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: clsParameter, modifiers: [ parameter ] }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python ] }
+  - lineNumber: 56
+    sourceText: '    def save(self, user: PyUser) -> PyUser:'
+    segments:
+      - text: def
+        textmate: { scope: storage.type.function.python, rest: [ source.python, meta.function.python ] }
+      - text: save
+        textmate: { scope: entity.name.function.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: method, modifiers: [ declaration, classMember ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: self
+        textmate: { scope: variable.parameter.function.language.special.self.python, rest: [ source.python, meta.function.python, meta.function.parameters.python, variable.parameter.function.language.python ] }
+        semantic: { type: selfParameter, modifiers: [ declaration, parameter ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.parameters.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: user
+        textmate: { scope: variable.parameter.function.language.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+        semantic: { type: parameter, modifiers: [ declaration, parameter ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.annotation.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: PyUser
+        textmate: { scope: meta.function.parameters.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: class }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: ->
+        textmate: { scope: punctuation.separator.annotation.result.python, rest: [ source.python, meta.function.python ] }
+      - text: PyUser
+        textmate: { scope: meta.function.python, rest: [ source.python ] }
+        semantic: { type: class }
+      - text: ':'
+        textmate: { scope: punctuation.section.function.begin.python, rest: [ source.python, meta.function.python ] }
+  - lineNumber: 57
+    sourceText: '        self._store[user.id] = user'
+    segments:
+      - text: self
+        textmate: { scope: variable.language.special.self.python, rest: [ source.python ] }
+        semantic: { type: selfParameter, modifiers: [ parameter ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.member.access.python ] }
+      - text: _store
+        textmate: { scope: meta.indexed-name.python, rest: [ source.python, meta.member.access.python, meta.item-access.python ] }
+        semantic: { type: property, modifiers: [ classMember ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.member.access.python, meta.item-access.python ] }
+      - text: user
+        textmate: { scope: meta.item-access.arguments.python, rest: [ source.python, meta.member.access.python, meta.item-access.python ] }
+        semantic: { type: parameter, modifiers: [ parameter ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.member.access.python, meta.item-access.python, meta.item-access.arguments.python, meta.member.access.python ] }
+      - text: id
+        textmate: { scope: meta.attribute.python, rest: [ source.python, meta.member.access.python, meta.item-access.python, meta.item-access.arguments.python, meta.member.access.python ] }
+        semantic: { type: property, modifiers: [ static, classMember ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.member.access.python, meta.item-access.python ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: user
+        textmate: { scope: source.python }
+        semantic: { type: parameter, modifiers: [ parameter ] }
+  - lineNumber: 58
+    sourceText: '        return user'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: user
+        textmate: { scope: source.python }
+        semantic: { type: parameter, modifiers: [ parameter ] }
+  - lineNumber: 60
+    sourceText: '    def find_all(self) -> list[PyUser]:'
+    segments:
+      - text: def
+        textmate: { scope: storage.type.function.python, rest: [ source.python, meta.function.python ] }
+      - text: find_all
+        textmate: { scope: entity.name.function.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: method, modifiers: [ declaration, classMember ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: self
+        textmate: { scope: variable.parameter.function.language.special.self.python, rest: [ source.python, meta.function.python, meta.function.parameters.python, variable.parameter.function.language.python ] }
+        semantic: { type: selfParameter, modifiers: [ declaration, parameter ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: ->
+        textmate: { scope: punctuation.separator.annotation.result.python, rest: [ source.python, meta.function.python ] }
+      - text: list
+        textmate: { scope: meta.indexed-name.python, rest: [ source.python, meta.function.python, meta.item-access.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function.python, meta.item-access.python ] }
+      - text: PyUser
+        textmate: { scope: meta.item-access.arguments.python, rest: [ source.python, meta.function.python, meta.item-access.python ] }
+        semantic: { type: class }
+      - text: ']'
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function.python, meta.item-access.python ] }
+      - text: ':'
+        textmate: { scope: punctuation.section.function.begin.python, rest: [ source.python, meta.function.python ] }
+  - lineNumber: 61
+    sourceText: '        return list(self._store.values())'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: list
+        textmate: { scope: support.type.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python ] }
+      - text: self
+        textmate: { scope: variable.language.special.self.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+        semantic: { type: selfParameter, modifiers: [ parameter ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.member.access.python ] }
+      - text: _store
+        textmate: { scope: meta.attribute.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.member.access.python ] }
+        semantic: { type: property, modifiers: [ classMember ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.member.access.python ] }
+      - text: values
+        textmate: { scope: meta.function-call.generic.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.member.access.python, meta.function-call.python ] }
+        semantic: { type: method, modifiers: [ defaultLibrary, builtin, classMember ] }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.member.access.python, meta.function-call.python ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.member.access.python, meta.function-call.python ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python ] }
+  - lineNumber: 64
+    sourceText: 'def py_users(repo: PyUserRepository) -> Iterator[PyUser]:'
+    segments:
+      - text: def
+        textmate: { scope: storage.type.function.python, rest: [ source.python, meta.function.python ] }
+      - text: py_users
+        textmate: { scope: entity.name.function.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: function, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: repo
+        textmate: { scope: variable.parameter.function.language.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+        semantic: { type: parameter, modifiers: [ declaration, parameter ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.annotation.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: PyUserRepository
+        textmate: { scope: meta.function.parameters.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: class }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: ->
+        textmate: { scope: punctuation.separator.annotation.result.python, rest: [ source.python, meta.function.python ] }
+      - text: Iterator
+        textmate: { scope: meta.indexed-name.python, rest: [ source.python, meta.function.python, meta.item-access.python ] }
+        semantic: { type: class }
+      - text: '['
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function.python, meta.item-access.python ] }
+      - text: PyUser
+        textmate: { scope: meta.item-access.arguments.python, rest: [ source.python, meta.function.python, meta.item-access.python ] }
+        semantic: { type: class }
+      - text: ']'
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function.python, meta.item-access.python ] }
+      - text: ':'
+        textmate: { scope: punctuation.section.function.begin.python, rest: [ source.python, meta.function.python ] }
+  - lineNumber: 65
+    sourceText: '    yield from repo.find_all()'
+    segments:
+      - text: yield from
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: repo
+        textmate: { scope: source.python }
+        semantic: { type: parameter, modifiers: [ parameter ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.member.access.python ] }
+      - text: find_all
+        textmate: { scope: meta.function-call.generic.python, rest: [ source.python, meta.member.access.python, meta.function-call.python ] }
+        semantic: { type: method, modifiers: [ classMember ] }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.member.access.python, meta.function-call.python ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.member.access.python, meta.function-call.python ] }
+  - lineNumber: 68
+    sourceText: 'def py_retry(block: Callable[[], T], max_attempts: int = MAX_RETRIES) -> T:'
+    segments:
+      - text: def
+        textmate: { scope: storage.type.function.python, rest: [ source.python, meta.function.python ] }
+      - text: py_retry
+        textmate: { scope: entity.name.function.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: function, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: block
+        textmate: { scope: variable.parameter.function.language.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+        semantic: { type: function, modifiers: [ declaration, parameter ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.annotation.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: Callable
+        textmate: { scope: meta.indexed-name.python, rest: [ source.python, meta.function.python, meta.function.parameters.python, meta.item-access.python ] }
+        semantic: { type: class }
+      - text: '['
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function.python, meta.function.parameters.python, meta.item-access.python ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.list.begin.python, rest: [ source.python, meta.function.python, meta.function.parameters.python, meta.item-access.python, meta.item-access.arguments.python ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.list.end.python, rest: [ source.python, meta.function.python, meta.function.parameters.python, meta.item-access.python, meta.item-access.arguments.python ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.element.python, rest: [ source.python, meta.function.python, meta.function.parameters.python, meta.item-access.python, meta.item-access.arguments.python ] }
+      - text: T
+        textmate: { scope: meta.item-access.arguments.python, rest: [ source.python, meta.function.python, meta.function.parameters.python, meta.item-access.python ] }
+        semantic: { type: typeParameter, modifiers: [ readonly ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function.python, meta.function.parameters.python, meta.item-access.python ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.parameters.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: max_attempts
+        textmate: { scope: variable.parameter.function.language.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+        semantic: { type: parameter, modifiers: [ declaration, parameter ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.annotation.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: int
+        textmate: { scope: support.type.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: MAX_RETRIES
+        textmate: { scope: constant.other.caps.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+        semantic: { type: variable, modifiers: [ readonly ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: ->
+        textmate: { scope: punctuation.separator.annotation.result.python, rest: [ source.python, meta.function.python ] }
+      - text: T
+        textmate: { scope: meta.function.python, rest: [ source.python ] }
+        semantic: { type: typeParameter, modifiers: [ readonly ] }
+      - text: ':'
+        textmate: { scope: punctuation.section.function.begin.python, rest: [ source.python, meta.function.python ] }
+  - lineNumber: 69
+    sourceText: '    last: Exception | None = None'
+    segments:
+      - text: last
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+      - text: Exception
+        textmate: { scope: support.type.exception.python, rest: [ source.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: '|'
+        textmate: { scope: keyword.operator.bitwise.python, rest: [ source.python ] }
+      - text: None
+        textmate: { scope: constant.language.python, rest: [ source.python ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: None
+        textmate: { scope: constant.language.python, rest: [ source.python ] }
+  - lineNumber: 70
+    sourceText: '    for _ in range(max_attempts):'
+    segments:
+      - text: for
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: _
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: in
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: range
+        textmate: { scope: support.function.builtin.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python ] }
+      - text: max_attempts
+        textmate: { scope: meta.function-call.arguments.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: parameter, modifiers: [ parameter ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+  - lineNumber: 71
+    sourceText: '        try:'
+    segments:
+      - text: try
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+  - lineNumber: 72
+    sourceText: '            return block()'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: block
+        textmate: { scope: meta.function-call.generic.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: function, modifiers: [ parameter ] }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python ] }
+  - lineNumber: 73
+    sourceText: '        except Exception as e:  # noqa: BLE001  # pylint: disable=broad-except'
+    segments:
+      - text: except
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: Exception
+        textmate: { scope: support.type.exception.python, rest: [ source.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: as
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: e
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+      - text: '#'
+        textmate: { scope: punctuation.definition.comment.python, rest: [ source.python, comment.line.number-sign.python ] }
+      - text: ' noqa: BLE001  # pylint: disable=broad-except'
+        textmate: { scope: comment.line.number-sign.python, rest: [ source.python ] }
+  - lineNumber: 74
+    sourceText: '            last = e'
+    segments:
+      - text: last
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: e
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+  - lineNumber: 75
+    sourceText: '    raise last or RuntimeError(f"failed after {max_attempts} attempts")'
+    segments:
+      - text: raise
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: last
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: or
+        textmate: { scope: keyword.operator.logical.python, rest: [ source.python ] }
+      - text: RuntimeError
+        textmate: { scope: support.type.exception.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python ] }
+      - text: f
+        textmate: { scope: storage.type.string.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.fstring.python, string.interpolated.python, string.quoted.single.python ] }
+      - text: '"'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.fstring.python, punctuation.definition.string.begin.python, string.interpolated.python ] }
+      - text: 'failed after '
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.fstring.python, string.interpolated.python ] }
+      - text: '{'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.fstring.python ] }
+      - text: max_attempts
+        textmate: { scope: meta.fstring.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+        semantic: { type: parameter, modifiers: [ parameter ] }
+      - text: '}'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.fstring.python ] }
+      - text: ' attempts'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.fstring.python, string.interpolated.python ] }
+      - text: '"'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.fstring.python, punctuation.definition.string.end.python, string.interpolated.python ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python ] }
+  - lineNumber: 78
+    sourceText: 'async def py_showcase(obj: object, repo: PyUserRepository) -> str:'
+    segments:
+      - text: async
+        textmate: { scope: storage.type.function.async.python, rest: [ source.python, meta.function.python ] }
+      - text: def
+        textmate: { scope: storage.type.function.python, rest: [ source.python, meta.function.python ] }
+      - text: py_showcase
+        textmate: { scope: entity.name.function.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: function, modifiers: [ declaration, async ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: obj
+        textmate: { scope: variable.parameter.function.language.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+        semantic: { type: parameter, modifiers: [ declaration, parameter ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.annotation.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: object
+        textmate: { scope: support.type.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.parameters.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: repo
+        textmate: { scope: variable.parameter.function.language.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+        semantic: { type: parameter, modifiers: [ declaration, parameter ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.annotation.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: PyUserRepository
+        textmate: { scope: meta.function.parameters.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: class }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.python, rest: [ source.python, meta.function.python, meta.function.parameters.python ] }
+      - text: ->
+        textmate: { scope: punctuation.separator.annotation.result.python, rest: [ source.python, meta.function.python ] }
+      - text: str
+        textmate: { scope: support.type.python, rest: [ source.python, meta.function.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: ':'
+        textmate: { scope: punctuation.section.function.begin.python, rest: [ source.python, meta.function.python ] }
+  - lineNumber: 79
+    sourceText: '    match obj:'
+    segments:
+      - text: match
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: obj
+        textmate: { scope: source.python }
+        semantic: { type: parameter, modifiers: [ parameter ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+  - lineNumber: 80
+    sourceText: '        case PyUser(name=n) if PyRole.ADMIN in obj.roles:  # type: ignore[union-attr]'
+    segments:
+      - text: case
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: PyUser
+        textmate: { scope: meta.function-call.generic.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: class }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python ] }
+      - text: name
+        textmate: { scope: variable.parameter.function-call.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+      - text: n
+        textmate: { scope: meta.function-call.arguments.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: variable }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python ] }
+      - text: if
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: PyRole
+        textmate: { scope: source.python }
+        semantic: { type: enum }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.member.access.python ] }
+      - text: ADMIN
+        textmate: { scope: constant.other.caps.python, rest: [ source.python, meta.member.access.python ] }
+        semantic: { type: enumMember }
+      - text: in
+        textmate: { scope: keyword.operator.logical.python, rest: [ source.python ] }
+      - text: obj
+        textmate: { scope: source.python }
+        semantic: { type: parameter, modifiers: [ parameter ] }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.member.access.python ] }
+      - text: roles
+        textmate: { scope: meta.attribute.python, rest: [ source.python, meta.member.access.python ] }
+        semantic: { type: property, modifiers: [ static, classMember ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+      - text: '# '
+        textmate: { scope: meta.typehint.comment.python, rest: [ source.python, comment.line.number-sign.python ] }
+      - text: 'type:'
+        textmate: { scope: comment.typehint.directive.notation.python, rest: [ source.python, comment.line.number-sign.python, meta.typehint.comment.python ] }
+      - text: ignore
+        textmate: { scope: comment.typehint.variable.notation.python, rest: [ source.python, comment.line.number-sign.python, meta.typehint.comment.python ] }
+      - text: '['
+        textmate: { scope: comment.typehint.punctuation.notation.python, rest: [ source.python, comment.line.number-sign.python, meta.typehint.comment.python ] }
+      - text: union
+        textmate: { scope: comment.typehint.variable.notation.python, rest: [ source.python, comment.line.number-sign.python, meta.typehint.comment.python ] }
+      - text: '-'
+        textmate: { scope: meta.typehint.comment.python, rest: [ source.python, comment.line.number-sign.python ] }
+      - text: attr
+        textmate: { scope: comment.typehint.variable.notation.python, rest: [ source.python, comment.line.number-sign.python, meta.typehint.comment.python ] }
+      - text: ']'
+        textmate: { scope: comment.typehint.punctuation.notation.python, rest: [ source.python, comment.line.number-sign.python, meta.typehint.comment.python ] }
+  - lineNumber: 81
+    sourceText: '            kind = f"admin:{n}"'
+    segments:
+      - text: kind
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: f
+        textmate: { scope: storage.type.string.python, rest: [ source.python, meta.fstring.python, string.interpolated.python, string.quoted.single.python ] }
+      - text: '"'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.fstring.python, punctuation.definition.string.begin.python, string.interpolated.python ] }
+      - text: 'admin:'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.fstring.python, string.interpolated.python ] }
+      - text: '{'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: n
+        textmate: { scope: meta.fstring.python, rest: [ source.python ] }
+        semantic: { type: variable }
+      - text: '}'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: '"'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.fstring.python, punctuation.definition.string.end.python, string.interpolated.python ] }
+  - lineNumber: 82
+    sourceText: '        case PyUser(name=n):'
+    segments:
+      - text: case
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: PyUser
+        textmate: { scope: meta.function-call.generic.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: class }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python ] }
+      - text: name
+        textmate: { scope: variable.parameter.function-call.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python ] }
+      - text: n
+        textmate: { scope: meta.function-call.arguments.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: variable }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+  - lineNumber: 83
+    sourceText: '            kind = f"user:{n}"'
+    segments:
+      - text: kind
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: f
+        textmate: { scope: storage.type.string.python, rest: [ source.python, meta.fstring.python, string.interpolated.python, string.quoted.single.python ] }
+      - text: '"'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.fstring.python, punctuation.definition.string.begin.python, string.interpolated.python ] }
+      - text: 'user:'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.fstring.python, string.interpolated.python ] }
+      - text: '{'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: n
+        textmate: { scope: meta.fstring.python, rest: [ source.python ] }
+        semantic: { type: variable }
+      - text: '}'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: '"'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.fstring.python, punctuation.definition.string.end.python, string.interpolated.python ] }
+  - lineNumber: 84
+    sourceText: '        case int(i):'
+    segments:
+      - text: case
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: int
+        textmate: { scope: support.type.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python ] }
+      - text: i
+        textmate: { scope: meta.function-call.arguments.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: variable }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+  - lineNumber: 85
+    sourceText: '            kind = f"int:{i}"'
+    segments:
+      - text: kind
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: f
+        textmate: { scope: storage.type.string.python, rest: [ source.python, meta.fstring.python, string.interpolated.python, string.quoted.single.python ] }
+      - text: '"'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.fstring.python, punctuation.definition.string.begin.python, string.interpolated.python ] }
+      - text: 'int:'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.fstring.python, string.interpolated.python ] }
+      - text: '{'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: i
+        textmate: { scope: meta.fstring.python, rest: [ source.python ] }
+        semantic: { type: variable }
+      - text: '}'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: '"'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.fstring.python, punctuation.definition.string.end.python, string.interpolated.python ] }
+  - lineNumber: 86
+    sourceText: '        case _:'
+    segments:
+      - text: case
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: _
+        textmate: { scope: source.python }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+  - lineNumber: 87
+    sourceText: '            kind = "other"'
+    segments:
+      - text: kind
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.python, rest: [ source.python, string.quoted.single.python ] }
+      - text: other
+        textmate: { scope: string.quoted.single.python, rest: [ source.python ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.python, rest: [ source.python, string.quoted.single.python ] }
+  - lineNumber: 88
+    sourceText: '    names: list[str] = []'
+    segments:
+      - text: names
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+      - text: list
+        textmate: { scope: meta.indexed-name.python, rest: [ source.python, meta.item-access.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.item-access.python ] }
+      - text: str
+        textmate: { scope: support.type.python, rest: [ source.python, meta.item-access.python, meta.item-access.arguments.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.item-access.python ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.list.begin.python, rest: [ source.python ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.list.end.python, rest: [ source.python ] }
+  - lineNumber: 89
+    sourceText: '    if users := list(py_users(repo)):'
+    segments:
+      - text: if
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: users
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: :=
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: list
+        textmate: { scope: support.type.python, rest: [ source.python, meta.function-call.python ] }
+        semantic: { type: class, modifiers: [ defaultLibrary, builtin ] }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python ] }
+      - text: py_users
+        textmate: { scope: meta.function-call.generic.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.function-call.python ] }
+        semantic: { type: function }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.function-call.python ] }
+      - text: repo
+        textmate: { scope: meta.function-call.arguments.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.function-call.python ] }
+        semantic: { type: parameter, modifiers: [ parameter ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python, meta.function-call.arguments.python, meta.function-call.python ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.function-call.python ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.colon.python, rest: [ source.python ] }
+  - lineNumber: 90
+    sourceText: '        names = [u.name for u in users]'
+    segments:
+      - text: names
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.list.begin.python, rest: [ source.python ] }
+      - text: u
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.member.access.python ] }
+      - text: name
+        textmate: { scope: meta.attribute.python, rest: [ source.python, meta.member.access.python ] }
+        semantic: { type: property, modifiers: [ static, classMember ] }
+      - text: for
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: u
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: in
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: users
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: ']'
+        textmate: { scope: punctuation.definition.list.end.python, rest: [ source.python ] }
+  - lineNumber: 91
+    sourceText: '    hex_val = 0xFF'
+    segments:
+      - text: hex_val
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: 0x
+        textmate: { scope: storage.type.number.python, rest: [ source.python, constant.numeric.hex.python ] }
+      - text: FF
+        textmate: { scope: constant.numeric.hex.python, rest: [ source.python ] }
+  - lineNumber: 92
+    sourceText: '    fp = 3.14'
+    segments:
+      - text: fp
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: '3.14'
+        textmate: { scope: constant.numeric.float.python, rest: [ source.python ] }
+  - lineNumber: 93
+    sourceText: '    ch = "P"'
+    segments:
+      - text: ch
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.python, rest: [ source.python, string.quoted.single.python ] }
+      - text: P
+        textmate: { scope: string.quoted.single.python, rest: [ source.python ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.python, rest: [ source.python, string.quoted.single.python ] }
+  - lineNumber: 94
+    sourceText: '    raw = math.sqrt(2.0)'
+    segments:
+      - text: raw
+        textmate: { scope: source.python }
+        semantic: { type: variable }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.python, rest: [ source.python ] }
+      - text: math
+        textmate: { scope: source.python }
+        semantic: { type: namespace }
+      - text: .
+        textmate: { scope: punctuation.separator.period.python, rest: [ source.python, meta.member.access.python ] }
+      - text: sqrt
+        textmate: { scope: meta.function-call.generic.python, rest: [ source.python, meta.member.access.python, meta.function-call.python ] }
+        semantic: { type: function }
+      - text: (
+        textmate: { scope: punctuation.definition.arguments.begin.python, rest: [ source.python, meta.member.access.python, meta.function-call.python ] }
+      - text: '2.0'
+        textmate: { scope: constant.numeric.float.python, rest: [ source.python, meta.member.access.python, meta.function-call.python, meta.function-call.arguments.python ] }
+      - text: )
+        textmate: { scope: punctuation.definition.arguments.end.python, rest: [ source.python, meta.member.access.python, meta.function-call.python ] }
+  - lineNumber: 95
+    sourceText: '    return f"{kind} {hex_val} {fp} {ch} {raw} {names if users else []}"'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python ] }
+      - text: f
+        textmate: { scope: storage.type.string.python, rest: [ source.python, meta.fstring.python, string.interpolated.python, string.quoted.single.python ] }
+      - text: '"'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.fstring.python, punctuation.definition.string.begin.python, string.interpolated.python ] }
+      - text: '{'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: kind
+        textmate: { scope: meta.fstring.python, rest: [ source.python ] }
+        semantic: { type: variable }
+      - text: '}'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: '{'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: hex_val
+        textmate: { scope: meta.fstring.python, rest: [ source.python ] }
+        semantic: { type: variable }
+      - text: '}'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: '{'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: fp
+        textmate: { scope: meta.fstring.python, rest: [ source.python ] }
+        semantic: { type: variable }
+      - text: '}'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: '{'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: ch
+        textmate: { scope: meta.fstring.python, rest: [ source.python ] }
+        semantic: { type: variable }
+      - text: '}'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: '{'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: raw
+        textmate: { scope: meta.fstring.python, rest: [ source.python ] }
+        semantic: { type: variable }
+      - text: '}'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: '{'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: names
+        textmate: { scope: meta.fstring.python, rest: [ source.python ] }
+        semantic: { type: variable }
+      - text: if
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python, meta.fstring.python ] }
+      - text: users
+        textmate: { scope: meta.fstring.python, rest: [ source.python ] }
+        semantic: { type: variable }
+      - text: else
+        textmate: { scope: keyword.control.flow.python, rest: [ source.python, meta.fstring.python ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.list.begin.python, rest: [ source.python, meta.fstring.python ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.list.end.python, rest: [ source.python, meta.fstring.python ] }
+      - text: '}'
+        textmate: { scope: constant.character.format.placeholder.other.python, rest: [ source.python, meta.fstring.python ] }
+      - text: '"'
+        textmate: { scope: string.quoted.single.python, rest: [ source.python, meta.fstring.python, punctuation.definition.string.end.python, string.interpolated.python ] }

@@ -1,0 +1,195 @@
+schema: token-scope-export/v1
+note: Semantic tokens come from VS Code built-in semantic-token commands. TextMate scopes are re-tokenized from the contributed grammar.
+positionEncoding: { lines: 1-based, columns: 0-based, endColumn: exclusive }
+exportedAt: 2026-03-20T16:29:49.766Z
+source:
+  languageId: gradle-kotlin-dsl
+  version: 1
+grammar: source.gradle-kotlin-dsl
+semanticLegend: null
+stats: { lineCount: 27, semanticTokenCount: 0, textmateTokenCount: 83, exportedSegmentCount: 59 }
+lines:
+  - lineNumber: 1
+    sourceText: plugins {
+    segments:
+      - text: plugins
+        textmate: { scope: entity.name.function.call.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '{'
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 2
+    sourceText: '    kotlin("jvm") version "2.1.0"'
+    segments:
+      - text: kotlin
+        textmate: { scope: entity.name.function.call.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: (
+        textmate: { scope: source.gradle-kotlin-dsl }
+      - text: '"'
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: jvm
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '"'
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: ') version '
+        textmate: { scope: source.gradle-kotlin-dsl }
+      - text: '"'
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: 2.1.0
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '"'
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+  - lineNumber: 3
+    sourceText: '    java'
+    segments:
+      - text: '    java'
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 4
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 6
+    sourceText: group = "tests"
+    segments:
+      - text: group
+        textmate: { scope: variable.other.definition.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '"'
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: tests
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '"'
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+  - lineNumber: 7
+    sourceText: version = "1.0"
+    segments:
+      - text: version
+        textmate: { scope: variable.other.definition.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '"'
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '1.0'
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '"'
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+  - lineNumber: 9
+    sourceText: repositories {
+    segments:
+      - text: repositories
+        textmate: { scope: entity.name.function.call.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '{'
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 10
+    sourceText: '    mavenCentral()'
+    segments:
+      - text: mavenCentral
+        textmate: { scope: entity.name.function.call.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: ()
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 11
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 13
+    sourceText: kotlin {
+    segments:
+      - text: kotlin
+        textmate: { scope: entity.name.function.call.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '{'
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 14
+    sourceText: '    jvmToolchain(21)'
+    segments:
+      - text: jvmToolchain
+        textmate: { scope: entity.name.function.call.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: (
+        textmate: { scope: source.gradle-kotlin-dsl }
+      - text: '21'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: )
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 15
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 17
+    sourceText: sourceSets {
+    segments:
+      - text: sourceSets
+        textmate: { scope: entity.name.function.call.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '{'
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 18
+    sourceText: '    main {'
+    segments:
+      - text: main
+        textmate: { scope: entity.name.function.call.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '{'
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 19
+    sourceText: '        kotlin {'
+    segments:
+      - text: kotlin
+        textmate: { scope: entity.name.function.call.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '{'
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 20
+    sourceText: '            srcDirs("src/main/kotlin")'
+    segments:
+      - text: srcDirs
+        textmate: { scope: entity.name.function.call.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: (
+        textmate: { scope: source.gradle-kotlin-dsl }
+      - text: '"'
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: src/main/kotlin
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '"'
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: )
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 21
+    sourceText: '        }'
+    segments:
+      - text: '        }'
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 22
+    sourceText: '        java {'
+    segments:
+      - text: java
+        textmate: { scope: entity.name.function.call.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '{'
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 23
+    sourceText: '            srcDirs("src/main/java")'
+    segments:
+      - text: srcDirs
+        textmate: { scope: entity.name.function.call.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: (
+        textmate: { scope: source.gradle-kotlin-dsl }
+      - text: '"'
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: src/main/java
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: '"'
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.gradle-kotlin-dsl ] }
+      - text: )
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 24
+    sourceText: '        }'
+    segments:
+      - text: '        }'
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 25
+    sourceText: '    }'
+    segments:
+      - text: '    }'
+        textmate: { scope: source.gradle-kotlin-dsl }
+  - lineNumber: 26
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: source.gradle-kotlin-dsl }

@@ -1,0 +1,68 @@
+# Comment
+name: example
+version: 234
+active: true
+rating: 4.56
+empty_value: null
+timestamp: 2025-03-19
+acceleration: 1.2e-4
+
+# Block scalars
+description: |
+  This is a literal block scalar.
+  Newlines are preserved.
+summary: >
+  This is a folded block scalar.
+  Lines are joined into one.
+
+# Collections
+tags:
+  - alpha
+  - beta
+counts: [1, 2, 3]
+inline_map: { host: localhost, port: 8080 }
+
+# Nested mapping
+server:
+  host: localhost
+  port: 8080
+  ssl: false
+  limits:
+    max_connections: 100
+    timeout: 30.5
+
+# Sequence of mappings
+items:
+  - id: 1
+    label: first
+  - id: 2
+    label: second
+
+# Anchor and alias
+defaults: &defaults
+  adapter: postgres
+  pool: 5
+
+development:
+  <<: *defaults
+  database: dev_db
+
+production:
+  <<: *defaults
+  database: prod_db
+
+# Multi-line key types
+complex key: complex value
+
+# Various scalars
+quoted_single: "single quotes"
+quoted_double: "double\tquotes"
+unquoted: plain string
+integer_hex: 0xFF
+integer_octal: 0o77
+float_special: .inf
+negative_infinity: -.inf
+not_a_number: .nan
+boolean_alt: yes
+empty_mapping: {}
+empty_sequence: []

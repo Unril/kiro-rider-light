@@ -1,0 +1,412 @@
+schema: token-scope-export/v1
+note: Semantic tokens come from VS Code built-in semantic-token commands. TextMate scopes are re-tokenized from the contributed grammar.
+positionEncoding: { lines: 1-based, columns: 0-based, endColumn: exclusive }
+exportedAt: 2026-03-21T00:25:51.413Z
+source:
+  languageId: json
+  version: 34
+grammar: source.json
+semanticLegend: null
+stats: { lineCount: 32, semanticTokenCount: 0, textmateTokenCount: 208, exportedSegmentCount: 154 }
+lines:
+  - lineNumber: 1
+    sourceText: '{'
+    segments:
+      - text: '{'
+        textmate: { scope: punctuation.definition.dictionary.begin.json, rest: [ source.json, meta.structure.dictionary.json ] }
+  - lineNumber: 2
+    sourceText: '  "name": "example",'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: name
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, string.quoted.double.json ] }
+      - text: example
+        textmate: { scope: string.quoted.double.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, string.quoted.double.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.dictionary.pair.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+  - lineNumber: 3
+    sourceText: '  "version": 2,'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: version
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '2'
+        textmate: { scope: constant.numeric.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.dictionary.pair.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+  - lineNumber: 4
+    sourceText: '  "active": true,'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: active
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: 'true'
+        textmate: { scope: constant.language.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.dictionary.pair.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+  - lineNumber: 5
+    sourceText: '  "rating": 4.5e3,'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: rating
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '4.5e3'
+        textmate: { scope: constant.numeric.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.dictionary.pair.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+  - lineNumber: 6
+    sourceText: '  "tags": ["alpha", "beta"],'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: tags
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.array.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, string.quoted.double.json ] }
+      - text: alpha
+        textmate: { scope: string.quoted.double.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, string.quoted.double.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.array.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, string.quoted.double.json ] }
+      - text: beta
+        textmate: { scope: string.quoted.double.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, string.quoted.double.json ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.array.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.dictionary.pair.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+  - lineNumber: 7
+    sourceText: '  "counts": [1, 2, 3],'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: counts
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.array.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+      - text: '1'
+        textmate: { scope: constant.numeric.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.array.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+      - text: '2'
+        textmate: { scope: constant.numeric.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.array.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+      - text: '3'
+        textmate: { scope: constant.numeric.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.array.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.dictionary.pair.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+  - lineNumber: 8
+    sourceText: '  "metadata": null,'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: metadata
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: 'null'
+        textmate: { scope: constant.language.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.dictionary.pair.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+  - lineNumber: 9
+    sourceText: '  "server": {'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: server
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.dictionary.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json ] }
+  - lineNumber: 10
+    sourceText: '    "host": "localhost",'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: host
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, string.quoted.double.json ] }
+      - text: localhost
+        textmate: { scope: string.quoted.double.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, string.quoted.double.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.dictionary.pair.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+  - lineNumber: 11
+    sourceText: '    "port": 8080,'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: port
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '8080'
+        textmate: { scope: constant.numeric.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.dictionary.pair.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+  - lineNumber: 12
+    sourceText: '    "ssl": false'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ssl
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: 'false'
+        textmate: { scope: constant.language.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+  - lineNumber: 13
+    sourceText: '  },'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.dictionary.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.dictionary.pair.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+  - lineNumber: 14
+    sourceText: '  "matrix": ['
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: matrix
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.array.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+  - lineNumber: 15
+    sourceText: '    [1, 0],'
+    segments:
+      - text: '['
+        textmate: { scope: punctuation.definition.array.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.array.json ] }
+      - text: '1'
+        textmate: { scope: constant.numeric.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.array.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.array.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.array.json ] }
+      - text: '0'
+        textmate: { scope: constant.numeric.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.array.json ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.array.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.array.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.array.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+  - lineNumber: 16
+    sourceText: '    [0, 1]'
+    segments:
+      - text: '['
+        textmate: { scope: punctuation.definition.array.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.array.json ] }
+      - text: '0'
+        textmate: { scope: constant.numeric.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.array.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.array.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.array.json ] }
+      - text: '1'
+        textmate: { scope: constant.numeric.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.array.json ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.array.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.array.json ] }
+  - lineNumber: 17
+    sourceText: '  ],'
+    segments:
+      - text: ']'
+        textmate: { scope: punctuation.definition.array.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.dictionary.pair.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+  - lineNumber: 18
+    sourceText: '  "empty": {},'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: empty
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.dictionary.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.dictionary.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.dictionary.pair.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+  - lineNumber: 19
+    sourceText: '  "items": ['
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: items
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.array.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+  - lineNumber: 20
+    sourceText: '    {'
+    segments:
+      - text: '{'
+        textmate: { scope: punctuation.definition.dictionary.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json ] }
+  - lineNumber: 21
+    sourceText: '      "id": 1,'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: id
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '1'
+        textmate: { scope: constant.numeric.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.dictionary.pair.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+  - lineNumber: 22
+    sourceText: '      "label": "first"'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: label
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, string.quoted.double.json ] }
+      - text: first
+        textmate: { scope: string.quoted.double.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, string.quoted.double.json ] }
+  - lineNumber: 23
+    sourceText: '    },'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.dictionary.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.array.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+  - lineNumber: 24
+    sourceText: '    {'
+    segments:
+      - text: '{'
+        textmate: { scope: punctuation.definition.dictionary.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json ] }
+  - lineNumber: 25
+    sourceText: '      "id": 2,'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: id
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '2'
+        textmate: { scope: constant.numeric.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.dictionary.pair.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+  - lineNumber: 26
+    sourceText: '      "label": {'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: label
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.dictionary.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json ] }
+  - lineNumber: 27
+    sourceText: '        "name": "second"'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: name
+        textmate: { scope: support.type.property-name.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, string.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.support.type.property-name.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, string.json, support.type.property-name.json ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.dictionary.key-value.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, string.quoted.double.json ] }
+      - text: second
+        textmate: { scope: string.quoted.double.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, string.quoted.double.json ] }
+  - lineNumber: 28
+    sourceText: '      }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.dictionary.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.dictionary.json ] }
+  - lineNumber: 29
+    sourceText: '    }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.dictionary.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json, meta.structure.dictionary.json ] }
+  - lineNumber: 30
+    sourceText: '  ]'
+    segments:
+      - text: ']'
+        textmate: { scope: punctuation.definition.array.end.json, rest: [ source.json, meta.structure.dictionary.json, meta.structure.dictionary.value.json, meta.structure.array.json ] }
+  - lineNumber: 31
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.dictionary.end.json, rest: [ source.json, meta.structure.dictionary.json ] }

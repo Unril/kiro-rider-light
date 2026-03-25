@@ -1,0 +1,548 @@
+schema: token-scope-export/v1
+note: Semantic tokens come from VS Code built-in semantic-token commands. TextMate scopes are re-tokenized from the contributed grammar.
+positionEncoding: { lines: 1-based, columns: 0-based, endColumn: exclusive }
+exportedAt: 2026-03-21T00:21:50.854Z
+source:
+  languageId: yaml
+  version: 7
+grammar: source.yaml
+semanticLegend: null
+stats: { lineCount: 69, semanticTokenCount: 0, textmateTokenCount: 266, exportedSegmentCount: 180 }
+lines:
+  - lineNumber: 1
+    sourceText: '# Comment'
+    segments:
+      - text: '#'
+        textmate: { scope: punctuation.definition.comment.yaml, rest: [ source.yaml, meta.stream.yaml, comment.line.number-sign.yaml ] }
+      - text: ' Comment'
+        textmate: { scope: comment.line.number-sign.yaml, rest: [ source.yaml, meta.stream.yaml ] }
+  - lineNumber: 2
+    sourceText: 'name: example'
+    segments:
+      - text: name
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: example
+        textmate: { scope: string.unquoted.plain.out.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 3
+    sourceText: 'version: 234'
+    segments:
+      - text: version
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '234'
+        textmate: { scope: constant.numeric.integer.decimal.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 4
+    sourceText: 'active: true'
+    segments:
+      - text: active
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: 'true'
+        textmate: { scope: constant.language.boolean.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 5
+    sourceText: 'rating: 4.56'
+    segments:
+      - text: rating
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '4.56'
+        textmate: { scope: constant.numeric.float.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 6
+    sourceText: 'empty_value: null'
+    segments:
+      - text: empty_value
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: 'null'
+        textmate: { scope: constant.language.null.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 7
+    sourceText: 'timestamp: 2025-03-19'
+    segments:
+      - text: timestamp
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: 2025-03-19
+        textmate: { scope: string.unquoted.plain.out.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 8
+    sourceText: 'acceleration: 1.2e-4'
+    segments:
+      - text: acceleration
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '1.2e-4'
+        textmate: { scope: constant.numeric.float.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 10
+    sourceText: '# Block scalars'
+    segments:
+      - text: '#'
+        textmate: { scope: punctuation.definition.comment.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, comment.line.number-sign.yaml ] }
+      - text: ' Block scalars'
+        textmate: { scope: comment.line.number-sign.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 11
+    sourceText: 'description: |'
+    segments:
+      - text: description
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '|'
+        textmate: { scope: keyword.control.flow.block-scalar.literal.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.scalar.yaml ] }
+  - lineNumber: 12
+    sourceText: '  This is a literal block scalar.'
+    segments:
+      - text: This is a literal block scalar.
+        textmate: { scope: string.unquoted.block.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.scalar.yaml ] }
+  - lineNumber: 13
+    sourceText: '  Newlines are preserved.'
+    segments:
+      - text: Newlines are preserved.
+        textmate: { scope: string.unquoted.block.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.scalar.yaml ] }
+  - lineNumber: 14
+    sourceText: 'summary: >'
+    segments:
+      - text: summary
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '>'
+        textmate: { scope: keyword.control.flow.block-scalar.folded.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.scalar.yaml ] }
+  - lineNumber: 15
+    sourceText: '  This is a folded block scalar.'
+    segments:
+      - text: This is a folded block scalar.
+        textmate: { scope: string.unquoted.block.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.scalar.yaml ] }
+  - lineNumber: 16
+    sourceText: '  Lines are joined into one.'
+    segments:
+      - text: Lines are joined into one.
+        textmate: { scope: string.unquoted.block.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.scalar.yaml ] }
+  - lineNumber: 18
+    sourceText: '# Collections'
+    segments:
+      - text: '#'
+        textmate: { scope: punctuation.definition.comment.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.scalar.yaml, comment.line.number-sign.yaml ] }
+      - text: ' Collections'
+        textmate: { scope: comment.line.number-sign.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.scalar.yaml ] }
+  - lineNumber: 19
+    sourceText: 'tags:'
+    segments:
+      - text: tags
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 20
+    sourceText: '  - alpha'
+    segments:
+      - text: '-'
+        textmate: { scope: punctuation.definition.block.sequence.item.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml ] }
+      - text: alpha
+        textmate: { scope: string.unquoted.plain.out.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml ] }
+  - lineNumber: 21
+    sourceText: '  - beta'
+    segments:
+      - text: '-'
+        textmate: { scope: punctuation.definition.block.sequence.item.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml ] }
+      - text: beta
+        textmate: { scope: string.unquoted.plain.out.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml ] }
+  - lineNumber: 22
+    sourceText: 'counts: [1, 2, 3]'
+    segments:
+      - text: counts
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.sequence.begin.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.sequence.yaml ] }
+      - text: '1'
+        textmate: { scope: constant.numeric.integer.decimal.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.sequence.yaml, string.unquoted.plain.in.yaml ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.sequence.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.sequence.yaml ] }
+      - text: '2'
+        textmate: { scope: constant.numeric.integer.decimal.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.sequence.yaml, string.unquoted.plain.in.yaml ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.sequence.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.sequence.yaml ] }
+      - text: '3'
+        textmate: { scope: constant.numeric.integer.decimal.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.sequence.yaml, string.unquoted.plain.in.yaml ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.sequence.end.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.sequence.yaml ] }
+  - lineNumber: 23
+    sourceText: 'inline_map: { host: localhost, port: 8080 }'
+    segments:
+      - text: inline_map
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.mapping.begin.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.mapping.yaml ] }
+      - text: host
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.mapping.yaml, meta.flow.map.implicit.yaml, meta.flow.map.key.yaml, string.unquoted.plain.in.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.mapping.yaml, meta.flow.map.implicit.yaml, meta.flow.pair.value.yaml ] }
+      - text: localhost
+        textmate: { scope: string.unquoted.plain.in.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.mapping.yaml, meta.flow.map.implicit.yaml, meta.flow.pair.value.yaml ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.mapping.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.mapping.yaml ] }
+      - text: port
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.mapping.yaml, meta.flow.map.implicit.yaml, meta.flow.map.key.yaml, string.unquoted.plain.in.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.mapping.yaml, meta.flow.map.implicit.yaml, meta.flow.pair.value.yaml ] }
+      - text: '8080'
+        textmate: { scope: constant.numeric.integer.decimal.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.mapping.yaml, meta.flow.map.implicit.yaml, meta.flow.pair.value.yaml, string.unquoted.plain.in.yaml ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.mapping.end.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.mapping.yaml ] }
+  - lineNumber: 25
+    sourceText: '# Nested mapping'
+    segments:
+      - text: '#'
+        textmate: { scope: punctuation.definition.comment.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, comment.line.number-sign.yaml ] }
+      - text: ' Nested mapping'
+        textmate: { scope: comment.line.number-sign.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 26
+    sourceText: 'server:'
+    segments:
+      - text: server
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 27
+    sourceText: '  host: localhost'
+    segments:
+      - text: host
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: localhost
+        textmate: { scope: string.unquoted.plain.out.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 28
+    sourceText: '  port: 8080'
+    segments:
+      - text: port
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '8080'
+        textmate: { scope: constant.numeric.integer.decimal.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 29
+    sourceText: '  ssl: false'
+    segments:
+      - text: ssl
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: 'false'
+        textmate: { scope: constant.language.boolean.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 30
+    sourceText: '  limits:'
+    segments:
+      - text: limits
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 31
+    sourceText: '    max_connections: 100'
+    segments:
+      - text: max_connections
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '100'
+        textmate: { scope: constant.numeric.integer.decimal.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 32
+    sourceText: '    timeout: 30.5'
+    segments:
+      - text: timeout
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '30.5'
+        textmate: { scope: constant.numeric.float.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 34
+    sourceText: '# Sequence of mappings'
+    segments:
+      - text: '#'
+        textmate: { scope: punctuation.definition.comment.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, comment.line.number-sign.yaml ] }
+      - text: ' Sequence of mappings'
+        textmate: { scope: comment.line.number-sign.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 35
+    sourceText: 'items:'
+    segments:
+      - text: items
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 36
+    sourceText: '  - id: 1'
+    segments:
+      - text: '-'
+        textmate: { scope: punctuation.definition.block.sequence.item.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml ] }
+      - text: id
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '1'
+        textmate: { scope: constant.numeric.integer.decimal.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 37
+    sourceText: '    label: first'
+    segments:
+      - text: label
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: first
+        textmate: { scope: string.unquoted.plain.out.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 38
+    sourceText: '  - id: 2'
+    segments:
+      - text: '-'
+        textmate: { scope: punctuation.definition.block.sequence.item.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml ] }
+      - text: id
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '2'
+        textmate: { scope: constant.numeric.integer.decimal.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 39
+    sourceText: '    label: second'
+    segments:
+      - text: label
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: second
+        textmate: { scope: string.unquoted.plain.out.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 41
+    sourceText: '# Anchor and alias'
+    segments:
+      - text: '#'
+        textmate: { scope: punctuation.definition.comment.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml, meta.mapping.yaml, meta.map.value.yaml, comment.line.number-sign.yaml ] }
+      - text: ' Anchor and alias'
+        textmate: { scope: comment.line.number-sign.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.block.sequence.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 42
+    sourceText: 'defaults: &defaults'
+    segments:
+      - text: defaults
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '&'
+        textmate: { scope: punctuation.definition.anchor.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, keyword.control.flow.anchor.yaml ] }
+      - text: defaults
+        textmate: { scope: variable.other.anchor.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, keyword.control.flow.anchor.yaml ] }
+  - lineNumber: 43
+    sourceText: '  adapter: postgres'
+    segments:
+      - text: adapter
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: postgres
+        textmate: { scope: string.unquoted.plain.out.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 44
+    sourceText: '  pool: 5'
+    segments:
+      - text: pool
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '5'
+        textmate: { scope: constant.numeric.integer.decimal.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 46
+    sourceText: 'development:'
+    segments:
+      - text: development
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 47
+    sourceText: '  <<: *defaults'
+    segments:
+      - text: <<
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '*'
+        textmate: { scope: punctuation.definition.alias.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, keyword.control.flow.alias.yaml ] }
+      - text: defaults
+        textmate: { scope: variable.other.alias.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, keyword.control.flow.alias.yaml ] }
+  - lineNumber: 48
+    sourceText: '  database: dev_db'
+    segments:
+      - text: database
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: dev_db
+        textmate: { scope: string.unquoted.plain.out.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 50
+    sourceText: 'production:'
+    segments:
+      - text: production
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 51
+    sourceText: '  <<: *defaults'
+    segments:
+      - text: <<
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '*'
+        textmate: { scope: punctuation.definition.alias.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, keyword.control.flow.alias.yaml ] }
+      - text: defaults
+        textmate: { scope: variable.other.alias.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, keyword.control.flow.alias.yaml ] }
+  - lineNumber: 52
+    sourceText: '  database: prod_db'
+    segments:
+      - text: database
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: prod_db
+        textmate: { scope: string.unquoted.plain.out.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 54
+    sourceText: '# Multi-line key types'
+    segments:
+      - text: '#'
+        textmate: { scope: punctuation.definition.comment.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml, comment.line.number-sign.yaml ] }
+      - text: ' Multi-line key types'
+        textmate: { scope: comment.line.number-sign.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 55
+    sourceText: 'complex key: complex value'
+    segments:
+      - text: complex key
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: complex value
+        textmate: { scope: string.unquoted.plain.out.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 57
+    sourceText: '# Various scalars'
+    segments:
+      - text: '#'
+        textmate: { scope: punctuation.definition.comment.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, comment.line.number-sign.yaml ] }
+      - text: ' Various scalars'
+        textmate: { scope: comment.line.number-sign.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 58
+    sourceText: 'quoted_single: "single quotes"'
+    segments:
+      - text: quoted_single
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.quoted.double.yaml ] }
+      - text: single quotes
+        textmate: { scope: string.quoted.double.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.quoted.double.yaml ] }
+  - lineNumber: 59
+    sourceText: 'quoted_double: "double\tquotes"'
+    segments:
+      - text: quoted_double
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.quoted.double.yaml ] }
+      - text: double
+        textmate: { scope: string.quoted.double.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: \t
+        textmate: { scope: constant.character.escape.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.quoted.double.yaml ] }
+      - text: quotes
+        textmate: { scope: string.quoted.double.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.quoted.double.yaml ] }
+  - lineNumber: 60
+    sourceText: 'unquoted: plain string'
+    segments:
+      - text: unquoted
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: plain string
+        textmate: { scope: string.unquoted.plain.out.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 61
+    sourceText: 'integer_hex: 0xFF'
+    segments:
+      - text: integer_hex
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '0xFF'
+        textmate: { scope: constant.numeric.integer.hexadecimal.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 62
+    sourceText: 'integer_octal: 0o77'
+    segments:
+      - text: integer_octal
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '0o77'
+        textmate: { scope: constant.numeric.integer.octal.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 63
+    sourceText: 'float_special: .inf'
+    segments:
+      - text: float_special
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '.inf'
+        textmate: { scope: constant.numeric.float.inf.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 64
+    sourceText: 'negative_infinity: -.inf'
+    segments:
+      - text: negative_infinity
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '-.inf'
+        textmate: { scope: constant.numeric.float.inf.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 65
+    sourceText: 'not_a_number: .nan'
+    segments:
+      - text: not_a_number
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '.nan'
+        textmate: { scope: constant.numeric.float.nan.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 66
+    sourceText: 'boolean_alt: yes'
+    segments:
+      - text: boolean_alt
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: yes
+        textmate: { scope: string.unquoted.plain.out.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 67
+    sourceText: 'empty_mapping: {}'
+    segments:
+      - text: empty_mapping
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.mapping.begin.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.mapping.yaml ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.mapping.end.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.mapping.yaml ] }
+  - lineNumber: 68
+    sourceText: 'empty_sequence: []'
+    segments:
+      - text: empty_sequence
+        textmate: { scope: entity.name.tag.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.sequence.begin.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.sequence.yaml ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.sequence.end.yaml, rest: [ source.yaml, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.sequence.yaml ] }

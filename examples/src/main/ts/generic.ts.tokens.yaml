@@ -1,0 +1,1365 @@
+schema: token-scope-export/v1
+note: Semantic tokens come from VS Code built-in semantic-token commands. TextMate scopes are re-tokenized from the contributed grammar.
+positionEncoding: { lines: 1-based, columns: 0-based, endColumn: exclusive }
+exportedAt: 2026-03-20T18:19:45.785Z
+source:
+  languageId: typescript
+  version: 18
+grammar: source.ts
+semanticLegend:
+  tokenTypes:
+    - class
+    - enum
+    - interface
+    - namespace
+    - typeParameter
+    - type
+    - parameter
+    - variable
+    - enumMember
+    - property
+    - function
+    - method
+  tokenModifiers:
+    - declaration
+    - static
+    - async
+    - readonly
+    - defaultLibrary
+    - local
+stats: { lineCount: 73, semanticTokenCount: 142, textmateTokenCount: 771, exportedSegmentCount: 509 }
+lines:
+  - lineNumber: 1
+    sourceText: /** Generic syntax showcase for TypeScript token scopes. */
+    segments:
+      - text: /**
+        textmate: { scope: punctuation.definition.comment.ts, rest: [ source.ts, comment.block.documentation.ts ] }
+      - text: ' Generic syntax showcase for TypeScript token scopes. '
+        textmate: { scope: comment.block.documentation.ts, rest: [ source.ts ] }
+      - text: '*/'
+        textmate: { scope: punctuation.definition.comment.ts, rest: [ source.ts, comment.block.documentation.ts ] }
+  - lineNumber: 3
+    sourceText: type TsId = number;
+    segments:
+      - text: type
+        textmate: { scope: storage.type.type.ts, rest: [ source.ts, meta.type.declaration.ts ] }
+      - text: TsId
+        textmate: { scope: entity.name.type.alias.ts, rest: [ source.ts, meta.type.declaration.ts ] }
+        semantic: { type: type, modifiers: [ declaration ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.type.declaration.ts ] }
+      - text: number
+        textmate: { scope: support.type.primitive.ts, rest: [ source.ts, meta.type.declaration.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts ] }
+  - lineNumber: 4
+    sourceText: 'type TsResult<T> = { ok: true; value: T } | { ok: false; error: string };'
+    segments:
+      - text: type
+        textmate: { scope: storage.type.type.ts, rest: [ source.ts, meta.type.declaration.ts ] }
+      - text: TsResult
+        textmate: { scope: entity.name.type.alias.ts, rest: [ source.ts, meta.type.declaration.ts ] }
+        semantic: { type: type, modifiers: [ declaration ] }
+      - text: <
+        textmate: { scope: punctuation.definition.typeparameters.begin.ts, rest: [ source.ts, meta.type.declaration.ts, meta.type.parameters.ts ] }
+      - text: T
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.type.declaration.ts, meta.type.parameters.ts ] }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.typeparameters.end.ts, rest: [ source.ts, meta.type.declaration.ts, meta.type.parameters.ts ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.type.declaration.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts ] }
+      - text: ok
+        textmate: { scope: variable.object.property.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts, meta.field.declaration.ts, meta.definition.property.ts ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts, meta.field.declaration.ts, meta.type.annotation.ts ] }
+      - text: 'true'
+        textmate: { scope: support.type.builtin.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts, meta.field.declaration.ts, meta.type.annotation.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts ] }
+      - text: value
+        textmate: { scope: variable.object.property.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts, meta.field.declaration.ts, meta.definition.property.ts ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts, meta.field.declaration.ts, meta.type.annotation.ts ] }
+      - text: T
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts, meta.field.declaration.ts, meta.type.annotation.ts ] }
+        semantic: { type: typeParameter }
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts ] }
+      - text: '|'
+        textmate: { scope: keyword.operator.type.ts, rest: [ source.ts, meta.type.declaration.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts ] }
+      - text: ok
+        textmate: { scope: variable.object.property.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts, meta.field.declaration.ts, meta.definition.property.ts ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts, meta.field.declaration.ts, meta.type.annotation.ts ] }
+      - text: 'false'
+        textmate: { scope: support.type.builtin.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts, meta.field.declaration.ts, meta.type.annotation.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts ] }
+      - text: error
+        textmate: { scope: variable.object.property.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts, meta.field.declaration.ts, meta.definition.property.ts ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts, meta.field.declaration.ts, meta.type.annotation.ts ] }
+      - text: string
+        textmate: { scope: support.type.primitive.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts, meta.field.declaration.ts, meta.type.annotation.ts ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.type.declaration.ts, meta.object.type.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts ] }
+  - lineNumber: 6
+    sourceText: const TS_MAX_RETRIES = 3 as const;
+    segments:
+      - text: const
+        textmate: { scope: storage.type.ts, rest: [ source.ts, meta.var.expr.ts ] }
+      - text: TS_MAX_RETRIES
+        textmate: { scope: variable.other.constant.ts, rest: [ source.ts, meta.var.expr.ts, meta.var-single-variable.expr.ts, meta.definition.variable.ts ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.var.expr.ts ] }
+      - text: '3'
+        textmate: { scope: constant.numeric.decimal.ts, rest: [ source.ts, meta.var.expr.ts ] }
+      - text: as
+        textmate: { scope: keyword.control.as.ts, rest: [ source.ts, meta.var.expr.ts ] }
+      - text: const
+        textmate: { scope: storage.modifier.ts, rest: [ source.ts, meta.var.expr.ts ] }
+        semantic: { type: type }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts ] }
+  - lineNumber: 8
+    sourceText: enum TsRole {
+    segments:
+      - text: enum
+        textmate: { scope: storage.type.enum.ts, rest: [ source.ts, meta.enum.declaration.ts ] }
+      - text: TsRole
+        textmate: { scope: entity.name.type.enum.ts, rest: [ source.ts, meta.enum.declaration.ts ] }
+        semantic: { type: enum, modifiers: [ declaration ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.enum.declaration.ts ] }
+  - lineNumber: 9
+    sourceText: '  Admin = "ADMIN",'
+    segments:
+      - text: Admin
+        textmate: { scope: variable.other.enummember.ts, rest: [ source.ts, meta.enum.declaration.ts ] }
+        semantic: { type: enumMember, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.enum.declaration.ts ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.ts, rest: [ source.ts, meta.enum.declaration.ts, string.quoted.double.ts ] }
+      - text: ADMIN
+        textmate: { scope: string.quoted.double.ts, rest: [ source.ts, meta.enum.declaration.ts ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.ts, rest: [ source.ts, meta.enum.declaration.ts, string.quoted.double.ts ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.ts, rest: [ source.ts, meta.enum.declaration.ts ] }
+  - lineNumber: 10
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.enum.declaration.ts ] }
+  - lineNumber: 12
+    sourceText: interface TsRepository<T> {
+    segments:
+      - text: interface
+        textmate: { scope: storage.type.interface.ts, rest: [ source.ts, meta.interface.ts ] }
+      - text: TsRepository
+        textmate: { scope: entity.name.type.interface.ts, rest: [ source.ts, meta.interface.ts ] }
+        semantic: { type: interface, modifiers: [ declaration ] }
+      - text: <
+        textmate: { scope: punctuation.definition.typeparameters.begin.ts, rest: [ source.ts, meta.interface.ts, meta.type.parameters.ts ] }
+      - text: T
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.interface.ts, meta.type.parameters.ts ] }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.typeparameters.end.ts, rest: [ source.ts, meta.interface.ts, meta.type.parameters.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.interface.ts ] }
+  - lineNumber: 13
+    sourceText: '  findById(id: TsId): T | undefined;'
+    segments:
+      - text: findById
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.interface.ts, meta.method.declaration.ts, meta.definition.method.ts ] }
+        semantic: { type: method, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.ts, rest: [ source.ts, meta.interface.ts, meta.method.declaration.ts, meta.parameters.ts ] }
+      - text: id
+        textmate: { scope: variable.parameter.ts, rest: [ source.ts, meta.interface.ts, meta.method.declaration.ts, meta.parameters.ts ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.interface.ts, meta.method.declaration.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+      - text: TsId
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.interface.ts, meta.method.declaration.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+        semantic: { type: type }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.ts, rest: [ source.ts, meta.interface.ts, meta.method.declaration.ts, meta.parameters.ts ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.interface.ts, meta.method.declaration.ts, meta.return.type.ts ] }
+      - text: T
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.interface.ts, meta.method.declaration.ts, meta.return.type.ts ] }
+        semantic: { type: typeParameter }
+      - text: '|'
+        textmate: { scope: keyword.operator.type.ts, rest: [ source.ts, meta.interface.ts, meta.method.declaration.ts, meta.return.type.ts ] }
+      - text: undefined
+        textmate: { scope: support.type.builtin.ts, rest: [ source.ts, meta.interface.ts, meta.method.declaration.ts, meta.return.type.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.interface.ts ] }
+  - lineNumber: 14
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.interface.ts ] }
+  - lineNumber: 16
+    sourceText: interface TsUser {
+    segments:
+      - text: interface
+        textmate: { scope: storage.type.interface.ts, rest: [ source.ts, meta.interface.ts ] }
+      - text: TsUser
+        textmate: { scope: entity.name.type.interface.ts, rest: [ source.ts, meta.interface.ts ] }
+        semantic: { type: interface, modifiers: [ declaration ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.interface.ts ] }
+  - lineNumber: 17
+    sourceText: '  readonly id: TsId;'
+    segments:
+      - text: readonly
+        textmate: { scope: storage.modifier.ts, rest: [ source.ts, meta.interface.ts, meta.field.declaration.ts ] }
+      - text: id
+        textmate: { scope: variable.object.property.ts, rest: [ source.ts, meta.interface.ts, meta.field.declaration.ts, meta.definition.property.ts ] }
+        semantic: { type: property, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.interface.ts, meta.field.declaration.ts, meta.type.annotation.ts ] }
+      - text: TsId
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.interface.ts, meta.field.declaration.ts, meta.type.annotation.ts ] }
+        semantic: { type: type }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.interface.ts ] }
+  - lineNumber: 18
+    sourceText: '  name: string;'
+    segments:
+      - text: name
+        textmate: { scope: variable.object.property.ts, rest: [ source.ts, meta.interface.ts, meta.field.declaration.ts, meta.definition.property.ts ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.interface.ts, meta.field.declaration.ts, meta.type.annotation.ts ] }
+      - text: string
+        textmate: { scope: support.type.primitive.ts, rest: [ source.ts, meta.interface.ts, meta.field.declaration.ts, meta.type.annotation.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.interface.ts ] }
+  - lineNumber: 19
+    sourceText: '  roles: Set<TsRole>;'
+    segments:
+      - text: roles
+        textmate: { scope: variable.object.property.ts, rest: [ source.ts, meta.interface.ts, meta.field.declaration.ts, meta.definition.property.ts ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.interface.ts, meta.field.declaration.ts, meta.type.annotation.ts ] }
+      - text: Set
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.interface.ts, meta.field.declaration.ts, meta.type.annotation.ts ] }
+        semantic: { type: interface, modifiers: [ defaultLibrary ] }
+      - text: <
+        textmate: { scope: punctuation.definition.typeparameters.begin.ts, rest: [ source.ts, meta.interface.ts, meta.field.declaration.ts, meta.type.annotation.ts, meta.type.parameters.ts ] }
+      - text: TsRole
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.interface.ts, meta.field.declaration.ts, meta.type.annotation.ts, meta.type.parameters.ts ] }
+        semantic: { type: enum }
+      - text: '>'
+        textmate: { scope: punctuation.definition.typeparameters.end.ts, rest: [ source.ts, meta.interface.ts, meta.field.declaration.ts, meta.type.annotation.ts, meta.type.parameters.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.interface.ts ] }
+  - lineNumber: 20
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.interface.ts ] }
+  - lineNumber: 22
+    sourceText: class TsUserRepository implements TsRepository<TsUser> {
+    segments:
+      - text: class
+        textmate: { scope: storage.type.class.ts, rest: [ source.ts, meta.class.ts ] }
+      - text: TsUserRepository
+        textmate: { scope: entity.name.type.class.ts, rest: [ source.ts, meta.class.ts ] }
+        semantic: { type: class, modifiers: [ declaration ] }
+      - text: implements
+        textmate: { scope: storage.modifier.ts, rest: [ source.ts, meta.class.ts ] }
+      - text: TsRepository
+        textmate: { scope: entity.other.inherited-class.ts, rest: [ source.ts, meta.class.ts ] }
+        semantic: { type: interface }
+      - text: <
+        textmate: { scope: punctuation.definition.typeparameters.begin.ts, rest: [ source.ts, meta.class.ts, meta.type.parameters.ts ] }
+      - text: TsUser
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.class.ts, meta.type.parameters.ts ] }
+        semantic: { type: interface }
+      - text: '>'
+        textmate: { scope: punctuation.definition.typeparameters.end.ts, rest: [ source.ts, meta.class.ts, meta.type.parameters.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.class.ts ] }
+  - lineNumber: 23
+    sourceText: '  private readonly store = new Map<TsId, TsUser>();'
+    segments:
+      - text: private
+        textmate: { scope: storage.modifier.ts, rest: [ source.ts, meta.class.ts ] }
+      - text: readonly
+        textmate: { scope: storage.modifier.ts, rest: [ source.ts, meta.class.ts, meta.field.declaration.ts ] }
+      - text: store
+        textmate: { scope: variable.object.property.ts, rest: [ source.ts, meta.class.ts, meta.field.declaration.ts, meta.definition.property.ts ] }
+        semantic: { type: property, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.class.ts, meta.field.declaration.ts ] }
+      - text: new
+        textmate: { scope: keyword.operator.new.ts, rest: [ source.ts, meta.class.ts, meta.field.declaration.ts, new.expr.ts ] }
+      - text: Map
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.class.ts, meta.field.declaration.ts, new.expr.ts, meta.function-call.ts ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: <
+        textmate: { scope: punctuation.definition.typeparameters.begin.ts, rest: [ source.ts, meta.class.ts, meta.field.declaration.ts, new.expr.ts, meta.type.parameters.ts ] }
+      - text: TsId
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.class.ts, meta.field.declaration.ts, new.expr.ts, meta.type.parameters.ts ] }
+        semantic: { type: type }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.ts, rest: [ source.ts, meta.class.ts, meta.field.declaration.ts, new.expr.ts, meta.type.parameters.ts ] }
+      - text: TsUser
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.class.ts, meta.field.declaration.ts, new.expr.ts, meta.type.parameters.ts ] }
+        semantic: { type: interface }
+      - text: '>'
+        textmate: { scope: punctuation.definition.typeparameters.end.ts, rest: [ source.ts, meta.class.ts, meta.field.declaration.ts, new.expr.ts, meta.type.parameters.ts ] }
+      - text: (
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.class.ts, meta.field.declaration.ts, new.expr.ts ] }
+      - text: )
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.class.ts, meta.field.declaration.ts, new.expr.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.class.ts ] }
+  - lineNumber: 25
+    sourceText: '  constructor(private readonly label: string) {}'
+    segments:
+      - text: constructor
+        textmate: { scope: storage.type.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts ] }
+      - text: private
+        textmate: { scope: storage.modifier.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts ] }
+      - text: readonly
+        textmate: { scope: storage.modifier.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts ] }
+      - text: label
+        textmate: { scope: variable.parameter.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts ] }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+      - text: string
+        textmate: { scope: support.type.primitive.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+  - lineNumber: 27
+    sourceText: '  findById(id: TsId): TsUser | undefined {'
+    segments:
+      - text: findById
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.definition.method.ts ] }
+        semantic: { type: method, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts ] }
+      - text: id
+        textmate: { scope: variable.parameter.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+      - text: TsId
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+        semantic: { type: type }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.return.type.ts ] }
+      - text: TsUser
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.return.type.ts ] }
+        semantic: { type: interface }
+      - text: '|'
+        textmate: { scope: keyword.operator.type.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.return.type.ts ] }
+      - text: undefined
+        textmate: { scope: support.type.builtin.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.return.type.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+  - lineNumber: 28
+    sourceText: '    return this.store.get(id);'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+      - text: this
+        textmate: { scope: variable.language.this.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.function-call.ts ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.function-call.ts ] }
+      - text: store
+        textmate: { scope: variable.other.object.property.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.function-call.ts ] }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.function-call.ts ] }
+      - text: get
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.function-call.ts ] }
+        semantic: { type: method, modifiers: [ defaultLibrary ] }
+      - text: (
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+      - text: id
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+        semantic: { type: parameter }
+      - text: )
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+  - lineNumber: 29
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+  - lineNumber: 31
+    sourceText: '  save(user: TsUser): TsResult<TsUser> {'
+    segments:
+      - text: save
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.definition.method.ts ] }
+        semantic: { type: method, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts ] }
+      - text: user
+        textmate: { scope: variable.parameter.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+      - text: TsUser
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+        semantic: { type: interface }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.parameters.ts ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.return.type.ts ] }
+      - text: TsResult
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.return.type.ts ] }
+        semantic: { type: type }
+      - text: <
+        textmate: { scope: punctuation.definition.typeparameters.begin.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.return.type.ts, meta.type.parameters.ts ] }
+      - text: TsUser
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.return.type.ts, meta.type.parameters.ts ] }
+        semantic: { type: interface }
+      - text: '>'
+        textmate: { scope: punctuation.definition.typeparameters.end.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.return.type.ts, meta.type.parameters.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+  - lineNumber: 32
+    sourceText: '    this.store.set(user.id, user);'
+    segments:
+      - text: this
+        textmate: { scope: variable.language.this.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.function-call.ts ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.function-call.ts ] }
+      - text: store
+        textmate: { scope: variable.other.object.property.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.function-call.ts ] }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.function-call.ts ] }
+      - text: set
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.function-call.ts ] }
+        semantic: { type: method, modifiers: [ defaultLibrary ] }
+      - text: (
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+      - text: user
+        textmate: { scope: variable.other.object.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+        semantic: { type: parameter }
+      - text: .
+        textmate: { scope: punctuation.accessor.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+      - text: id
+        textmate: { scope: variable.other.property.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+      - text: user
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+        semantic: { type: parameter }
+      - text: )
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+  - lineNumber: 33
+    sourceText: '    return { ok: true, value: user };'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.objectliteral.ts ] }
+      - text: ok
+        textmate: { scope: meta.object-literal.key.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.key-value.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts, meta.object-literal.key.ts ] }
+      - text: 'true'
+        textmate: { scope: constant.language.boolean.true.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.objectliteral.ts ] }
+      - text: value
+        textmate: { scope: meta.object-literal.key.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.key-value.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts, meta.object-literal.key.ts ] }
+      - text: user
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts ] }
+        semantic: { type: parameter }
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts, meta.objectliteral.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+  - lineNumber: 34
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.class.ts, meta.method.declaration.ts, meta.block.ts ] }
+  - lineNumber: 35
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.class.ts ] }
+  - lineNumber: 37
+    sourceText: 'const isAdmin = (user: TsUser): boolean => user.roles.has(TsRole.Admin);'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.ts, rest: [ source.ts, meta.var.expr.ts ] }
+      - text: isAdmin
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.var.expr.ts, meta.var-single-variable.expr.ts, meta.definition.variable.ts, variable.other.constant.ts ] }
+        semantic: { type: function, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.var.expr.ts ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.ts, rest: [ source.ts, meta.var.expr.ts, meta.arrow.ts, meta.parameters.ts ] }
+      - text: user
+        textmate: { scope: variable.parameter.ts, rest: [ source.ts, meta.var.expr.ts, meta.arrow.ts, meta.parameters.ts ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.var.expr.ts, meta.arrow.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+      - text: TsUser
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.var.expr.ts, meta.arrow.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+        semantic: { type: interface }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.ts, rest: [ source.ts, meta.var.expr.ts, meta.arrow.ts, meta.parameters.ts ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.var.expr.ts, meta.arrow.ts, meta.return.type.arrow.ts ] }
+      - text: boolean
+        textmate: { scope: support.type.primitive.ts, rest: [ source.ts, meta.var.expr.ts, meta.arrow.ts, meta.return.type.arrow.ts ] }
+      - text: =>
+        textmate: { scope: storage.type.function.arrow.ts, rest: [ source.ts, meta.var.expr.ts, meta.arrow.ts ] }
+      - text: user
+        textmate: { scope: variable.other.object.ts, rest: [ source.ts, meta.var.expr.ts, meta.function-call.ts ] }
+        semantic: { type: parameter }
+      - text: .
+        textmate: { scope: punctuation.accessor.ts, rest: [ source.ts, meta.var.expr.ts, meta.function-call.ts ] }
+      - text: roles
+        textmate: { scope: variable.other.object.property.ts, rest: [ source.ts, meta.var.expr.ts, meta.function-call.ts ] }
+        semantic: { type: property }
+      - text: .
+        textmate: { scope: punctuation.accessor.ts, rest: [ source.ts, meta.var.expr.ts, meta.function-call.ts ] }
+      - text: has
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.var.expr.ts, meta.function-call.ts ] }
+        semantic: { type: method, modifiers: [ defaultLibrary ] }
+      - text: (
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.var.expr.ts ] }
+      - text: TsRole
+        textmate: { scope: variable.other.object.ts, rest: [ source.ts, meta.var.expr.ts ] }
+        semantic: { type: enum }
+      - text: .
+        textmate: { scope: punctuation.accessor.ts, rest: [ source.ts, meta.var.expr.ts ] }
+      - text: Admin
+        textmate: { scope: variable.other.property.ts, rest: [ source.ts, meta.var.expr.ts ] }
+        semantic: { type: enumMember, modifiers: [ readonly ] }
+      - text: )
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.var.expr.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts ] }
+  - lineNumber: 39
+    sourceText: 'async function tsFetch<T>(repo: TsRepository<T>, id: TsId): Promise<TsResult<T>> {'
+    segments:
+      - text: async
+        textmate: { scope: storage.modifier.async.ts, rest: [ source.ts, meta.function.ts ] }
+      - text: function
+        textmate: { scope: storage.type.function.ts, rest: [ source.ts, meta.function.ts ] }
+      - text: tsFetch
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.function.ts, meta.definition.function.ts ] }
+        semantic: { type: function, modifiers: [ declaration, async ] }
+      - text: <
+        textmate: { scope: punctuation.definition.typeparameters.begin.ts, rest: [ source.ts, meta.function.ts, meta.type.parameters.ts ] }
+      - text: T
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.type.parameters.ts ] }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.typeparameters.end.ts, rest: [ source.ts, meta.function.ts, meta.type.parameters.ts ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts ] }
+      - text: repo
+        textmate: { scope: variable.parameter.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+      - text: TsRepository
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+        semantic: { type: interface }
+      - text: <
+        textmate: { scope: punctuation.definition.typeparameters.begin.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts, meta.type.parameters.ts ] }
+      - text: T
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts, meta.type.parameters.ts ] }
+        semantic: { type: typeParameter }
+      - text: '>'
+        textmate: { scope: punctuation.definition.typeparameters.end.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts, meta.type.parameters.ts ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.parameter.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts ] }
+      - text: id
+        textmate: { scope: variable.parameter.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+      - text: TsId
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+        semantic: { type: type }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.function.ts, meta.return.type.ts ] }
+      - text: Promise
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.return.type.ts ] }
+        semantic: { type: interface, modifiers: [ defaultLibrary ] }
+      - text: <
+        textmate: { scope: punctuation.definition.typeparameters.begin.ts, rest: [ source.ts, meta.function.ts, meta.return.type.ts, meta.type.parameters.ts ] }
+      - text: TsResult
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.return.type.ts, meta.type.parameters.ts ] }
+        semantic: { type: type }
+      - text: <
+        textmate: { scope: punctuation.definition.typeparameters.begin.ts, rest: [ source.ts, meta.function.ts, meta.return.type.ts, meta.type.parameters.ts, meta.type.parameters.ts ] }
+      - text: T
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.return.type.ts, meta.type.parameters.ts, meta.type.parameters.ts ] }
+        semantic: { type: typeParameter }
+      - text: '>'
+        textmate: { scope: punctuation.definition.typeparameters.end.ts, rest: [ source.ts, meta.function.ts, meta.return.type.ts, meta.type.parameters.ts, meta.type.parameters.ts ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.typeparameters.end.ts, rest: [ source.ts, meta.function.ts, meta.return.type.ts, meta.type.parameters.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 40
+    sourceText: '  const item = repo.findById(id);'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: item
+        textmate: { scope: variable.other.constant.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.var-single-variable.expr.ts, meta.definition.variable.ts ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: repo
+        textmate: { scope: variable.other.object.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.function-call.ts ] }
+        semantic: { type: parameter }
+      - text: .
+        textmate: { scope: punctuation.accessor.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.function-call.ts ] }
+      - text: findById
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.function-call.ts ] }
+        semantic: { type: method }
+      - text: (
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: id
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+        semantic: { type: parameter }
+      - text: )
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 41
+    sourceText: '  if (item === undefined) {'
+    segments:
+      - text: if
+        textmate: { scope: keyword.control.conditional.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: (
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: item
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: ===
+        textmate: { scope: keyword.operator.comparison.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: undefined
+        textmate: { scope: constant.language.undefined.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: )
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts ] }
+  - lineNumber: 42
+    sourceText: '    return { ok: false, error: `not found: ${id}` };'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.objectliteral.ts ] }
+      - text: ok
+        textmate: { scope: meta.object-literal.key.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.key-value.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts, meta.object-literal.key.ts ] }
+      - text: 'false'
+        textmate: { scope: constant.language.boolean.false.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.objectliteral.ts ] }
+      - text: error
+        textmate: { scope: meta.object-literal.key.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.key-value.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts, meta.object-literal.key.ts ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.string.template.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts, string.template.ts ] }
+      - text: 'not found: '
+        textmate: { scope: string.template.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts, string.template.ts, meta.template.expression.ts ] }
+      - text: id
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts, string.template.ts, meta.template.expression.ts, meta.embedded.line.ts ] }
+        semantic: { type: parameter }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts, string.template.ts, meta.template.expression.ts ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.string.template.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts, string.template.ts ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.objectliteral.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts ] }
+  - lineNumber: 43
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts ] }
+  - lineNumber: 44
+    sourceText: '  return { ok: true, value: item };'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.objectliteral.ts ] }
+      - text: ok
+        textmate: { scope: meta.object-literal.key.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.key-value.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts, meta.object-literal.key.ts ] }
+      - text: 'true'
+        textmate: { scope: constant.language.boolean.true.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.objectliteral.ts ] }
+      - text: value
+        textmate: { scope: meta.object-literal.key.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.key-value.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts, meta.object-literal.key.ts ] }
+      - text: item
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.objectliteral.ts, meta.object.member.ts ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.objectliteral.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 45
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 47
+    sourceText: 'async function tsRetry<T>(block: () => Promise<T>): Promise<T> {'
+    segments:
+      - text: async
+        textmate: { scope: storage.modifier.async.ts, rest: [ source.ts, meta.function.ts ] }
+      - text: function
+        textmate: { scope: storage.type.function.ts, rest: [ source.ts, meta.function.ts ] }
+      - text: tsRetry
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.function.ts, meta.definition.function.ts ] }
+        semantic: { type: function, modifiers: [ declaration, async ] }
+      - text: <
+        textmate: { scope: punctuation.definition.typeparameters.begin.ts, rest: [ source.ts, meta.function.ts, meta.type.parameters.ts ] }
+      - text: T
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.type.parameters.ts ] }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.typeparameters.end.ts, rest: [ source.ts, meta.function.ts, meta.type.parameters.ts ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts ] }
+      - text: block
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts ] }
+        semantic: { type: function, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts, meta.type.function.ts, meta.parameters.ts ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts, meta.type.function.ts, meta.parameters.ts ] }
+      - text: =>
+        textmate: { scope: storage.type.function.arrow.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts, meta.type.function.return.ts ] }
+      - text: Promise
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts, meta.type.function.return.ts ] }
+        semantic: { type: interface, modifiers: [ defaultLibrary ] }
+      - text: <
+        textmate: { scope: punctuation.definition.typeparameters.begin.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts, meta.type.function.return.ts, meta.type.parameters.ts ] }
+      - text: T
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts, meta.type.function.return.ts, meta.type.parameters.ts ] }
+        semantic: { type: typeParameter }
+      - text: '>'
+        textmate: { scope: punctuation.definition.typeparameters.end.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts, meta.type.function.return.ts, meta.type.parameters.ts ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.function.ts, meta.return.type.ts ] }
+      - text: Promise
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.return.type.ts ] }
+        semantic: { type: interface, modifiers: [ defaultLibrary ] }
+      - text: <
+        textmate: { scope: punctuation.definition.typeparameters.begin.ts, rest: [ source.ts, meta.function.ts, meta.return.type.ts, meta.type.parameters.ts ] }
+      - text: T
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.return.type.ts, meta.type.parameters.ts ] }
+        semantic: { type: typeParameter }
+      - text: '>'
+        textmate: { scope: punctuation.definition.typeparameters.end.ts, rest: [ source.ts, meta.function.ts, meta.return.type.ts, meta.type.parameters.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 48
+    sourceText: '  let last: unknown;'
+    segments:
+      - text: let
+        textmate: { scope: storage.type.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: last
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.var-single-variable.expr.ts, meta.definition.variable.ts ] }
+        semantic: { type: variable, modifiers: [ declaration, local ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.var-single-variable.expr.ts, meta.type.annotation.ts ] }
+      - text: unknown
+        textmate: { scope: support.type.primitive.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.var-single-variable.expr.ts, meta.type.annotation.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 49
+    sourceText: '  for (let i = 0; i < TS_MAX_RETRIES; i++) {'
+    segments:
+      - text: for
+        textmate: { scope: keyword.control.loop.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: (
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: let
+        textmate: { scope: storage.type.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: i
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.var-single-variable.expr.ts, meta.definition.variable.ts ] }
+        semantic: { type: variable, modifiers: [ declaration, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '0'
+        textmate: { scope: constant.numeric.decimal.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: i
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+        semantic: { type: variable, modifiers: [ local ] }
+      - text: <
+        textmate: { scope: keyword.operator.relational.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: TS_MAX_RETRIES
+        textmate: { scope: variable.other.constant.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+        semantic: { type: variable, modifiers: [ readonly ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: i
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+        semantic: { type: variable, modifiers: [ local ] }
+      - text: ++
+        textmate: { scope: keyword.operator.increment.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: )
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts ] }
+  - lineNumber: 50
+    sourceText: '    try {'
+    segments:
+      - text: try
+        textmate: { scope: keyword.control.trycatch.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.block.ts ] }
+  - lineNumber: 51
+    sourceText: '      return await block();'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.block.ts ] }
+      - text: await
+        textmate: { scope: keyword.control.flow.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.block.ts ] }
+      - text: block
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.block.ts, meta.function-call.ts ] }
+        semantic: { type: function }
+      - text: (
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.block.ts ] }
+      - text: )
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.block.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.block.ts ] }
+  - lineNumber: 52
+    sourceText: '    } catch (e: unknown) {'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.block.ts ] }
+      - text: catch
+        textmate: { scope: keyword.control.trycatch.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.arrow.ts, meta.parameters.ts ] }
+      - text: e
+        textmate: { scope: variable.parameter.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.arrow.ts, meta.parameters.ts ] }
+        semantic: { type: variable, modifiers: [ declaration, local ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.arrow.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+      - text: unknown
+        textmate: { scope: support.type.primitive.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.arrow.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.arrow.ts, meta.parameters.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.block.ts ] }
+  - lineNumber: 53
+    sourceText: '      last = e;'
+    segments:
+      - text: last
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.block.ts ] }
+        semantic: { type: variable, modifiers: [ local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.block.ts ] }
+      - text: e
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.block.ts ] }
+        semantic: { type: variable, modifiers: [ local ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.block.ts ] }
+  - lineNumber: 54
+    sourceText: '    }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts, meta.block.ts ] }
+  - lineNumber: 55
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.block.ts ] }
+  - lineNumber: 56
+    sourceText: '  throw last instanceof Error ? last : new Error(String(last));'
+    segments:
+      - text: throw
+        textmate: { scope: keyword.control.trycatch.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: last
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+        semantic: { type: variable, modifiers: [ local ] }
+      - text: instanceof
+        textmate: { scope: keyword.operator.expression.instanceof.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: Error
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: '?'
+        textmate: { scope: keyword.operator.ternary.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: last
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+        semantic: { type: variable, modifiers: [ local ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.ternary.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: new
+        textmate: { scope: keyword.operator.new.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, new.expr.ts ] }
+      - text: Error
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, new.expr.ts, meta.function-call.ts ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: (
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, new.expr.ts ] }
+      - text: String
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, new.expr.ts, meta.function-call.ts ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: (
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, new.expr.ts ] }
+      - text: last
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, new.expr.ts ] }
+        semantic: { type: variable, modifiers: [ local ] }
+      - text: )
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, new.expr.ts ] }
+      - text: )
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, new.expr.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 57
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 59
+    sourceText: '// showcase: destructuring, optional chaining, ??, satisfies, as const, typeof'
+    segments:
+      - text: //
+        textmate: { scope: punctuation.definition.comment.ts, rest: [ source.ts, comment.line.double-slash.ts ] }
+      - text: ' showcase: destructuring, optional chaining, ??, satisfies, as const, typeof'
+        textmate: { scope: comment.line.double-slash.ts, rest: [ source.ts ] }
+  - lineNumber: 60
+    sourceText: 'function tsShowcase(obj: unknown, repo: TsUserRepository): string {'
+    segments:
+      - text: function
+        textmate: { scope: storage.type.function.ts, rest: [ source.ts, meta.function.ts ] }
+      - text: tsShowcase
+        textmate: { scope: entity.name.function.ts, rest: [ source.ts, meta.function.ts, meta.definition.function.ts ] }
+        semantic: { type: function, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts ] }
+      - text: obj
+        textmate: { scope: variable.parameter.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+      - text: unknown
+        textmate: { scope: support.type.primitive.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.parameter.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts ] }
+      - text: repo
+        textmate: { scope: variable.parameter.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+      - text: TsUserRepository
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts, meta.type.annotation.ts ] }
+        semantic: { type: class }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.ts, rest: [ source.ts, meta.function.ts, meta.parameters.ts ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.type.annotation.ts, rest: [ source.ts, meta.function.ts, meta.return.type.ts ] }
+      - text: string
+        textmate: { scope: support.type.primitive.ts, rest: [ source.ts, meta.function.ts, meta.return.type.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 61
+    sourceText: '  const user = obj instanceof Object && "id" in obj ? (obj as TsUser) : undefined;'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: user
+        textmate: { scope: variable.other.constant.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.var-single-variable.expr.ts, meta.definition.variable.ts ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: obj
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+        semantic: { type: parameter }
+      - text: instanceof
+        textmate: { scope: keyword.operator.expression.instanceof.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: Object
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: '&&'
+        textmate: { scope: keyword.operator.logical.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, string.quoted.double.ts ] }
+      - text: id
+        textmate: { scope: string.quoted.double.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, string.quoted.double.ts ] }
+      - text: in
+        textmate: { scope: keyword.operator.expression.in.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: obj
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+        semantic: { type: parameter }
+      - text: '?'
+        textmate: { scope: keyword.operator.ternary.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: (
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: obj
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+        semantic: { type: parameter }
+      - text: as
+        textmate: { scope: keyword.control.as.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: TsUser
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+        semantic: { type: interface }
+      - text: )
+        textmate: { scope: meta.brace.round.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.ternary.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: undefined
+        textmate: { scope: constant.language.undefined.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 62
+    sourceText: '  const name = user?.name ?? "anonymous";'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: name
+        textmate: { scope: variable.other.constant.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.var-single-variable.expr.ts, meta.definition.variable.ts ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: user
+        textmate: { scope: variable.other.object.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: ?.
+        textmate: { scope: punctuation.accessor.optional.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: name
+        textmate: { scope: variable.other.property.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+        semantic: { type: property }
+      - text: ??
+        textmate: { scope: keyword.operator.logical.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, string.quoted.double.ts ] }
+      - text: anonymous
+        textmate: { scope: string.quoted.double.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, string.quoted.double.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 63
+    sourceText: '  const hex = 0xff;'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: hex
+        textmate: { scope: variable.other.constant.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.var-single-variable.expr.ts, meta.definition.variable.ts ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '0xff'
+        textmate: { scope: constant.numeric.hex.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 64
+    sourceText: '  const fp = 3.14;'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: fp
+        textmate: { scope: variable.other.constant.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.var-single-variable.expr.ts, meta.definition.variable.ts ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '3'
+        textmate: { scope: constant.numeric.decimal.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: .
+        textmate: { scope: meta.delimiter.decimal.period.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, constant.numeric.decimal.ts ] }
+      - text: '14'
+        textmate: { scope: constant.numeric.decimal.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 65
+    sourceText: '  const ch = "T";'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: ch
+        textmate: { scope: variable.other.constant.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.var-single-variable.expr.ts, meta.definition.variable.ts ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, string.quoted.double.ts ] }
+      - text: T
+        textmate: { scope: string.quoted.double.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, string.quoted.double.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 66
+    sourceText: '  const config = { retries: TS_MAX_RETRIES } satisfies Record<string, number>;'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: config
+        textmate: { scope: variable.other.constant.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.var-single-variable.expr.ts, meta.definition.variable.ts ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.objectliteral.ts ] }
+      - text: retries
+        textmate: { scope: meta.object-literal.key.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.objectliteral.ts, meta.object.member.ts ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.key-value.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.objectliteral.ts, meta.object.member.ts, meta.object-literal.key.ts ] }
+      - text: TS_MAX_RETRIES
+        textmate: { scope: variable.other.constant.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.objectliteral.ts, meta.object.member.ts ] }
+        semantic: { type: variable, modifiers: [ readonly ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.objectliteral.ts ] }
+      - text: satisfies
+        textmate: { scope: keyword.control.satisfies.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: Record
+        textmate: { scope: entity.name.type.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+        semantic: { type: type, modifiers: [ defaultLibrary ] }
+      - text: <
+        textmate: { scope: punctuation.definition.typeparameters.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.type.parameters.ts ] }
+      - text: string
+        textmate: { scope: support.type.primitive.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.type.parameters.ts ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.type.parameters.ts ] }
+      - text: number
+        textmate: { scope: support.type.primitive.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.type.parameters.ts ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.typeparameters.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.type.parameters.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 67
+    sourceText: '  const kind = typeof obj === "string" ? "string" : "other";'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: kind
+        textmate: { scope: variable.other.constant.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, meta.var-single-variable.expr.ts, meta.definition.variable.ts ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: typeof
+        textmate: { scope: keyword.operator.expression.typeof.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: obj
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+        semantic: { type: parameter }
+      - text: ===
+        textmate: { scope: keyword.operator.comparison.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, string.quoted.double.ts ] }
+      - text: string
+        textmate: { scope: string.quoted.double.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, string.quoted.double.ts ] }
+      - text: '?'
+        textmate: { scope: keyword.operator.ternary.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, string.quoted.double.ts ] }
+      - text: string
+        textmate: { scope: string.quoted.double.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, string.quoted.double.ts ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.ternary.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, string.quoted.double.ts ] }
+      - text: other
+        textmate: { scope: string.quoted.double.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, meta.var.expr.ts, string.quoted.double.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 68
+    sourceText: '  return `${name} ${hex} ${fp} ${ch} ${config.retries} ${kind}`;'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.string.template.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts ] }
+      - text: name
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts, meta.embedded.line.ts ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts ] }
+      - text: hex
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts, meta.embedded.line.ts ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts ] }
+      - text: fp
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts, meta.embedded.line.ts ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts ] }
+      - text: ch
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts, meta.embedded.line.ts ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts ] }
+      - text: config
+        textmate: { scope: variable.other.object.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts, meta.embedded.line.ts ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts, meta.embedded.line.ts ] }
+      - text: retries
+        textmate: { scope: variable.other.property.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts, meta.embedded.line.ts ] }
+        semantic: { type: property }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts ] }
+      - text: kind
+        textmate: { scope: variable.other.readwrite.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts, meta.embedded.line.ts ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts, meta.template.expression.ts ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.string.template.end.ts, rest: [ source.ts, meta.function.ts, meta.block.ts, string.template.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 69
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.function.ts, meta.block.ts ] }
+  - lineNumber: 71
+    sourceText: export type { TsId, TsResult, TsUser };
+    segments:
+      - text: export
+        textmate: { scope: keyword.control.export.ts, rest: [ source.ts, meta.export.ts ] }
+      - text: type
+        textmate: { scope: keyword.control.type.ts, rest: [ source.ts, meta.export.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+      - text: TsId
+        textmate: { scope: variable.other.readwrite.alias.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+        semantic: { type: type }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+      - text: TsResult
+        textmate: { scope: variable.other.readwrite.alias.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+        semantic: { type: type }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+      - text: TsUser
+        textmate: { scope: variable.other.readwrite.alias.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+        semantic: { type: interface }
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts ] }
+  - lineNumber: 72
+    sourceText: export { TsRole, TsUserRepository, isAdmin, tsFetch, tsRetry, tsShowcase };
+    segments:
+      - text: export
+        textmate: { scope: keyword.control.export.ts, rest: [ source.ts, meta.export.ts ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+      - text: TsRole
+        textmate: { scope: variable.other.readwrite.alias.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+        semantic: { type: enum }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+      - text: TsUserRepository
+        textmate: { scope: variable.other.readwrite.alias.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+        semantic: { type: class }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+      - text: isAdmin
+        textmate: { scope: variable.other.readwrite.alias.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+        semantic: { type: function, modifiers: [ readonly ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+      - text: tsFetch
+        textmate: { scope: variable.other.readwrite.alias.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+        semantic: { type: function, modifiers: [ async ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+      - text: tsRetry
+        textmate: { scope: variable.other.readwrite.alias.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+        semantic: { type: function, modifiers: [ async ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+      - text: tsShowcase
+        textmate: { scope: variable.other.readwrite.alias.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+        semantic: { type: function }
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.ts, rest: [ source.ts, meta.export.ts, meta.block.ts ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.ts, rest: [ source.ts ] }

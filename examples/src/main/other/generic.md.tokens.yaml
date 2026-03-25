@@ -1,0 +1,452 @@
+schema: token-scope-export/v1
+note: Semantic tokens come from VS Code built-in semantic-token commands. TextMate scopes are re-tokenized from the contributed grammar.
+positionEncoding: { lines: 1-based, columns: 0-based, endColumn: exclusive }
+exportedAt: 2026-03-21T00:50:35.694Z
+source:
+  languageId: markdown
+  version: 174
+grammar: text.html.markdown
+semanticLegend: null
+stats: { lineCount: 59, semanticTokenCount: 0, textmateTokenCount: 226, exportedSegmentCount: 162 }
+lines:
+  - lineNumber: 1
+    sourceText: ---
+    segments:
+      - text: ---
+        textmate: { scope: punctuation.definition.begin.frontmatter, rest: [ text.html.markdown ] }
+  - lineNumber: 2
+    sourceText: 'title: Generic Markdown'
+    segments:
+      - text: title
+        textmate: { scope: entity.name.tag.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: Generic Markdown
+        textmate: { scope: string.unquoted.plain.out.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 3
+    sourceText: 'date: 2026-03-19'
+    segments:
+      - text: date
+        textmate: { scope: entity.name.tag.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: 2026-03-19
+        textmate: { scope: string.unquoted.plain.out.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+  - lineNumber: 4
+    sourceText: 'tags: [example, tokens]'
+    segments:
+      - text: tags
+        textmate: { scope: entity.name.tag.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.sequence.begin.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.sequence.yaml ] }
+      - text: example
+        textmate: { scope: string.unquoted.plain.in.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.sequence.yaml ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.sequence.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.sequence.yaml ] }
+      - text: tokens
+        textmate: { scope: string.unquoted.plain.in.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.sequence.yaml ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.sequence.end.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, meta.flow.sequence.yaml ] }
+  - lineNumber: 5
+    sourceText: 'draft: false'
+    segments:
+      - text: draft
+        textmate: { scope: entity.name.tag.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.key.yaml, string.unquoted.plain.yaml ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.map.value.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml ] }
+      - text: 'false'
+        textmate: { scope: constant.language.boolean.yaml, rest: [ text.html.markdown, meta.embedded.block.frontmatter, meta.stream.yaml, meta.document.yaml, meta.mapping.yaml, meta.map.value.yaml, string.unquoted.plain.out.yaml ] }
+  - lineNumber: 6
+    sourceText: ---
+    segments:
+      - text: ---
+        textmate: { scope: punctuation.definition.end.frontmatter, rest: [ text.html.markdown ] }
+  - lineNumber: 8
+    sourceText: '# Heading 1'
+    segments:
+      - text: '#'
+        textmate: { scope: punctuation.definition.heading.markdown, rest: [ text.html.markdown, markup.heading.markdown, heading.1.markdown ] }
+      - text: Heading 1
+        textmate: { scope: entity.name.section.markdown, rest: [ text.html.markdown, markup.heading.markdown, heading.1.markdown ] }
+  - lineNumber: 10
+    sourceText: '## Heading 2'
+    segments:
+      - text: '##'
+        textmate: { scope: punctuation.definition.heading.markdown, rest: [ text.html.markdown, markup.heading.markdown, heading.2.markdown ] }
+      - text: Heading 2
+        textmate: { scope: entity.name.section.markdown, rest: [ text.html.markdown, markup.heading.markdown, heading.2.markdown ] }
+  - lineNumber: 12
+    sourceText: '### Heading 3'
+    segments:
+      - text: '###'
+        textmate: { scope: punctuation.definition.heading.markdown, rest: [ text.html.markdown, markup.heading.markdown, heading.3.markdown ] }
+      - text: Heading 3
+        textmate: { scope: entity.name.section.markdown, rest: [ text.html.markdown, markup.heading.markdown, heading.3.markdown ] }
+  - lineNumber: 14
+    sourceText: '#### Heading 4'
+    segments:
+      - text: '####'
+        textmate: { scope: punctuation.definition.heading.markdown, rest: [ text.html.markdown, markup.heading.markdown, heading.4.markdown ] }
+      - text: Heading 4
+        textmate: { scope: entity.name.section.markdown, rest: [ text.html.markdown, markup.heading.markdown, heading.4.markdown ] }
+  - lineNumber: 16
+    sourceText: Body <br> text with **bold**, *italic*, ***bold italic***, and ~~strikethrough~~.
+    segments:
+      - text: 'Body '
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown ] }
+      - text: <
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.markdown, meta.paragraph.markdown, meta.tag.inline.br.void.html ] }
+      - text: br
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.markdown, meta.paragraph.markdown, meta.tag.inline.br.void.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.markdown, meta.paragraph.markdown, meta.tag.inline.br.void.html ] }
+      - text: ' text with '
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown ] }
+      - text: '**'
+        textmate: { scope: punctuation.definition.bold.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, markup.bold.markdown ] }
+      - text: bold
+        textmate: { scope: markup.bold.markdown, rest: [ text.html.markdown, meta.paragraph.markdown ] }
+      - text: '**'
+        textmate: { scope: punctuation.definition.bold.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, markup.bold.markdown ] }
+      - text: ', '
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown ] }
+      - text: '*'
+        textmate: { scope: punctuation.definition.italic.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, markup.italic.markdown ] }
+      - text: italic
+        textmate: { scope: markup.italic.markdown, rest: [ text.html.markdown, meta.paragraph.markdown ] }
+      - text: '*'
+        textmate: { scope: punctuation.definition.italic.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, markup.italic.markdown ] }
+      - text: ', '
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown ] }
+      - text: '**'
+        textmate: { scope: punctuation.definition.bold.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, markup.bold.markdown ] }
+      - text: '*'
+        textmate: { scope: punctuation.definition.italic.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, markup.bold.markdown, markup.italic.markdown ] }
+      - text: bold italic
+        textmate: { scope: markup.italic.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, markup.bold.markdown ] }
+      - text: '*'
+        textmate: { scope: punctuation.definition.italic.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, markup.bold.markdown, markup.italic.markdown ] }
+      - text: '**'
+        textmate: { scope: punctuation.definition.bold.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, markup.bold.markdown ] }
+      - text: ', and '
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown ] }
+      - text: ~~
+        textmate: { scope: punctuation.definition.strikethrough.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, markup.strikethrough.markdown ] }
+      - text: strikethrough
+        textmate: { scope: markup.strikethrough.markdown, rest: [ text.html.markdown, meta.paragraph.markdown ] }
+      - text: ~~
+        textmate: { scope: punctuation.definition.strikethrough.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, markup.strikethrough.markdown ] }
+      - text: .
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown ] }
+  - lineNumber: 18
+    sourceText: Inline `code span` and a [link text](https://example.com "title").
+    segments:
+      - text: 'Inline '
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.raw.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, markup.inline.raw.string.markdown ] }
+      - text: code span
+        textmate: { scope: markup.inline.raw.string.markdown, rest: [ text.html.markdown, meta.paragraph.markdown ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.raw.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, markup.inline.raw.string.markdown ] }
+      - text: ' and a '
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.link.title.begin.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.inline.markdown ] }
+      - text: link text
+        textmate: { scope: string.other.link.title.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.inline.markdown ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.link.title.end.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.inline.markdown ] }
+      - text: (
+        textmate: { scope: punctuation.definition.metadata.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.inline.markdown ] }
+      - text: https://example.com
+        textmate: { scope: markup.underline.link.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.inline.markdown ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.inline.markdown, string.other.link.description.title.markdown ] }
+      - text: title
+        textmate: { scope: string.other.link.description.title.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.inline.markdown ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.inline.markdown, string.other.link.description.title.markdown ] }
+      - text: )
+        textmate: { scope: punctuation.definition.metadata.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.inline.markdown ] }
+      - text: .
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown ] }
+  - lineNumber: 20
+    sourceText: Other url <fake@example.com>
+    segments:
+      - text: 'Other url '
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown ] }
+      - text: <
+        textmate: { scope: punctuation.definition.link.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.email.lt-gt.markdown ] }
+      - text: fake@example.com
+        textmate: { scope: markup.underline.link.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.email.lt-gt.markdown ] }
+      - text: '>'
+        textmate: { scope: meta.link.email.lt-gt.markdown, rest: [ text.html.markdown, meta.paragraph.markdown ] }
+  - lineNumber: 22
+    sourceText: <fake@example.com>
+    segments:
+      - text: <
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.markdown, meta.tag.other.unrecognized.html.derivative ] }
+      - text: fake@example.com
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.markdown, meta.tag.other.unrecognized.html.derivative ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.markdown, meta.tag.other.unrecognized.html.derivative ] }
+  - lineNumber: 24
+    sourceText: '> Blockquote with **bold** inside.'
+    segments:
+      - text: '>'
+        textmate: { scope: punctuation.definition.quote.begin.markdown, rest: [ text.html.markdown, markup.quote.markdown ] }
+      - text: 'Blockquote with '
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown, markup.quote.markdown ] }
+      - text: '**'
+        textmate: { scope: punctuation.definition.bold.markdown, rest: [ text.html.markdown, markup.quote.markdown, meta.paragraph.markdown, markup.bold.markdown ] }
+      - text: bold
+        textmate: { scope: markup.bold.markdown, rest: [ text.html.markdown, markup.quote.markdown, meta.paragraph.markdown ] }
+      - text: '**'
+        textmate: { scope: punctuation.definition.bold.markdown, rest: [ text.html.markdown, markup.quote.markdown, meta.paragraph.markdown, markup.bold.markdown ] }
+      - text: ' inside.'
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown, markup.quote.markdown ] }
+  - lineNumber: 26
+    sourceText: Example [hobbit-hole][123]
+    segments:
+      - text: 'Example '
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.link.title.begin.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.reference.markdown ] }
+      - text: hobbit-hole
+        textmate: { scope: string.other.link.title.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.reference.markdown ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.link.title.end.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.reference.markdown ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.constant.begin.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.reference.markdown ] }
+      - text: '123'
+        textmate: { scope: constant.other.reference.link.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.reference.markdown ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.constant.end.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.link.reference.markdown ] }
+  - lineNumber: 28
+    sourceText: '- Bullet item'
+    segments:
+      - text: '-'
+        textmate: { scope: punctuation.definition.list.begin.markdown, rest: [ text.html.markdown, markup.list.unnumbered.markdown ] }
+      - text: Bullet item
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown, markup.list.unnumbered.markdown ] }
+  - lineNumber: 29
+    sourceText: '  - Nested bullet'
+    segments:
+      - text: '-'
+        textmate: { scope: punctuation.definition.list.begin.markdown, rest: [ text.html.markdown, markup.list.unnumbered.markdown, markup.list.unnumbered.markdown ] }
+      - text: Nested bullet
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown, markup.list.unnumbered.markdown, markup.list.unnumbered.markdown ] }
+  - lineNumber: 30
+    sourceText: '    - Deep nested'
+    segments:
+      - text: '-'
+        textmate: { scope: punctuation.definition.list.begin.markdown, rest: [ text.html.markdown, markup.list.unnumbered.markdown, markup.list.unnumbered.markdown ] }
+      - text: Deep nested
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown, markup.list.unnumbered.markdown, markup.list.unnumbered.markdown ] }
+  - lineNumber: 32
+    sourceText: 1. Ordered item
+    segments:
+      - text: '1.'
+        textmate: { scope: punctuation.definition.list.begin.markdown, rest: [ text.html.markdown, markup.list.numbered.markdown ] }
+      - text: Ordered item
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown, markup.list.numbered.markdown ] }
+  - lineNumber: 33
+    sourceText: '   1. Nested ordered'
+    segments:
+      - text: '1.'
+        textmate: { scope: punctuation.definition.list.begin.markdown, rest: [ text.html.markdown, markup.list.numbered.markdown, markup.list.numbered.markdown ] }
+      - text: Nested ordered
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown, markup.list.numbered.markdown, markup.list.numbered.markdown ] }
+  - lineNumber: 34
+    sourceText: 2. Second item
+    segments:
+      - text: '2.'
+        textmate: { scope: punctuation.definition.list.begin.markdown, rest: [ text.html.markdown, markup.list.numbered.markdown ] }
+      - text: Second item
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown, markup.list.numbered.markdown ] }
+  - lineNumber: 35
+    sourceText: '   - Mixed nested'
+    segments:
+      - text: '-'
+        textmate: { scope: punctuation.definition.list.begin.markdown, rest: [ text.html.markdown, markup.list.numbered.markdown, markup.list.unnumbered.markdown ] }
+      - text: Mixed nested
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown, markup.list.numbered.markdown, markup.list.unnumbered.markdown ] }
+  - lineNumber: 37
+    sourceText: '- [x] Done task'
+    segments:
+      - text: '-'
+        textmate: { scope: punctuation.definition.list.begin.markdown, rest: [ text.html.markdown, markup.list.unnumbered.markdown ] }
+      - text: '['
+        textmate: { scope: punctuation.definition.link.title.begin.markdown, rest: [ text.html.markdown, markup.list.unnumbered.markdown, meta.paragraph.markdown, meta.link.reference.markdown ] }
+      - text: x
+        textmate: { scope: string.other.link.title.markdown, rest: [ text.html.markdown, markup.list.unnumbered.markdown, meta.paragraph.markdown, meta.link.reference.markdown ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.link.title.end.markdown, rest: [ text.html.markdown, markup.list.unnumbered.markdown, meta.paragraph.markdown, meta.link.reference.markdown ] }
+      - text: ' Done task'
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown, markup.list.unnumbered.markdown ] }
+  - lineNumber: 38
+    sourceText: '- [ ] Pending task'
+    segments:
+      - text: '-'
+        textmate: { scope: punctuation.definition.list.begin.markdown, rest: [ text.html.markdown, markup.list.unnumbered.markdown ] }
+      - text: '[ ] Pending task'
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown, markup.list.unnumbered.markdown ] }
+  - lineNumber: 40
+    sourceText: '| Name | Type | Default |'
+    segments:
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: Name
+        textmate: { scope: markup.table.markdown, rest: [ text.html.markdown ] }
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: Type
+        textmate: { scope: markup.table.markdown, rest: [ text.html.markdown ] }
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: Default
+        textmate: { scope: markup.table.markdown, rest: [ text.html.markdown ] }
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+  - lineNumber: 41
+    sourceText: '|---|:---:|---:|'
+    segments:
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: ---
+        textmate: { scope: punctuation.separator.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: ':---:'
+        textmate: { scope: punctuation.separator.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: '---:'
+        textmate: { scope: punctuation.separator.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+  - lineNumber: 42
+    sourceText: '| `host` | string <br> other | `localhost` |'
+    segments:
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.raw.markdown, rest: [ text.html.markdown, markup.table.markdown, markup.inline.raw.string.markdown ] }
+      - text: host
+        textmate: { scope: markup.inline.raw.string.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.raw.markdown, rest: [ text.html.markdown, markup.table.markdown, markup.inline.raw.string.markdown ] }
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: string <br> other
+        textmate: { scope: markup.table.markdown, rest: [ text.html.markdown ] }
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.raw.markdown, rest: [ text.html.markdown, markup.table.markdown, markup.inline.raw.string.markdown ] }
+      - text: localhost
+        textmate: { scope: markup.inline.raw.string.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.raw.markdown, rest: [ text.html.markdown, markup.table.markdown, markup.inline.raw.string.markdown ] }
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+  - lineNumber: 43
+    sourceText: '| port | number | "5432.123" |'
+    segments:
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: port
+        textmate: { scope: markup.table.markdown, rest: [ text.html.markdown ] }
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: number
+        textmate: { scope: markup.table.markdown, rest: [ text.html.markdown ] }
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+      - text: '"5432.123"'
+        textmate: { scope: markup.table.markdown, rest: [ text.html.markdown ] }
+      - text: '|'
+        textmate: { scope: punctuation.definition.table.markdown, rest: [ text.html.markdown, markup.table.markdown ] }
+  - lineNumber: 45
+    sourceText: '```kotlin'
+    segments:
+      - text: '```'
+        textmate: { scope: punctuation.definition.markdown, rest: [ text.html.markdown, markup.fenced_code.block.markdown ] }
+      - text: kotlin
+        textmate: { scope: fenced_code.block.language.markdown, rest: [ text.html.markdown, markup.fenced_code.block.markdown ] }
+  - lineNumber: 46
+    sourceText: val x = 1
+    segments:
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ text.html.markdown, markup.fenced_code.block.markdown, meta.embedded.block.kotlin ] }
+      - text: ' x '
+        textmate: { scope: meta.embedded.block.kotlin, rest: [ text.html.markdown, markup.fenced_code.block.markdown ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ text.html.markdown, markup.fenced_code.block.markdown, meta.embedded.block.kotlin ] }
+      - text: '1'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ text.html.markdown, markup.fenced_code.block.markdown, meta.embedded.block.kotlin ] }
+  - lineNumber: 47
+    sourceText: '```'
+    segments:
+      - text: '```'
+        textmate: { scope: punctuation.definition.markdown, rest: [ text.html.markdown, markup.fenced_code.block.markdown ] }
+  - lineNumber: 49
+    sourceText: '```text'
+    segments:
+      - text: '```'
+        textmate: { scope: punctuation.definition.markdown, rest: [ text.html.markdown, markup.fenced_code.block.markdown ] }
+      - text: text
+        textmate: { scope: fenced_code.block.language, rest: [ text.html.markdown, markup.fenced_code.block.markdown ] }
+  - lineNumber: 50
+    sourceText: some text
+    segments:
+      - text: some text
+        textmate: { scope: markup.fenced_code.block.markdown, rest: [ text.html.markdown ] }
+  - lineNumber: 51
+    sourceText: some other text
+    segments:
+      - text: some other text
+        textmate: { scope: markup.fenced_code.block.markdown, rest: [ text.html.markdown ] }
+  - lineNumber: 52
+    sourceText: '```'
+    segments:
+      - text: '```'
+        textmate: { scope: punctuation.definition.markdown, rest: [ text.html.markdown, markup.fenced_code.block.markdown ] }
+  - lineNumber: 54
+    sourceText: ---
+    segments:
+      - text: ---
+        textmate: { scope: meta.separator.markdown, rest: [ text.html.markdown ] }
+  - lineNumber: 56
+    sourceText: 'Image ref: ![alt text](image.png)'
+    segments:
+      - text: 'Image ref: '
+        textmate: { scope: meta.paragraph.markdown, rest: [ text.html.markdown ] }
+      - text: '!['
+        textmate: { scope: punctuation.definition.link.description.begin.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.image.inline.markdown ] }
+      - text: alt text
+        textmate: { scope: string.other.link.description.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.image.inline.markdown ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.link.description.end.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.image.inline.markdown ] }
+      - text: (
+        textmate: { scope: punctuation.definition.metadata.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.image.inline.markdown ] }
+      - text: image.png
+        textmate: { scope: markup.underline.link.image.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.image.inline.markdown ] }
+      - text: )
+        textmate: { scope: punctuation.definition.metadata.markdown, rest: [ text.html.markdown, meta.paragraph.markdown, meta.image.inline.markdown ] }
+  - lineNumber: 58
+    sourceText: '[123]: https://en.wikipedia.org/wiki/Hobbit#Lifestyle'
+    segments:
+      - text: '['
+        textmate: { scope: punctuation.definition.constant.markdown, rest: [ text.html.markdown, meta.link.reference.def.markdown ] }
+      - text: '123'
+        textmate: { scope: constant.other.reference.link.markdown, rest: [ text.html.markdown, meta.link.reference.def.markdown ] }
+      - text: ']'
+        textmate: { scope: punctuation.definition.constant.markdown, rest: [ text.html.markdown, meta.link.reference.def.markdown ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.key-value.markdown, rest: [ text.html.markdown, meta.link.reference.def.markdown ] }
+      - text: https://en.wikipedia.org/wiki/Hobbit#Lifestyle
+        textmate: { scope: markup.underline.link.markdown, rest: [ text.html.markdown, meta.link.reference.def.markdown ] }

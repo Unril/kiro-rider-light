@@ -1,0 +1,1985 @@
+schema: token-scope-export/v1
+note: Semantic tokens come from VS Code built-in semantic-token commands. TextMate scopes are re-tokenized from the contributed grammar.
+positionEncoding: { lines: 1-based, columns: 0-based, endColumn: exclusive }
+exportedAt: 2026-03-20T22:19:24.761Z
+source:
+  languageId: kotlin
+  version: 176
+grammar: source.kotlin
+semanticLegend:
+  tokenTypes:
+    - namespace
+    - class
+    - enum
+    - interface
+    - struct
+    - typeParameter
+    - type
+    - parameter
+    - variable
+    - property
+    - enumMember
+    - event
+    - function
+    - method
+    - macro
+    - keyword
+    - modifier
+    - comment
+    - string
+    - number
+    - regexp
+    - operator
+    - decorator
+  tokenModifiers:
+    - declaration
+    - definition
+    - readonly
+    - static
+    - deprecated
+    - abstract
+    - async
+    - modification
+    - documentation
+    - defaultLibrary
+stats: { lineCount: 116, semanticTokenCount: 245, textmateTokenCount: 757, exportedSegmentCount: 717 }
+lines:
+  - lineNumber: 1
+    sourceText: '@file:JvmName("KtGeneric")'
+    segments:
+      - text: '@'
+        textmate: { scope: punctuation.definition.annotation.kotlin, rest: [ source.kotlin, meta.annotation.kotlin ] }
+      - text: file
+        textmate: { scope: source.kotlin }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: JvmName
+        textmate: { scope: source.kotlin }
+        semantic: { type: method }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: KtGeneric
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: )
+        textmate: { scope: source.kotlin }
+  - lineNumber: 2
+    sourceText: '@file:Suppress("UNUSED_VARIABLE")'
+    segments:
+      - text: '@'
+        textmate: { scope: punctuation.definition.annotation.kotlin, rest: [ source.kotlin, meta.annotation.kotlin ] }
+      - text: file
+        textmate: { scope: source.kotlin }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Suppress
+        textmate: { scope: source.kotlin }
+        semantic: { type: method }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: UNUSED_VARIABLE
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: )
+        textmate: { scope: source.kotlin }
+  - lineNumber: 4
+    sourceText: package examples
+    segments:
+      - text: package
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: examples
+        textmate: { scope: source.kotlin }
+        semantic: { type: namespace }
+  - lineNumber: 6
+    sourceText: import java.io.Closeable
+    segments:
+      - text: import
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: java
+        textmate: { scope: source.kotlin }
+        semantic: { type: namespace }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: io
+        textmate: { scope: source.kotlin }
+        semantic: { type: namespace }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Closeable
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface, modifiers: [ abstract ] }
+  - lineNumber: 7
+    sourceText: import kotlin.math.PI
+    segments:
+      - text: import
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: kotlin
+        textmate: { scope: source.kotlin }
+        semantic: { type: namespace }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: math
+        textmate: { scope: source.kotlin }
+        semantic: { type: namespace }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: PI
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ readonly, static, defaultLibrary ] }
+  - lineNumber: 8
+    sourceText: import kotlin.math.sqrt
+    segments:
+      - text: import
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: kotlin
+        textmate: { scope: source.kotlin }
+        semantic: { type: namespace }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: math
+        textmate: { scope: source.kotlin }
+        semantic: { type: namespace }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: sqrt
+        textmate: { scope: source.kotlin }
+  - lineNumber: 10
+    sourceText: const val KT_VERSION = "1.0.0"
+    segments:
+      - text: const
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: KT_VERSION
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ declaration, readonly, static ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: 1.0.0
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+  - lineNumber: 11
+    sourceText: private const val MAX_RETRIES = 3
+    segments:
+      - text: private
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: const
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: MAX_RETRIES
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ declaration, readonly, static ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: '3'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ source.kotlin ] }
+  - lineNumber: 13
+    sourceText: typealias KtPredicate<T> = (T) -> Boolean
+    segments:
+      - text: typealias
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: KtPredicate
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface, modifiers: [ declaration, abstract, defaultLibrary ] }
+      - text: <
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: T
+        textmate: { scope: source.kotlin }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ' ('
+        textmate: { scope: source.kotlin }
+      - text: T
+        textmate: { scope: source.kotlin }
+        semantic: { type: typeParameter }
+      - text: ') '
+        textmate: { scope: source.kotlin }
+      - text: ->
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Boolean
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+  - lineNumber: 15
+    sourceText: '@Target(AnnotationTarget.CLASS, AnnotationTarget.FUNCTION)'
+    segments:
+      - text: '@'
+        textmate: { scope: punctuation.definition.annotation.kotlin, rest: [ source.kotlin, meta.annotation.kotlin ] }
+      - text: Target
+        textmate: { scope: source.kotlin }
+        semantic: { type: method }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: AnnotationTarget
+        textmate: { scope: source.kotlin }
+        semantic: { type: enum, modifiers: [ defaultLibrary ] }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: CLASS
+        textmate: { scope: source.kotlin }
+        semantic: { type: enumMember, modifiers: [ readonly, defaultLibrary ] }
+      - text: ', '
+        textmate: { scope: source.kotlin }
+      - text: AnnotationTarget
+        textmate: { scope: source.kotlin }
+        semantic: { type: enum, modifiers: [ defaultLibrary ] }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: FUNCTION
+        textmate: { scope: source.kotlin }
+        semantic: { type: enumMember, modifiers: [ readonly, defaultLibrary ] }
+      - text: )
+        textmate: { scope: source.kotlin }
+  - lineNumber: 16
+    sourceText: '@Retention(AnnotationRetention.RUNTIME)'
+    segments:
+      - text: '@'
+        textmate: { scope: punctuation.definition.annotation.kotlin, rest: [ source.kotlin, meta.annotation.kotlin ] }
+      - text: Retention
+        textmate: { scope: source.kotlin }
+        semantic: { type: method }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: AnnotationRetention
+        textmate: { scope: source.kotlin }
+        semantic: { type: enum, modifiers: [ defaultLibrary ] }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: RUNTIME
+        textmate: { scope: source.kotlin }
+        semantic: { type: enumMember, modifiers: [ readonly, defaultLibrary ] }
+      - text: )
+        textmate: { scope: source.kotlin }
+  - lineNumber: 17
+    sourceText: 'annotation class KtTracked(val label: String = "")'
+    segments:
+      - text: annotation
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: class
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: KtTracked
+        textmate: { scope: source.kotlin }
+        semantic: { type: decorator, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: label
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: String
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: )
+        textmate: { scope: source.kotlin }
+  - lineNumber: 19
+    sourceText: 'enum class KtRole(val level: Int) {'
+    segments:
+      - text: enum
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: class
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: KtRole
+        textmate: { scope: source.kotlin }
+        semantic: { type: enum, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: level
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Int
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: ) {
+        textmate: { scope: source.kotlin }
+  - lineNumber: 20
+    sourceText: '  ADMIN(3) {'
+    segments:
+      - text: ADMIN
+        textmate: { scope: source.kotlin }
+        semantic: { type: enumMember, modifiers: [ declaration, readonly ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: '3'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ source.kotlin ] }
+      - text: ) {
+        textmate: { scope: source.kotlin }
+  - lineNumber: 21
+    sourceText: '    override fun display() = "Administrator"'
+    segments:
+      - text: override
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: fun
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: display
+        textmate: { scope: source.kotlin }
+        semantic: { type: method, modifiers: [ declaration ] }
+      - text: '() '
+        textmate: { scope: source.kotlin }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: Administrator
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+  - lineNumber: 22
+    sourceText: '  };'
+    segments:
+      - text: '  };'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 24
+    sourceText: '  abstract fun display(): String'
+    segments:
+      - text: abstract
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: fun
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: display
+        textmate: { scope: source.kotlin }
+        semantic: { type: method, modifiers: [ declaration, abstract ] }
+      - text: ()
+        textmate: { scope: source.kotlin }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: String
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+  - lineNumber: 25
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 27
+    sourceText: sealed interface KtResult<out T> {
+    segments:
+      - text: sealed
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: interface
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: KtResult
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface, modifiers: [ declaration ] }
+      - text: <
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: 'out '
+        textmate: { scope: source.kotlin }
+      - text: T
+        textmate: { scope: source.kotlin }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ' {'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 28
+    sourceText: '  data class Success<T>(val value: T) : KtResult<T>'
+    segments:
+      - text: data
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: class
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: Success
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct, modifiers: [ declaration ] }
+      - text: <
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: T
+        textmate: { scope: source.kotlin }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: value
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: T
+        textmate: { scope: source.kotlin }
+        semantic: { type: typeParameter }
+      - text: ') '
+        textmate: { scope: source.kotlin }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtResult
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface }
+      - text: <
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: T
+        textmate: { scope: source.kotlin }
+        semantic: { type: typeParameter }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+  - lineNumber: 30
+    sourceText: '  data object Loading : KtResult<Nothing>'
+    segments:
+      - text: data
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: object
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: Loading
+        textmate: { scope: source.kotlin }
+        semantic: { type: type, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtResult
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface }
+      - text: <
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Nothing
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+  - lineNumber: 31
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 33
+    sourceText: '@JvmInline'
+    segments:
+      - text: '@'
+        textmate: { scope: punctuation.definition.annotation.kotlin, rest: [ source.kotlin, meta.annotation.kotlin ] }
+      - text: JvmInline
+        textmate: { scope: source.kotlin }
+        semantic: { type: method }
+  - lineNumber: 34
+    sourceText: 'value class KtUserId(val value: Long) {'
+    segments:
+      - text: value
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: class
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: KtUserId
+        textmate: { scope: source.kotlin }
+        semantic: { type: class, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: value
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Long
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: ) {
+        textmate: { scope: source.kotlin }
+  - lineNumber: 35
+    sourceText: '  init {'
+    segments:
+      - text: init
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: ' {'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 36
+    sourceText: '    require(value > 0) { "UserId must be positive: $value" }'
+    segments:
+      - text: require
+        textmate: { scope: source.kotlin }
+        semantic: { type: function, modifiers: [ static, defaultLibrary ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: value
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ defaultLibrary ] }
+      - text: '0'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ source.kotlin ] }
+      - text: ') { '
+        textmate: { scope: source.kotlin }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: 'UserId must be positive: '
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.kotlin ] }
+      - text: $
+        textmate: { scope: variable.other.interpolated.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: value
+        textmate: { scope: variable.other.interpolated.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: ' }'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 37
+    sourceText: '  }'
+    segments:
+      - text: '  }'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 38
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 40
+    sourceText: interface KtRepository<in ID, out T> {
+    segments:
+      - text: interface
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: KtRepository
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface, modifiers: [ declaration, abstract ] }
+      - text: <
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: in
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+      - text: ID
+        textmate: { scope: source.kotlin }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: ', out '
+        textmate: { scope: source.kotlin }
+      - text: T
+        textmate: { scope: source.kotlin }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ' {'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 41
+    sourceText: '  fun findById(id: ID): T?'
+    segments:
+      - text: fun
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: findById
+        textmate: { scope: source.kotlin }
+        semantic: { type: method, modifiers: [ declaration, abstract ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: id
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ID
+        textmate: { scope: source.kotlin }
+        semantic: { type: typeParameter }
+      - text: )
+        textmate: { scope: source.kotlin }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: T
+        textmate: { scope: source.kotlin }
+        semantic: { type: typeParameter }
+      - text: '?'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+  - lineNumber: 42
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 44
+    sourceText: '@KtTracked(label = "entity")'
+    segments:
+      - text: '@'
+        textmate: { scope: punctuation.definition.annotation.kotlin, rest: [ source.kotlin, meta.annotation.kotlin ] }
+      - text: KtTracked
+        textmate: { scope: source.kotlin }
+        semantic: { type: method }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: label
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: entity
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: )
+        textmate: { scope: source.kotlin }
+  - lineNumber: 45
+    sourceText: 'data class KtUser(val id: KtUserId, val name: String, val roles: Set<KtRole> = emptySet())'
+    segments:
+      - text: data
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: class
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: KtUser
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: id
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtUserId
+        textmate: { scope: source.kotlin }
+        semantic: { type: class }
+      - text: ', '
+        textmate: { scope: source.kotlin }
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: name
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: String
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: ', '
+        textmate: { scope: source.kotlin }
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: roles
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Set
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: interface, modifiers: [ abstract, defaultLibrary ] }
+      - text: <
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtRole
+        textmate: { scope: source.kotlin }
+        semantic: { type: enum }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: emptySet
+        textmate: { scope: source.kotlin }
+        semantic: { type: function, modifiers: [ static, defaultLibrary ] }
+      - text: ())
+        textmate: { scope: source.kotlin }
+  - lineNumber: 47
+    sourceText: 'open class KtUserRepository(val number: Long, other: Long) : KtRepository<KtUserId, KtUser>, Closeable {'
+    segments:
+      - text: open
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: class
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: KtUserRepository
+        textmate: { scope: source.kotlin }
+        semantic: { type: class, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: number
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Long
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: ', '
+        textmate: { scope: source.kotlin }
+      - text: other
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Long
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: ') '
+        textmate: { scope: source.kotlin }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtRepository
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface, modifiers: [ abstract ] }
+      - text: <
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtUserId
+        textmate: { scope: source.kotlin }
+        semantic: { type: class }
+      - text: ', '
+        textmate: { scope: source.kotlin }
+      - text: KtUser
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ', '
+        textmate: { scope: source.kotlin }
+      - text: Closeable
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface, modifiers: [ abstract ] }
+      - text: ' {'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 48
+    sourceText: '  private val store = mutableMapOf<Long, KtUser>()'
+    segments:
+      - text: private
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: store
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: mutableMapOf
+        textmate: { scope: source.kotlin }
+        semantic: { type: function, modifiers: [ static, defaultLibrary ] }
+      - text: <
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Long
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: ', '
+        textmate: { scope: source.kotlin }
+      - text: KtUser
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ()
+        textmate: { scope: source.kotlin }
+  - lineNumber: 49
+    sourceText: '  var lastAccess: Long = 0L + number + other'
+    segments:
+      - text: var
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: lastAccess
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ declaration, modification ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Long
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ' 0L '
+        textmate: { scope: source.kotlin }
+      - text: +
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ defaultLibrary ] }
+      - text: number
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: +
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ defaultLibrary ] }
+      - text: other
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+  - lineNumber: 50
+    sourceText: '    private set'
+    segments:
+      - text: private
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: set
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+  - lineNumber: 52
+    sourceText: '  lateinit var label: String'
+    segments:
+      - text: lateinit
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: var
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: label
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ declaration, modification ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: String
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+  - lineNumber: 53
+    sourceText: '  val size: Int by lazy { store.size }'
+    segments:
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: size
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Int
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: by
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+      - text: lazy
+        textmate: { scope: source.kotlin }
+        semantic: { type: function, modifiers: [ static, defaultLibrary ] }
+      - text: ' { '
+        textmate: { scope: source.kotlin }
+      - text: store
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: size
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ readonly, abstract, defaultLibrary ] }
+      - text: ' }'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 55
+    sourceText: '  override fun findById(id: KtUserId): KtUser? = store[id.value + number]'
+    segments:
+      - text: override
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: fun
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: findById
+        textmate: { scope: source.kotlin }
+        semantic: { type: method, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: id
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtUserId
+        textmate: { scope: source.kotlin }
+        semantic: { type: class }
+      - text: )
+        textmate: { scope: source.kotlin }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtUser
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct }
+      - text: '?'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: store
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: '['
+        textmate: { scope: source.kotlin }
+      - text: id
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: value
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: +
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ defaultLibrary ] }
+      - text: number
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: ']'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 57
+    sourceText: '  override fun close() {}'
+    segments:
+      - text: override
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: fun
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: close
+        textmate: { scope: source.kotlin }
+        semantic: { type: method, modifiers: [ declaration ] }
+      - text: () {}
+        textmate: { scope: source.kotlin }
+  - lineNumber: 59
+    sourceText: '  inner class Snapshot {'
+    segments:
+      - text: '  inner '
+        textmate: { scope: source.kotlin }
+      - text: class
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: Snapshot
+        textmate: { scope: source.kotlin }
+        semantic: { type: class, modifiers: [ declaration ] }
+      - text: ' {'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 60
+    sourceText: '    val count'
+    segments:
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: count
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ declaration, readonly ] }
+  - lineNumber: 61
+    sourceText: '      get() = store.size'
+    segments:
+      - text: get
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+      - text: '() '
+        textmate: { scope: source.kotlin }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: store
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: size
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ readonly, abstract, defaultLibrary ] }
+  - lineNumber: 62
+    sourceText: '  }'
+    segments:
+      - text: '  }'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 64
+    sourceText: '  companion object {'
+    segments:
+      - text: companion
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: object
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: ' {'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 65
+    sourceText: '    const val TABLE_NAME = "users"'
+    segments:
+      - text: const
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: TABLE_NAME
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: users
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+  - lineNumber: 67
+    sourceText: '    fun create(): KtUserRepository = KtUserRepository(1, 123)'
+    segments:
+      - text: fun
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: create
+        textmate: { scope: source.kotlin }
+        semantic: { type: method, modifiers: [ declaration ] }
+      - text: ()
+        textmate: { scope: source.kotlin }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtUserRepository
+        textmate: { scope: source.kotlin }
+        semantic: { type: class }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtUserRepository
+        textmate: { scope: source.kotlin }
+        semantic: { type: method }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: '1'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ source.kotlin ] }
+      - text: ', '
+        textmate: { scope: source.kotlin }
+      - text: '123'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ source.kotlin ] }
+      - text: )
+        textmate: { scope: source.kotlin }
+  - lineNumber: 68
+    sourceText: '  }'
+    segments:
+      - text: '  }'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 69
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 71
+    sourceText: 'class KtCachedRepository(delegate: KtUserRepository) : KtRepository<KtUserId, KtUser> by delegate'
+    segments:
+      - text: class
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: KtCachedRepository
+        textmate: { scope: source.kotlin }
+        semantic: { type: class, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: delegate
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtUserRepository
+        textmate: { scope: source.kotlin }
+        semantic: { type: class }
+      - text: ') '
+        textmate: { scope: source.kotlin }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtRepository
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface, modifiers: [ abstract ] }
+      - text: <
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtUserId
+        textmate: { scope: source.kotlin }
+        semantic: { type: class }
+      - text: ', '
+        textmate: { scope: source.kotlin }
+      - text: KtUser
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: by
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+      - text: delegate
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+  - lineNumber: 73
+    sourceText: 'fun KtUser.displayName(): String = "id=${id.value}"'
+    segments:
+      - text: fun
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: KtUser
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: displayName
+        textmate: { scope: source.kotlin }
+        semantic: { type: function, modifiers: [ declaration, static ] }
+      - text: ()
+        textmate: { scope: source.kotlin }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: String
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: id=
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.kotlin ] }
+      - text: ${
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: id
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin, variable.other.interpolated.expression.kotlin ] }
+      - text: value
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: '}'
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+  - lineNumber: 75
+    sourceText: 'val KtUser.isAdmin: Boolean'
+    segments:
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: KtUser
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: isAdmin
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ declaration, readonly, static ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Boolean
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+  - lineNumber: 76
+    sourceText: '  get() = KtRole.ADMIN in roles'
+    segments:
+      - text: get
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+      - text: '() '
+        textmate: { scope: source.kotlin }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtRole
+        textmate: { scope: source.kotlin }
+        semantic: { type: enum }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ADMIN
+        textmate: { scope: source.kotlin }
+        semantic: { type: enumMember, modifiers: [ readonly ] }
+      - text: in
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ abstract, defaultLibrary ] }
+      - text: roles
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ readonly ] }
+  - lineNumber: 78
+    sourceText: 'operator fun KtUser.plus(role: KtRole): KtUser = copy(roles = roles + role)'
+    segments:
+      - text: operator
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: fun
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: KtUser
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: plus
+        textmate: { scope: source.kotlin }
+        semantic: { type: operator, modifiers: [ declaration, static ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: role
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtRole
+        textmate: { scope: source.kotlin }
+        semantic: { type: enum }
+      - text: )
+        textmate: { scope: source.kotlin }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtUser
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: copy
+        textmate: { scope: source.kotlin }
+        semantic: { type: method }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: roles
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: roles
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: +
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ static, defaultLibrary ] }
+      - text: role
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: )
+        textmate: { scope: source.kotlin }
+  - lineNumber: 80
+    sourceText: 'infix fun KtUser.hasRole(role: KtRole): Boolean = role in roles'
+    segments:
+      - text: infix
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: fun
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: KtUser
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: hasRole
+        textmate: { scope: source.kotlin }
+        semantic: { type: function, modifiers: [ declaration, static ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: role
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtRole
+        textmate: { scope: source.kotlin }
+        semantic: { type: enum }
+      - text: )
+        textmate: { scope: source.kotlin }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Boolean
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: role
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: in
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ abstract, defaultLibrary ] }
+      - text: roles
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ readonly ] }
+  - lineNumber: 82
+    sourceText: 'inline fun <reified T> ktTypeName(): String = T::class.simpleName ?: "Unknown"'
+    segments:
+      - text: inline
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: fun
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: <
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: reified
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: T
+        textmate: { scope: source.kotlin }
+        semantic: { type: typeParameter, modifiers: [ declaration ] }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ktTypeName
+        textmate: { scope: source.kotlin }
+        semantic: { type: function, modifiers: [ declaration, static ] }
+      - text: ()
+        textmate: { scope: source.kotlin }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: String
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: T
+        textmate: { scope: source.kotlin }
+        semantic: { type: typeParameter }
+      - text: '::'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: class
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: simpleName
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ readonly, abstract, defaultLibrary ] }
+      - text: '?'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: Unknown
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+  - lineNumber: 84
+    sourceText: 'tailrec fun ktFactorial(n: Int, acc: Long = 1L): Long ='
+    segments:
+      - text: tailrec
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: fun
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: ktFactorial
+        textmate: { scope: source.kotlin }
+        semantic: { type: function, modifiers: [ declaration, static ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: n
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Int
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: ', '
+        textmate: { scope: source.kotlin }
+      - text: acc
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Long
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ' 1L)'
+        textmate: { scope: source.kotlin }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Long
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+  - lineNumber: 85
+    sourceText: '    if (n <= 1) acc else ktFactorial(n - 1, acc * n)'
+    segments:
+      - text: if
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+      - text: ' ('
+        textmate: { scope: source.kotlin }
+      - text: n
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: <=
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ defaultLibrary ] }
+      - text: '1'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ source.kotlin ] }
+      - text: ') '
+        textmate: { scope: source.kotlin }
+      - text: acc
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: else
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+      - text: ktFactorial
+        textmate: { scope: source.kotlin }
+        semantic: { type: function, modifiers: [ static ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: n
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: '-'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ defaultLibrary ] }
+      - text: '1'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ source.kotlin ] }
+      - text: ', '
+        textmate: { scope: source.kotlin }
+      - text: acc
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: '*'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ defaultLibrary ] }
+      - text: n
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: )
+        textmate: { scope: source.kotlin }
+  - lineNumber: 87
+    sourceText: 'suspend fun ktFetch(id: KtUserId, repo: KtRepository<KtUserId, KtUser>): KtResult<KtUser> ='
+    segments:
+      - text: suspend
+        textmate: { scope: storage.modifier.kotlin, rest: [ source.kotlin ] }
+      - text: fun
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: ktFetch
+        textmate: { scope: source.kotlin }
+        semantic: { type: function, modifiers: [ declaration, static, async ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: id
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtUserId
+        textmate: { scope: source.kotlin }
+        semantic: { type: class }
+      - text: ', '
+        textmate: { scope: source.kotlin }
+      - text: repo
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtRepository
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface, modifiers: [ abstract ] }
+      - text: <
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtUserId
+        textmate: { scope: source.kotlin }
+        semantic: { type: class }
+      - text: ', '
+        textmate: { scope: source.kotlin }
+      - text: KtUser
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: )
+        textmate: { scope: source.kotlin }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtResult
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface }
+      - text: <
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtUser
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+  - lineNumber: 88
+    sourceText: '    repo.findById(id)?.let { KtResult.Success(it) } ?: KtResult.Loading'
+    segments:
+      - text: repo
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: findById
+        textmate: { scope: source.kotlin }
+        semantic: { type: method, modifiers: [ abstract ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: id
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: )
+        textmate: { scope: source.kotlin }
+      - text: '?'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: let
+        textmate: { scope: source.kotlin }
+        semantic: { type: function, modifiers: [ static, defaultLibrary ] }
+      - text: ' { '
+        textmate: { scope: source.kotlin }
+      - text: KtResult
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Success
+        textmate: { scope: source.kotlin }
+        semantic: { type: method }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: it
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: ') } '
+        textmate: { scope: source.kotlin }
+      - text: '?'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtResult
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Loading
+        textmate: { scope: source.kotlin }
+        semantic: { type: type }
+  - lineNumber: 90
+    sourceText: '// showcase: literals, control flow, variable mutation, string templates'
+    segments:
+      - text: '// showcase: literals, control flow, variable mutation, string templates'
+        textmate: { scope: comment.line.double-slash.kotlin, rest: [ source.kotlin ] }
+  - lineNumber: 91
+    sourceText: 'fun ktShowcase(result: KtResult<KtUser>, any: Any?) {'
+    segments:
+      - text: fun
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: ktShowcase
+        textmate: { scope: source.kotlin }
+        semantic: { type: function, modifiers: [ declaration, static ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: result
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtResult
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface }
+      - text: <
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtUser
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ', '
+        textmate: { scope: source.kotlin }
+      - text: any
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Any
+        textmate: { scope: support.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: '?'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ) {
+        textmate: { scope: source.kotlin }
+  - lineNumber: 92
+    sourceText: '  val msg ='
+    segments:
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: msg
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+  - lineNumber: 93
+    sourceText: '      when (result) {'
+    segments:
+      - text: when
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+      - text: ' ('
+        textmate: { scope: source.kotlin }
+      - text: result
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: ) {
+        textmate: { scope: source.kotlin }
+  - lineNumber: 94
+    sourceText: '        is KtResult.Success -> {'
+    segments:
+      - text: is
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+      - text: KtResult
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Success
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct }
+      - text: ->
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ' {'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 95
+    sourceText: '          val (id, name) = result.value'
+    segments:
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: ' ('
+        textmate: { scope: source.kotlin }
+      - text: id
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ declaration, readonly ] }
+      - text: ', '
+        textmate: { scope: source.kotlin }
+      - text: name
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ declaration, readonly ] }
+      - text: ') '
+        textmate: { scope: source.kotlin }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: result
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: value
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: property, modifiers: [ readonly ] }
+  - lineNumber: 96
+    sourceText: '          "ok: ${id.value} $name"'
+    segments:
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: 'ok: '
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.kotlin ] }
+      - text: ${
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: id
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+        semantic: { type: variable, modifiers: [ readonly ] }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin, variable.other.interpolated.expression.kotlin ] }
+      - text: value
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: '}'
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: $
+        textmate: { scope: variable.other.interpolated.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: name
+        textmate: { scope: variable.other.interpolated.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+        semantic: { type: variable, modifiers: [ readonly ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+  - lineNumber: 97
+    sourceText: '        }'
+    segments:
+      - text: '        }'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 98
+    sourceText: '        KtResult.Loading -> "loading"'
+    segments:
+      - text: KtResult
+        textmate: { scope: source.kotlin }
+        semantic: { type: interface }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Loading
+        textmate: { scope: source.kotlin }
+        semantic: { type: type }
+      - text: ->
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: loading
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+  - lineNumber: 99
+    sourceText: '      }'
+    segments:
+      - text: '      }'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 100
+    sourceText: '  val safe = (any as? KtUser)?.roles ?: emptySet<KtRole>()'
+    segments:
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: safe
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ' ('
+        textmate: { scope: source.kotlin }
+      - text: any
+        textmate: { scope: source.kotlin }
+        semantic: { type: parameter, modifiers: [ readonly ] }
+      - text: as
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+      - text: '?'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtUser
+        textmate: { scope: source.kotlin }
+        semantic: { type: struct }
+      - text: )
+        textmate: { scope: source.kotlin }
+      - text: '?'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: roles
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ readonly ] }
+      - text: '?'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: emptySet
+        textmate: { scope: source.kotlin }
+        semantic: { type: function, modifiers: [ static, defaultLibrary ] }
+      - text: <
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: KtRole
+        textmate: { scope: source.kotlin }
+        semantic: { type: enum }
+      - text: '>'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ()
+        textmate: { scope: source.kotlin }
+  - lineNumber: 101
+    sourceText: '  val hex = 0xFF'
+    segments:
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: hex
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: '0xFF'
+        textmate: { scope: constant.numeric.hex.kotlin, rest: [ source.kotlin ] }
+  - lineNumber: 102
+    sourceText: '  val float = 3.14f + 1.234 + 1e4f + 1e5 + 1f + 112340L + 1234123'
+    segments:
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: float
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: '3'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ source.kotlin ] }
+      - text: .
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: '14f '
+        textmate: { scope: source.kotlin }
+      - text: +
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ defaultLibrary ] }
+      - text: '1.234'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ source.kotlin ] }
+      - text: +
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ defaultLibrary ] }
+      - text: ' 1e4f '
+        textmate: { scope: source.kotlin }
+      - text: +
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ defaultLibrary ] }
+      - text: '1e5'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ source.kotlin ] }
+      - text: +
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ defaultLibrary ] }
+      - text: ' 1f '
+        textmate: { scope: source.kotlin }
+      - text: +
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ defaultLibrary ] }
+      - text: ' 112340L '
+        textmate: { scope: source.kotlin }
+      - text: +
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+        semantic: { type: operator, modifiers: [ defaultLibrary ] }
+      - text: '1234123'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ source.kotlin ] }
+  - lineNumber: 103
+    sourceText: "  val ch = 'K'"
+    segments:
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: ch
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: " 'K'"
+        textmate: { scope: source.kotlin }
+  - lineNumber: 104
+    sourceText: '  val raw = """multi\nline"""'
+    segments:
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: raw
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: '"""'
+        textmate: { scope: punctuation.definition.string.begin.kotlin, rest: [ source.kotlin, string.quoted.triple.kotlin ] }
+      - text: multi
+        textmate: { scope: string.quoted.triple.kotlin, rest: [ source.kotlin ] }
+      - text: \n
+        textmate: { scope: constant.character.escape.kotlin, rest: [ source.kotlin, string.quoted.triple.kotlin ] }
+      - text: line
+        textmate: { scope: string.quoted.triple.kotlin, rest: [ source.kotlin ] }
+      - text: '"""'
+        textmate: { scope: punctuation.definition.string.end.kotlin, rest: [ source.kotlin, string.quoted.triple.kotlin ] }
+  - lineNumber: 105
+    sourceText: '  val tmpl = "sqrt=${sqrt(2.0)} pi=${PI}"'
+    segments:
+      - text: val
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: tmpl
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: sqrt=
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.kotlin ] }
+      - text: ${
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: sqrt
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+        semantic: { type: function, modifiers: [ static, defaultLibrary ] }
+      - text: (
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: '2.0'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin, variable.other.interpolated.expression.kotlin ] }
+      - text: )
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: '}'
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: ' pi='
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.kotlin ] }
+      - text: ${
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: PI
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+        semantic: { type: property, modifiers: [ readonly, static, defaultLibrary ] }
+      - text: '}'
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+  - lineNumber: 106
+    sourceText: '  var last: Throwable? = null'
+    segments:
+      - text: var
+        textmate: { scope: storage.type.kotlin, rest: [ source.kotlin ] }
+      - text: last
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ declaration, modification ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Throwable
+        textmate: { scope: source.kotlin }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: '?'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: 'null'
+        textmate: { scope: constant.language.kotlin, rest: [ source.kotlin ] }
+  - lineNumber: 107
+    sourceText: '  for (i in 0 until MAX_RETRIES) {'
+    segments:
+      - text: for
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+      - text: ' ('
+        textmate: { scope: source.kotlin }
+      - text: i
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ declaration, readonly ] }
+      - text: in
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+      - text: '0'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ source.kotlin ] }
+      - text: until
+        textmate: { scope: source.kotlin }
+        semantic: { type: function, modifiers: [ static, defaultLibrary ] }
+      - text: MAX_RETRIES
+        textmate: { scope: source.kotlin }
+        semantic: { type: property, modifiers: [ readonly, static ] }
+      - text: ) {
+        textmate: { scope: source.kotlin }
+  - lineNumber: 108
+    sourceText: '    try {'
+    segments:
+      - text: try
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+      - text: ' {'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 109
+    sourceText: '      ktFactorial(i)'
+    segments:
+      - text: ktFactorial
+        textmate: { scope: source.kotlin }
+        semantic: { type: function, modifiers: [ static ] }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: i
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ readonly ] }
+      - text: )
+        textmate: { scope: source.kotlin }
+  - lineNumber: 110
+    sourceText: '    } catch (e: Exception) {'
+    segments:
+      - text: '    } '
+        textmate: { scope: source.kotlin }
+      - text: catch
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+      - text: ' ('
+        textmate: { scope: source.kotlin }
+      - text: e
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ declaration, readonly ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: Exception
+        textmate: { scope: source.kotlin }
+        semantic: { type: class }
+      - text: ) {
+        textmate: { scope: source.kotlin }
+  - lineNumber: 111
+    sourceText: '      last = e'
+    segments:
+      - text: last
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ modification ] }
+      - text: =
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: e
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ readonly ] }
+  - lineNumber: 112
+    sourceText: '    }'
+    segments:
+      - text: '    }'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 113
+    sourceText: '  }'
+    segments:
+      - text: '  }'
+        textmate: { scope: source.kotlin }
+  - lineNumber: 114
+    sourceText: '  throw last ?: IllegalStateException("failed after ${MAX_RETRIES + 1} retries")'
+    segments:
+      - text: throw
+        textmate: { scope: keyword.control.kotlin, rest: [ source.kotlin ] }
+      - text: last
+        textmate: { scope: source.kotlin }
+        semantic: { type: variable, modifiers: [ modification ] }
+      - text: '?'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin ] }
+      - text: IllegalStateException
+        textmate: { scope: source.kotlin }
+        semantic: { type: method }
+      - text: (
+        textmate: { scope: source.kotlin }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: 'failed after '
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.kotlin ] }
+      - text: ${
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: MAX_RETRIES
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+        semantic: { type: property, modifiers: [ readonly, static ] }
+      - text: +
+        textmate: { scope: keyword.operator.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin, variable.other.interpolated.expression.kotlin ] }
+        semantic: { type: operator, modifiers: [ defaultLibrary ] }
+      - text: '1'
+        textmate: { scope: constant.numeric.decimal.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin, variable.other.interpolated.expression.kotlin ] }
+      - text: '}'
+        textmate: { scope: variable.other.interpolated.expression.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: ' retries'
+        textmate: { scope: string.quoted.double.kotlin, rest: [ source.kotlin ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.kotlin, rest: [ source.kotlin, string.quoted.double.kotlin ] }
+      - text: )
+        textmate: { scope: source.kotlin }
+  - lineNumber: 115
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: source.kotlin }

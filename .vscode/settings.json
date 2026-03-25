@@ -1,0 +1,7 @@
+{
+    "kiroAgent.trustedCommands": [
+        "*"
+    ],
+    "pylint.cwd": "${workspaceFolder}/theme_gen",
+    "basedpyright.analysis.configFilePath": "${workspaceFolder}/theme_gen"
+}

@@ -1,0 +1,882 @@
+schema: token-scope-export/v1
+note: Semantic tokens come from VS Code built-in semantic-token commands. TextMate scopes are re-tokenized from the contributed grammar.
+positionEncoding: { lines: 1-based, columns: 0-based, endColumn: exclusive }
+exportedAt: 2026-03-20T18:19:06.304Z
+source:
+  languageId: javascript
+  version: 18
+grammar: source.js
+semanticLegend:
+  tokenTypes:
+    - class
+    - enum
+    - interface
+    - namespace
+    - typeParameter
+    - type
+    - parameter
+    - variable
+    - enumMember
+    - property
+    - function
+    - method
+  tokenModifiers:
+    - declaration
+    - static
+    - async
+    - readonly
+    - defaultLibrary
+    - local
+stats: { lineCount: 53, semanticTokenCount: 73, textmateTokenCount: 474, exportedSegmentCount: 326 }
+lines:
+  - lineNumber: 1
+    sourceText: /** Generic syntax showcase for JavaScript token scopes. */
+    segments:
+      - text: /**
+        textmate: { scope: punctuation.definition.comment.js, rest: [ source.js, comment.block.documentation.js ] }
+      - text: ' Generic syntax showcase for JavaScript token scopes. '
+        textmate: { scope: comment.block.documentation.js, rest: [ source.js ] }
+      - text: '*/'
+        textmate: { scope: punctuation.definition.comment.js, rest: [ source.js, comment.block.documentation.js ] }
+  - lineNumber: 3
+    sourceText: const JS_MAX_RETRIES = 3;
+    segments:
+      - text: const
+        textmate: { scope: storage.type.js, rest: [ source.js, meta.var.expr.js ] }
+      - text: JS_MAX_RETRIES
+        textmate: { scope: variable.other.constant.js, rest: [ source.js, meta.var.expr.js, meta.var-single-variable.expr.js, meta.definition.variable.js ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.js, rest: [ source.js, meta.var.expr.js ] }
+      - text: '3'
+        textmate: { scope: constant.numeric.decimal.js, rest: [ source.js, meta.var.expr.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js ] }
+  - lineNumber: 5
+    sourceText: const JsRole = Object.freeze({
+    segments:
+      - text: const
+        textmate: { scope: storage.type.js, rest: [ source.js, meta.var.expr.js ] }
+      - text: JsRole
+        textmate: { scope: variable.other.constant.js, rest: [ source.js, meta.var.expr.js, meta.var-single-variable.expr.js, meta.definition.variable.js ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.js, rest: [ source.js, meta.var.expr.js ] }
+      - text: Object
+        textmate: { scope: variable.other.object.js, rest: [ source.js, meta.var.expr.js, meta.function-call.js ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.var.expr.js, meta.function-call.js ] }
+      - text: freeze
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.var.expr.js, meta.function-call.js ] }
+        semantic: { type: method, modifiers: [ defaultLibrary ] }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.var.expr.js ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.var.expr.js, meta.objectliteral.js ] }
+  - lineNumber: 6
+    sourceText: '  Admin: "ADMIN",'
+    segments:
+      - text: Admin
+        textmate: { scope: meta.object-literal.key.js, rest: [ source.js, meta.var.expr.js, meta.objectliteral.js, meta.object.member.js ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.key-value.js, rest: [ source.js, meta.var.expr.js, meta.objectliteral.js, meta.object.member.js, meta.object-literal.key.js ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.js, rest: [ source.js, meta.var.expr.js, meta.objectliteral.js, meta.object.member.js, string.quoted.double.js ] }
+      - text: ADMIN
+        textmate: { scope: string.quoted.double.js, rest: [ source.js, meta.var.expr.js, meta.objectliteral.js, meta.object.member.js ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.js, rest: [ source.js, meta.var.expr.js, meta.objectliteral.js, meta.object.member.js, string.quoted.double.js ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.js, rest: [ source.js, meta.var.expr.js, meta.objectliteral.js ] }
+  - lineNumber: 7
+    sourceText: '});'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.var.expr.js, meta.objectliteral.js ] }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.var.expr.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js ] }
+  - lineNumber: 9
+    sourceText: class JsUserRepository {
+    segments:
+      - text: class
+        textmate: { scope: storage.type.class.js, rest: [ source.js, meta.class.js ] }
+      - text: JsUserRepository
+        textmate: { scope: entity.name.type.class.js, rest: [ source.js, meta.class.js ] }
+        semantic: { type: class, modifiers: [ declaration ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.class.js ] }
+  - lineNumber: 10
+    sourceText: '  #store = new Map();'
+    segments:
+      - text: '#store'
+        textmate: { scope: variable.object.property.js, rest: [ source.js, meta.class.js, meta.field.declaration.js, meta.definition.property.js ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.js, rest: [ source.js, meta.class.js, meta.field.declaration.js ] }
+      - text: new
+        textmate: { scope: keyword.operator.new.js, rest: [ source.js, meta.class.js, meta.field.declaration.js, new.expr.js ] }
+      - text: Map
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.class.js, meta.field.declaration.js, new.expr.js, meta.function-call.js ] }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.class.js, meta.field.declaration.js, new.expr.js ] }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.class.js, meta.field.declaration.js, new.expr.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.class.js ] }
+  - lineNumber: 12
+    sourceText: '  findById(id) {'
+    segments:
+      - text: findById
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.definition.method.js ] }
+        semantic: { type: method, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.parameters.js ] }
+      - text: id
+        textmate: { scope: variable.parameter.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.parameters.js ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.parameters.js ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+  - lineNumber: 13
+    sourceText: '    return this.#store.get(id);'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+      - text: this
+        textmate: { scope: variable.language.this.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: '#store'
+        textmate: { scope: variable.other.object.property.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: get
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+      - text: id
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+        semantic: { type: parameter }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+  - lineNumber: 14
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+  - lineNumber: 16
+    sourceText: '  save(entity) {'
+    segments:
+      - text: save
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.definition.method.js ] }
+        semantic: { type: method, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.parameters.js ] }
+      - text: entity
+        textmate: { scope: variable.parameter.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.parameters.js ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.parameters.js ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+  - lineNumber: 17
+    sourceText: '    this.#store.set(entity.id, entity);'
+    segments:
+      - text: this
+        textmate: { scope: variable.language.this.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: '#store'
+        textmate: { scope: variable.other.object.property.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: set
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+      - text: entity
+        textmate: { scope: variable.other.object.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+        semantic: { type: parameter }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+      - text: id
+        textmate: { scope: variable.other.property.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+      - text: entity
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+        semantic: { type: parameter }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+  - lineNumber: 18
+    sourceText: '    return entity;'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+      - text: entity
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+        semantic: { type: parameter }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+  - lineNumber: 19
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+  - lineNumber: 21
+    sourceText: '  findAll() {'
+    segments:
+      - text: findAll
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.definition.method.js ] }
+        semantic: { type: method, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.parameters.js ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.parameters.js ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+  - lineNumber: 22
+    sourceText: '    return Array.from(this.#store.values());'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+      - text: Array
+        textmate: { scope: variable.other.object.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: from
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+      - text: this
+        textmate: { scope: variable.language.this.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: '#store'
+        textmate: { scope: variable.other.object.property.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: values
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js, meta.function-call.js ] }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+  - lineNumber: 23
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.class.js, meta.method.declaration.js, meta.block.js ] }
+  - lineNumber: 24
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.class.js ] }
+  - lineNumber: 26
+    sourceText: const jsDisplayName = ({ name, id }) => `${name} (id=${id})`;
+    segments:
+      - text: const
+        textmate: { scope: storage.type.js, rest: [ source.js, meta.var.expr.js ] }
+      - text: jsDisplayName
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.var.expr.js, meta.var-single-variable.expr.js, meta.definition.variable.js, variable.other.constant.js ] }
+        semantic: { type: function, modifiers: [ declaration, readonly ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.js, rest: [ source.js, meta.var.expr.js ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.js, rest: [ source.js, meta.var.expr.js, meta.arrow.js, meta.parameters.js ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.binding-pattern.object.js, rest: [ source.js, meta.var.expr.js, meta.arrow.js, meta.parameters.js, meta.parameter.object-binding-pattern.js ] }
+      - text: name
+        textmate: { scope: variable.parameter.js, rest: [ source.js, meta.var.expr.js, meta.arrow.js, meta.parameters.js, meta.parameter.object-binding-pattern.js ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.js, rest: [ source.js, meta.var.expr.js, meta.arrow.js, meta.parameters.js, meta.parameter.object-binding-pattern.js ] }
+      - text: id
+        textmate: { scope: variable.parameter.js, rest: [ source.js, meta.var.expr.js, meta.arrow.js, meta.parameters.js, meta.parameter.object-binding-pattern.js ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.binding-pattern.object.js, rest: [ source.js, meta.var.expr.js, meta.arrow.js, meta.parameters.js, meta.parameter.object-binding-pattern.js ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.js, rest: [ source.js, meta.var.expr.js, meta.arrow.js, meta.parameters.js ] }
+      - text: =>
+        textmate: { scope: storage.type.function.arrow.js, rest: [ source.js, meta.var.expr.js, meta.arrow.js ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.string.template.begin.js, rest: [ source.js, meta.var.expr.js, string.template.js ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.js, rest: [ source.js, meta.var.expr.js, string.template.js, meta.template.expression.js ] }
+      - text: name
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.var.expr.js, string.template.js, meta.template.expression.js, meta.embedded.line.js ] }
+        semantic: { type: parameter }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.js, rest: [ source.js, meta.var.expr.js, string.template.js, meta.template.expression.js ] }
+      - text: ' (id='
+        textmate: { scope: string.template.js, rest: [ source.js, meta.var.expr.js ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.js, rest: [ source.js, meta.var.expr.js, string.template.js, meta.template.expression.js ] }
+      - text: id
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.var.expr.js, string.template.js, meta.template.expression.js, meta.embedded.line.js ] }
+        semantic: { type: parameter }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.js, rest: [ source.js, meta.var.expr.js, string.template.js, meta.template.expression.js ] }
+      - text: )
+        textmate: { scope: string.template.js, rest: [ source.js, meta.var.expr.js ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.string.template.end.js, rest: [ source.js, meta.var.expr.js, string.template.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js ] }
+  - lineNumber: 28
+    sourceText: async function jsRetry(block, maxAttempts = JS_MAX_RETRIES) {
+    segments:
+      - text: async
+        textmate: { scope: storage.modifier.async.js, rest: [ source.js, meta.function.js ] }
+      - text: function
+        textmate: { scope: storage.type.function.js, rest: [ source.js, meta.function.js ] }
+      - text: jsRetry
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.function.js, meta.definition.function.js ] }
+        semantic: { type: function, modifiers: [ declaration, async ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.js, rest: [ source.js, meta.function.js, meta.parameters.js ] }
+      - text: block
+        textmate: { scope: variable.parameter.js, rest: [ source.js, meta.function.js, meta.parameters.js ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.parameter.js, rest: [ source.js, meta.function.js, meta.parameters.js ] }
+      - text: maxAttempts
+        textmate: { scope: variable.parameter.js, rest: [ source.js, meta.function.js, meta.parameters.js ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.js, rest: [ source.js, meta.function.js, meta.parameters.js ] }
+      - text: JS_MAX_RETRIES
+        textmate: { scope: variable.other.constant.js, rest: [ source.js, meta.function.js, meta.parameters.js ] }
+        semantic: { type: variable, modifiers: [ readonly ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.js, rest: [ source.js, meta.function.js, meta.parameters.js ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+  - lineNumber: 29
+    sourceText: '  let last;'
+    segments:
+      - text: let
+        textmate: { scope: storage.type.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: last
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.var-single-variable.expr.js, meta.definition.variable.js ] }
+        semantic: { type: variable, modifiers: [ declaration, local ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+  - lineNumber: 30
+    sourceText: '  for (let i = 0; i < maxAttempts; i++) {'
+    segments:
+      - text: for
+        textmate: { scope: keyword.control.loop.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+      - text: let
+        textmate: { scope: storage.type.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: i
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.var-single-variable.expr.js, meta.definition.variable.js ] }
+        semantic: { type: variable, modifiers: [ declaration, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: '0'
+        textmate: { scope: constant.numeric.decimal.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+      - text: i
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+        semantic: { type: variable, modifiers: [ local ] }
+      - text: <
+        textmate: { scope: keyword.operator.relational.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+      - text: maxAttempts
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+        semantic: { type: parameter }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+      - text: i
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+        semantic: { type: variable, modifiers: [ local ] }
+      - text: ++
+        textmate: { scope: keyword.operator.increment.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js ] }
+  - lineNumber: 31
+    sourceText: '    try {'
+    segments:
+      - text: try
+        textmate: { scope: keyword.control.trycatch.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+  - lineNumber: 32
+    sourceText: '      return await block();'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+      - text: await
+        textmate: { scope: keyword.control.flow.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+      - text: block
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js, meta.function-call.js ] }
+        semantic: { type: function }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+  - lineNumber: 33
+    sourceText: '    } catch (e) {'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+      - text: catch
+        textmate: { scope: keyword.control.trycatch.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js ] }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js ] }
+      - text: e
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js ] }
+        semantic: { type: variable, modifiers: [ declaration, local ] }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+  - lineNumber: 34
+    sourceText: '      last = e instanceof Error ? e : new Error(String(e));'
+    segments:
+      - text: last
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+        semantic: { type: variable, modifiers: [ local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+      - text: e
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+        semantic: { type: variable, modifiers: [ local ] }
+      - text: instanceof
+        textmate: { scope: keyword.operator.expression.instanceof.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+      - text: Error
+        textmate: { scope: entity.name.type.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: '?'
+        textmate: { scope: keyword.operator.ternary.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+      - text: e
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+        semantic: { type: variable, modifiers: [ local ] }
+      - text: ':'
+        textmate: { scope: keyword.operator.ternary.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+      - text: new
+        textmate: { scope: keyword.operator.new.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js, new.expr.js ] }
+      - text: Error
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js, new.expr.js, meta.function-call.js ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js, new.expr.js ] }
+      - text: String
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js, new.expr.js, meta.function-call.js ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js, new.expr.js ] }
+      - text: e
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js, new.expr.js ] }
+        semantic: { type: variable, modifiers: [ local ] }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js, new.expr.js ] }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js, new.expr.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+  - lineNumber: 35
+    sourceText: '    }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js, meta.block.js ] }
+  - lineNumber: 36
+    sourceText: '  }'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.function.js, meta.block.js, meta.block.js ] }
+  - lineNumber: 37
+    sourceText: '  throw last ?? new Error(`failed after ${maxAttempts} attempts`);'
+    segments:
+      - text: throw
+        textmate: { scope: keyword.control.trycatch.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+      - text: last
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+        semantic: { type: variable, modifiers: [ local ] }
+      - text: ??
+        textmate: { scope: keyword.operator.logical.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+      - text: new
+        textmate: { scope: keyword.operator.new.js, rest: [ source.js, meta.function.js, meta.block.js, new.expr.js ] }
+      - text: Error
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.function.js, meta.block.js, new.expr.js, meta.function-call.js ] }
+        semantic: { type: class, modifiers: [ defaultLibrary ] }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, new.expr.js ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.string.template.begin.js, rest: [ source.js, meta.function.js, meta.block.js, new.expr.js, string.template.js ] }
+      - text: 'failed after '
+        textmate: { scope: string.template.js, rest: [ source.js, meta.function.js, meta.block.js, new.expr.js ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.js, rest: [ source.js, meta.function.js, meta.block.js, new.expr.js, string.template.js, meta.template.expression.js ] }
+      - text: maxAttempts
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js, new.expr.js, string.template.js, meta.template.expression.js, meta.embedded.line.js ] }
+        semantic: { type: parameter }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.js, rest: [ source.js, meta.function.js, meta.block.js, new.expr.js, string.template.js, meta.template.expression.js ] }
+      - text: ' attempts'
+        textmate: { scope: string.template.js, rest: [ source.js, meta.function.js, meta.block.js, new.expr.js ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.string.template.end.js, rest: [ source.js, meta.function.js, meta.block.js, new.expr.js, string.template.js ] }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, new.expr.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+  - lineNumber: 38
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+  - lineNumber: 40
+    sourceText: '/** Showcase: object literal, spread, optional chaining, array methods. */'
+    segments:
+      - text: /**
+        textmate: { scope: punctuation.definition.comment.js, rest: [ source.js, comment.block.documentation.js ] }
+      - text: ' Showcase: object literal, spread, optional chaining, array methods. '
+        textmate: { scope: comment.block.documentation.js, rest: [ source.js ] }
+      - text: '*/'
+        textmate: { scope: punctuation.definition.comment.js, rest: [ source.js, comment.block.documentation.js ] }
+  - lineNumber: 41
+    sourceText: function jsShowcase(obj, repo) {
+    segments:
+      - text: function
+        textmate: { scope: storage.type.function.js, rest: [ source.js, meta.function.js ] }
+      - text: jsShowcase
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.function.js, meta.definition.function.js ] }
+        semantic: { type: function, modifiers: [ declaration ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.js, rest: [ source.js, meta.function.js, meta.parameters.js ] }
+      - text: obj
+        textmate: { scope: variable.parameter.js, rest: [ source.js, meta.function.js, meta.parameters.js ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.parameter.js, rest: [ source.js, meta.function.js, meta.parameters.js ] }
+      - text: repo
+        textmate: { scope: variable.parameter.js, rest: [ source.js, meta.function.js, meta.parameters.js ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.js, rest: [ source.js, meta.function.js, meta.parameters.js ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+  - lineNumber: 42
+    sourceText: '  const user = repo.findById(1);'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: user
+        textmate: { scope: variable.other.constant.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.var-single-variable.expr.js, meta.definition.variable.js ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: repo
+        textmate: { scope: variable.other.object.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.function-call.js ] }
+        semantic: { type: parameter }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.function-call.js ] }
+      - text: findById
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.function-call.js ] }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: '1'
+        textmate: { scope: constant.numeric.decimal.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+  - lineNumber: 43
+    sourceText: '  const name = user?.name ?? "anonymous";'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: name
+        textmate: { scope: variable.other.constant.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.var-single-variable.expr.js, meta.definition.variable.js ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: user
+        textmate: { scope: variable.other.object.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: ?.
+        textmate: { scope: punctuation.accessor.optional.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: name
+        textmate: { scope: variable.other.property.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: ??
+        textmate: { scope: keyword.operator.logical.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, string.quoted.double.js ] }
+      - text: anonymous
+        textmate: { scope: string.quoted.double.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, string.quoted.double.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+  - lineNumber: 44
+    sourceText: '  const copy = { ...obj, label: name };'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: copy
+        textmate: { scope: variable.other.constant.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.var-single-variable.expr.js, meta.definition.variable.js ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.objectliteral.js ] }
+      - text: ...
+        textmate: { scope: keyword.operator.spread.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.objectliteral.js, meta.object.member.js ] }
+      - text: obj
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.objectliteral.js, meta.object.member.js ] }
+        semantic: { type: parameter }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.objectliteral.js ] }
+      - text: label
+        textmate: { scope: meta.object-literal.key.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.objectliteral.js, meta.object.member.js ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ':'
+        textmate: { scope: punctuation.separator.key-value.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.objectliteral.js, meta.object.member.js, meta.object-literal.key.js ] }
+      - text: name
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.objectliteral.js, meta.object.member.js ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.objectliteral.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+  - lineNumber: 45
+    sourceText: '  const admins = repo.findAll().filter((u) => u.roles?.has(JsRole.Admin));'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: admins
+        textmate: { scope: variable.other.constant.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.var-single-variable.expr.js, meta.definition.variable.js ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: repo
+        textmate: { scope: variable.other.object.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.function-call.js ] }
+        semantic: { type: parameter }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.function-call.js ] }
+      - text: findAll
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.function-call.js ] }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.function-call.js ] }
+      - text: filter
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.function-call.js ] }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: (
+        textmate: { scope: punctuation.definition.parameters.begin.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.arrow.js, meta.parameters.js ] }
+      - text: u
+        textmate: { scope: variable.parameter.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.arrow.js, meta.parameters.js ] }
+        semantic: { type: parameter, modifiers: [ declaration ] }
+      - text: )
+        textmate: { scope: punctuation.definition.parameters.end.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.arrow.js, meta.parameters.js ] }
+      - text: =>
+        textmate: { scope: storage.type.function.arrow.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.arrow.js ] }
+      - text: u
+        textmate: { scope: variable.other.object.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.function-call.js ] }
+        semantic: { type: parameter }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.function-call.js ] }
+      - text: roles
+        textmate: { scope: variable.other.object.property.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.function-call.js ] }
+      - text: ?.
+        textmate: { scope: punctuation.accessor.optional.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.function-call.js ] }
+      - text: has
+        textmate: { scope: entity.name.function.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.function-call.js ] }
+      - text: (
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: JsRole
+        textmate: { scope: variable.other.object.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+        semantic: { type: variable, modifiers: [ readonly ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: Admin
+        textmate: { scope: variable.other.property.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+        semantic: { type: property }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: )
+        textmate: { scope: meta.brace.round.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+  - lineNumber: 46
+    sourceText: '  const hex = 0xff;'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: hex
+        textmate: { scope: variable.other.constant.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.var-single-variable.expr.js, meta.definition.variable.js ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: '0xff'
+        textmate: { scope: constant.numeric.hex.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+  - lineNumber: 47
+    sourceText: '  const fp = 3.14;'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: fp
+        textmate: { scope: variable.other.constant.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.var-single-variable.expr.js, meta.definition.variable.js ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: '3'
+        textmate: { scope: constant.numeric.decimal.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: .
+        textmate: { scope: meta.delimiter.decimal.period.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, constant.numeric.decimal.js ] }
+      - text: '14'
+        textmate: { scope: constant.numeric.decimal.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+  - lineNumber: 48
+    sourceText: '  const ch = "J";'
+    segments:
+      - text: const
+        textmate: { scope: storage.type.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: ch
+        textmate: { scope: variable.other.constant.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, meta.var-single-variable.expr.js, meta.definition.variable.js ] }
+        semantic: { type: variable, modifiers: [ declaration, readonly, local ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, string.quoted.double.js ] }
+      - text: J
+        textmate: { scope: string.quoted.double.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.js, rest: [ source.js, meta.function.js, meta.block.js, meta.var.expr.js, string.quoted.double.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+  - lineNumber: 49
+    sourceText: '  return `${name} ${hex} ${fp} ${ch} ${admins.length} ${copy.label}`;'
+    segments:
+      - text: return
+        textmate: { scope: keyword.control.flow.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.string.template.begin.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js ] }
+      - text: name
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js, meta.embedded.line.js ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js ] }
+      - text: hex
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js, meta.embedded.line.js ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js ] }
+      - text: fp
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js, meta.embedded.line.js ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js ] }
+      - text: ch
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js, meta.embedded.line.js ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js ] }
+      - text: admins
+        textmate: { scope: variable.other.object.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js, meta.embedded.line.js ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js, meta.embedded.line.js ] }
+      - text: length
+        textmate: { scope: support.variable.property.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js, meta.embedded.line.js ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js ] }
+      - text: ${
+        textmate: { scope: punctuation.definition.template-expression.begin.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js ] }
+      - text: copy
+        textmate: { scope: variable.other.object.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js, meta.embedded.line.js ] }
+        semantic: { type: variable, modifiers: [ readonly, local ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js, meta.embedded.line.js ] }
+      - text: label
+        textmate: { scope: variable.other.property.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js, meta.embedded.line.js ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.template-expression.end.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js, meta.template.expression.js ] }
+      - text: '`'
+        textmate: { scope: punctuation.definition.string.template.end.js, rest: [ source.js, meta.function.js, meta.block.js, string.template.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+  - lineNumber: 50
+    sourceText: '}'
+    segments:
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.function.js, meta.block.js ] }
+  - lineNumber: 52
+    sourceText: module.exports = { JsRole, JsUserRepository, jsDisplayName, jsRetry, jsShowcase };
+    segments:
+      - text: module
+        textmate: { scope: support.type.object.module.js, rest: [ source.js ] }
+      - text: .
+        textmate: { scope: punctuation.accessor.js, rest: [ source.js ] }
+      - text: exports
+        textmate: { scope: support.type.object.module.js, rest: [ source.js ] }
+      - text: =
+        textmate: { scope: keyword.operator.assignment.js, rest: [ source.js ] }
+      - text: '{'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.objectliteral.js ] }
+      - text: JsRole
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.objectliteral.js, meta.object.member.js ] }
+        semantic: { type: property, modifiers: [ declaration ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.js, rest: [ source.js, meta.objectliteral.js ] }
+      - text: JsUserRepository
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.objectliteral.js, meta.object.member.js ] }
+        semantic: { type: class, modifiers: [ declaration ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.js, rest: [ source.js, meta.objectliteral.js ] }
+      - text: jsDisplayName
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.objectliteral.js, meta.object.member.js ] }
+        semantic: { type: method, modifiers: [ declaration ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.js, rest: [ source.js, meta.objectliteral.js ] }
+      - text: jsRetry
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.objectliteral.js, meta.object.member.js ] }
+        semantic: { type: method, modifiers: [ declaration ] }
+      - text: ','
+        textmate: { scope: punctuation.separator.comma.js, rest: [ source.js, meta.objectliteral.js ] }
+      - text: jsShowcase
+        textmate: { scope: variable.other.readwrite.js, rest: [ source.js, meta.objectliteral.js, meta.object.member.js ] }
+        semantic: { type: method, modifiers: [ declaration ] }
+      - text: '}'
+        textmate: { scope: punctuation.definition.block.js, rest: [ source.js, meta.objectliteral.js ] }
+      - text: ;
+        textmate: { scope: punctuation.terminator.statement.js, rest: [ source.js ] }

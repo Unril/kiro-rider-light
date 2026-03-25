@@ -1,0 +1,22 @@
+{
+  "name": "kiro-rider-light",
+  "displayName": "kiro-rider-light",
+  "description": "Color theme for KiroIDE based on JetBrains Rider Light theme.",
+  "publisher": "nikolaifedorov",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Kiro Rider Light",
+        "uiTheme": "vs",
+        "path": "./themes/Kiro Rider Light-color-theme.json"
+      }
+    ]
+  }
+}

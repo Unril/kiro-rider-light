@@ -1,0 +1,251 @@
+schema: token-scope-export/v1
+note: Semantic tokens come from VS Code built-in semantic-token commands. TextMate scopes are re-tokenized from the contributed grammar.
+positionEncoding: { lines: 1-based, columns: 0-based, endColumn: exclusive }
+exportedAt: 2026-03-20T18:21:03.685Z
+source:
+  languageId: html
+  version: 1
+grammar: text.html.derivative
+semanticLegend:
+  tokenTypes:
+    - class
+    - enum
+    - interface
+    - namespace
+    - typeParameter
+    - type
+    - parameter
+    - variable
+    - enumMember
+    - property
+    - function
+    - method
+  tokenModifiers:
+    - declaration
+    - static
+    - async
+    - readonly
+    - defaultLibrary
+    - local
+stats: { lineCount: 15, semanticTokenCount: 0, textmateTokenCount: 104, exportedSegmentCount: 89 }
+lines:
+  - lineNumber: 1
+    sourceText: <!DOCTYPE html>
+    segments:
+      - text: <!
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.metadata.doctype.html ] }
+      - text: DOCTYPE
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.metadata.doctype.html ] }
+      - text: html
+        textmate: { scope: entity.other.attribute-name.html, rest: [ text.html.derivative, meta.tag.metadata.doctype.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.metadata.doctype.html ] }
+  - lineNumber: 2
+    sourceText: <html lang="en">
+    segments:
+      - text: <
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.structure.html.start.html ] }
+      - text: html
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.structure.html.start.html ] }
+      - text: lang
+        textmate: { scope: entity.other.attribute-name.html, rest: [ text.html.derivative, meta.tag.structure.html.start.html, meta.attribute.lang.html ] }
+      - text: =
+        textmate: { scope: punctuation.separator.key-value.html, rest: [ text.html.derivative, meta.tag.structure.html.start.html, meta.attribute.lang.html ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.html, rest: [ text.html.derivative, meta.tag.structure.html.start.html, meta.attribute.lang.html, string.quoted.double.html ] }
+      - text: en
+        textmate: { scope: string.quoted.double.html, rest: [ text.html.derivative, meta.tag.structure.html.start.html, meta.attribute.lang.html ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.html, rest: [ text.html.derivative, meta.tag.structure.html.start.html, meta.attribute.lang.html, string.quoted.double.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.structure.html.start.html ] }
+  - lineNumber: 3
+    sourceText: <head>
+    segments:
+      - text: <
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.structure.head.start.html ] }
+      - text: head
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.structure.head.start.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.structure.head.start.html ] }
+  - lineNumber: 4
+    sourceText: '    <meta charset="UTF-8">'
+    segments:
+      - text: <
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.metadata.meta.void.html ] }
+      - text: meta
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.metadata.meta.void.html ] }
+      - text: charset
+        textmate: { scope: entity.other.attribute-name.html, rest: [ text.html.derivative, meta.tag.metadata.meta.void.html, meta.attribute.charset.html ] }
+      - text: =
+        textmate: { scope: punctuation.separator.key-value.html, rest: [ text.html.derivative, meta.tag.metadata.meta.void.html, meta.attribute.charset.html ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.html, rest: [ text.html.derivative, meta.tag.metadata.meta.void.html, meta.attribute.charset.html, string.quoted.double.html ] }
+      - text: UTF-8
+        textmate: { scope: string.quoted.double.html, rest: [ text.html.derivative, meta.tag.metadata.meta.void.html, meta.attribute.charset.html ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.html, rest: [ text.html.derivative, meta.tag.metadata.meta.void.html, meta.attribute.charset.html, string.quoted.double.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.metadata.meta.void.html ] }
+  - lineNumber: 5
+    sourceText: '    <title>User Profile</title>'
+    segments:
+      - text: <
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.metadata.title.start.html ] }
+      - text: title
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.metadata.title.start.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.metadata.title.start.html ] }
+      - text: User Profile
+        textmate: { scope: text.html.derivative }
+      - text: </
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.metadata.title.end.html ] }
+      - text: title
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.metadata.title.end.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.metadata.title.end.html ] }
+  - lineNumber: 6
+    sourceText: </head>
+    segments:
+      - text: </
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.structure.head.end.html ] }
+      - text: head
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.structure.head.end.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.structure.head.end.html ] }
+  - lineNumber: 7
+    sourceText: <body>
+    segments:
+      - text: <
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.structure.body.start.html ] }
+      - text: body
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.structure.body.start.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.structure.body.start.html ] }
+  - lineNumber: 8
+    sourceText: '    <div class="container" id="main">'
+    segments:
+      - text: <
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.structure.div.start.html ] }
+      - text: div
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.structure.div.start.html ] }
+      - text: class
+        textmate: { scope: entity.other.attribute-name.html, rest: [ text.html.derivative, meta.tag.structure.div.start.html, meta.attribute.class.html ] }
+      - text: =
+        textmate: { scope: punctuation.separator.key-value.html, rest: [ text.html.derivative, meta.tag.structure.div.start.html, meta.attribute.class.html ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.html, rest: [ text.html.derivative, meta.tag.structure.div.start.html, meta.attribute.class.html, string.quoted.double.html ] }
+      - text: container
+        textmate: { scope: string.quoted.double.html, rest: [ text.html.derivative, meta.tag.structure.div.start.html, meta.attribute.class.html ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.html, rest: [ text.html.derivative, meta.tag.structure.div.start.html, meta.attribute.class.html, string.quoted.double.html ] }
+      - text: id
+        textmate: { scope: entity.other.attribute-name.html, rest: [ text.html.derivative, meta.tag.structure.div.start.html, meta.attribute.id.html ] }
+      - text: =
+        textmate: { scope: punctuation.separator.key-value.html, rest: [ text.html.derivative, meta.tag.structure.div.start.html, meta.attribute.id.html ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.html, rest: [ text.html.derivative, meta.tag.structure.div.start.html, meta.attribute.id.html, string.quoted.double.html ] }
+      - text: main
+        textmate: { scope: string.quoted.double.html, rest: [ text.html.derivative, meta.tag.structure.div.start.html, meta.attribute.id.html ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.html, rest: [ text.html.derivative, meta.tag.structure.div.start.html, meta.attribute.id.html, string.quoted.double.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.structure.div.start.html ] }
+  - lineNumber: 9
+    sourceText: '        <h1>Hello World</h1>'
+    segments:
+      - text: <
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.structure.h1.start.html ] }
+      - text: h1
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.structure.h1.start.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.structure.h1.start.html ] }
+      - text: Hello World
+        textmate: { scope: text.html.derivative }
+      - text: </
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.structure.h1.end.html ] }
+      - text: h1
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.structure.h1.end.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.structure.h1.end.html ] }
+  - lineNumber: 10
+    sourceText: '        <p data-role="admin">Welcome</p>'
+    segments:
+      - text: <
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.structure.p.start.html ] }
+      - text: p
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.structure.p.start.html ] }
+      - text: data-role
+        textmate: { scope: entity.other.attribute-name.html, rest: [ text.html.derivative, meta.tag.structure.p.start.html, meta.attribute.data-x.data-role.html ] }
+      - text: =
+        textmate: { scope: punctuation.separator.key-value.html, rest: [ text.html.derivative, meta.tag.structure.p.start.html, meta.attribute.data-x.data-role.html ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.html, rest: [ text.html.derivative, meta.tag.structure.p.start.html, meta.attribute.data-x.data-role.html, string.quoted.double.html ] }
+      - text: admin
+        textmate: { scope: string.quoted.double.html, rest: [ text.html.derivative, meta.tag.structure.p.start.html, meta.attribute.data-x.data-role.html ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.html, rest: [ text.html.derivative, meta.tag.structure.p.start.html, meta.attribute.data-x.data-role.html, string.quoted.double.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.structure.p.start.html ] }
+      - text: Welcome
+        textmate: { scope: text.html.derivative }
+      - text: </
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.structure.p.end.html ] }
+      - text: p
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.structure.p.end.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.structure.p.end.html ] }
+  - lineNumber: 11
+    sourceText: '    </div>'
+    segments:
+      - text: </
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.structure.div.end.html ] }
+      - text: div
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.structure.div.end.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.structure.div.end.html ] }
+  - lineNumber: 12
+    sourceText: '    <script src="app.js"></script>'
+    segments:
+      - text: <
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.embedded.block.html, meta.tag.metadata.script.start.html ] }
+      - text: script
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.embedded.block.html, meta.tag.metadata.script.start.html ] }
+      - text: src
+        textmate: { scope: entity.other.attribute-name.html, rest: [ text.html.derivative, meta.embedded.block.html, meta.tag.metadata.script.start.html, meta.attribute.src.html ] }
+      - text: =
+        textmate: { scope: punctuation.separator.key-value.html, rest: [ text.html.derivative, meta.embedded.block.html, meta.tag.metadata.script.start.html, meta.attribute.src.html ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.begin.html, rest: [ text.html.derivative, meta.embedded.block.html, meta.tag.metadata.script.start.html, meta.attribute.src.html, string.quoted.double.html ] }
+      - text: app.js
+        textmate: { scope: string.quoted.double.html, rest: [ text.html.derivative, meta.embedded.block.html, meta.tag.metadata.script.start.html, meta.attribute.src.html ] }
+      - text: '"'
+        textmate: { scope: punctuation.definition.string.end.html, rest: [ text.html.derivative, meta.embedded.block.html, meta.tag.metadata.script.start.html, meta.attribute.src.html, string.quoted.double.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.embedded.block.html, meta.tag.metadata.script.start.html ] }
+      - text: <
+        textmate: { scope: source.js-ignored-vscode, rest: [ text.html.derivative, meta.embedded.block.html, meta.tag.metadata.script.end.html, punctuation.definition.tag.begin.html ] }
+      - text: /
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.embedded.block.html, meta.tag.metadata.script.end.html ] }
+      - text: script
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.embedded.block.html, meta.tag.metadata.script.end.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.embedded.block.html, meta.tag.metadata.script.end.html ] }
+  - lineNumber: 13
+    sourceText: </body>
+    segments:
+      - text: </
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.structure.body.end.html ] }
+      - text: body
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.structure.body.end.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.structure.body.end.html ] }
+  - lineNumber: 14
+    sourceText: </html>
+    segments:
+      - text: </
+        textmate: { scope: punctuation.definition.tag.begin.html, rest: [ text.html.derivative, meta.tag.structure.html.end.html ] }
+      - text: html
+        textmate: { scope: entity.name.tag.html, rest: [ text.html.derivative, meta.tag.structure.html.end.html ] }
+      - text: '>'
+        textmate: { scope: punctuation.definition.tag.end.html, rest: [ text.html.derivative, meta.tag.structure.html.end.html ] }

@@ -1,0 +1,18 @@
+:root {
+    --primary: #3574F0;
+    --spacing: 1rem;
+}
+
+.card {
+    display: flex;
+    padding: var(--spacing);
+    border: 1px solid #E0E0E0;
+}
+
+.card:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .card { padding: 0.5rem; }
+}
