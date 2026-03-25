@@ -1,14 +1,38 @@
 {
   "name": "kiro-rider-light",
-  "displayName": "kiro-rider-light",
-  "description": "Color theme for KiroIDE based on JetBrains Rider Light theme.",
-  "publisher": "nikolaifedorov",
-  "version": "0.0.1",
+  "displayName": "Kiro Rider Light",
+  "description": "Light color theme for VS Code and Kiro IDE inspired by JetBrains Rider Light. OKLCH-based syntax palette with WCAG AA contrast, 465 UI colors, and full terminal ANSI support.",
+  "version": "0.1.0",
+  "publisher": "NikolaiFedorov",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Unril/kiro-rider-light"
+  },
+  "bugs": {
+    "url": "https://github.com/Unril/kiro-rider-light/issues"
+  },
+  "homepage": "https://github.com/Unril/kiro-rider-light",
+  "license": "MIT",
+  "icon": "img/icon.png",
+  "galleryBanner": {
+    "color": "#F2F2F2",
+    "theme": "light"
+  },
   "engines": {
-    "vscode": "^1.100.0"
+    "vscode": "^1.60.0"
   },
   "categories": [
     "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "light",
+    "rider",
+    "jetbrains",
+    "kiro",
+    "kiro-ide",
+    "kotlin",
+    "basedpyright"
   ],
   "contributes": {
     "themes": [

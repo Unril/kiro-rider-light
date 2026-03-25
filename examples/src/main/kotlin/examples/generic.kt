@@ -44,7 +44,8 @@ interface KtRepository<in ID, out T> {
 @KtTracked(label = "entity")
 data class KtUser(val id: KtUserId, val name: String, val roles: Set<KtRole> = emptySet())
 
-open class KtUserRepository(val number: Long, other: Long) : KtRepository<KtUserId, KtUser>, Closeable {
+open class KtUserRepository(val number: Long, other: Long) :
+    KtRepository<KtUserId, KtUser>, Closeable {
   private val store = mutableMapOf<Long, KtUser>()
   var lastAccess: Long = 0L + number + other
     private set
@@ -112,4 +113,32 @@ fun ktShowcase(result: KtResult<KtUser>, any: Any?) {
     }
   }
   throw last ?: IllegalStateException("failed after ${MAX_RETRIES + 1} retries")
+}
+
+// In-memory user repository with pagination support
+class InMemoryUserRepository : KtRepository<KtUserId, KtUser> {
+  private val store = mutableMapOf<KtUserId, KtUser>()
+
+  override fun findById(id: KtUserId): KtUser? = store[id]
+
+  fun save(user: KtUser): KtUser {
+    val existing = store[user.id]
+    if (existing != null && existing.name == user.name) return existing
+    store[user.id] = user
+    return user
+  }
+
+  fun findAll(predicate: KtPredicate<KtUser> = { true }): List<KtUser> =
+      store.values.filter(predicate)
+
+  fun findByRole(role: KtRole): List<KtUser> = findAll { role in it.roles }
+
+  fun count(): Int = store.size
+
+  fun summary(): String {
+    val total = store.size
+    val adminCount = findByRole(KtRole.ADMIN).size
+    val ratio = if (total > 0) adminCount * 100 / total else 0
+    return "Repository: $total users, $adminCount admins ($ratio%)"
+  }
 }
