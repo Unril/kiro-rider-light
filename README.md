@@ -6,24 +6,24 @@ Designed to feel light and clean while keeping syntax readable. Classes, functio
 
 Includes dedicated highlighting scopes for [Kotlin LSP][kotlin-lsp] and [basedpyright][basedpyright], with WCAG AA contrast ratios throughout.
 
-## Screenshots
-
 <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/ui.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/ui.png" alt="Overall UI" width="960"></a>
 
-<img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_kt.png" alt="Kotlin highlighting"> <img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_py.png" alt="Python highlighting">
+<img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_kt.png" alt="Kotlin highlighting">
 
-| | |
-| --- | --- |
-| <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/kt.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/kt.png" alt="Kotlin" width="400"></a> | <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/java.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/java.png" alt="Java" width="400"></a> |
-| Kotlin | Java |
-| <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/ts.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/ts.png" alt="TypeScript" width="400"></a> | <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/js.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/js.png" alt="JavaScript" width="400"></a> |
-| TypeScript | JavaScript |
-| <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/py.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/py.png" alt="Python" width="400"></a> | <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/md.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/md.png" alt="Markdown" width="400"></a> |
-| Python | Markdown |
-| <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/yaml.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/yaml.png" alt="YAML" width="400"></a> | <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/json.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/json.png" alt="JSON" width="400"></a> |
-| YAML | JSON |
-| <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/html.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/html.png" alt="HTML" width="400"></a> | <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/css.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/css.png" alt="CSS" width="400"></a> |
-| HTML | CSS |
+<img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_py.png" alt="Python highlighting">
+
+## Screenshots
+
+- [Kotlin](https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/kt.png)
+- [Java](https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/java.png)
+- [TypeScript](https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/ts.png)
+- [JavaScript](https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/js.png)
+- [Python](https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/py.png)
+- [Markdown](https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/md.png)
+- [YAML](https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/yaml.png)
+- [JSON](https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/json.png)
+- [HTML](https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/html.png)
+- [CSS](https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/css.png)
 
 ## Features
 
@@ -37,20 +37,20 @@ Includes dedicated highlighting scopes for [Kotlin LSP][kotlin-lsp] and [basedpy
 
 ## Syntax palette
 
-| Role | Color |
-| --- | --- |
-| Functions | ![#007561](https://placehold.co/15x15/007561/007561.png) Green |
-| Types / Classes | ![#7922A7](https://placehold.co/15x15/7922A7/7922A7.png) Purple |
-| Keywords | ![#305EDD](https://placehold.co/15x15/305EDD/305EDD.png) Blue |
-| Fields / Properties | ![#00819D](https://placehold.co/15x15/00819D/00819D.png) Teal |
-| Strings | ![#A26955](https://placehold.co/15x15/A26955/A26955.png) Brown |
-| Numbers | ![#C24C82](https://placehold.co/15x15/C24C82/C24C82.png) Magenta |
-| Comments | ![#5C822E](https://placehold.co/15x15/5C822E/5C822E.png) Muted green |
-| Metadata / Annotations | ![#977100](https://placehold.co/15x15/977100/977100.png) Olive |
+| Role                   | Color                                                                |
+| ---------------------- | -------------------------------------------------------------------- |
+| Functions              | ![#007561](https://placehold.co/15x15/007561/007561.png) Green       |
+| Types / Classes        | ![#7922A7](https://placehold.co/15x15/7922A7/7922A7.png) Purple      |
+| Keywords               | ![#305EDD](https://placehold.co/15x15/305EDD/305EDD.png) Blue        |
+| Fields / Properties    | ![#00819D](https://placehold.co/15x15/00819D/00819D.png) Teal        |
+| Strings                | ![#A26955](https://placehold.co/15x15/A26955/A26955.png) Brown       |
+| Numbers                | ![#C24C82](https://placehold.co/15x15/C24C82/C24C82.png) Magenta     |
+| Comments               | ![#5C822E](https://placehold.co/15x15/5C822E/5C822E.png) Muted green |
+| Metadata / Annotations | ![#977100](https://placehold.co/15x15/977100/977100.png) Olive       |
 
 ## Installation
 
-Install from the [VS Code Marketplace][marketplace] or search for "Kiro Rider Light" in the Extensions view.
+Install from the [VS Code Marketplace][marketplace] or [Open VSX][open-vsx], or search for "Kiro Rider Light" in the Extensions view.
 
 Or install a `.vsix` directly:
 
@@ -84,6 +84,7 @@ Pull requests are welcome. Repository: [github.com/Unril/kiro-rider-light][repo]
 MIT
 
 [marketplace]: https://marketplace.visualstudio.com/items?itemName=NikolaiFedorov.kiro-rider-light
+[open-vsx]: https://open-vsx.org/extension/NikolaiFedorov/kiro-rider-light
 [repo]: https://github.com/Unril/kiro-rider-light
 [kotlin-lsp]: https://github.com/Kotlin/kotlin-lsp
 [basedpyright]: https://github.com/detachhead/basedpyright
