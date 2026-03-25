@@ -8,25 +8,21 @@ Includes dedicated highlighting scopes for [Kotlin LSP][kotlin-lsp] and [basedpy
 
 ## Screenshots
 
-<img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/ui.png" alt="Overall UI" width="960">
+<a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/ui.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/ui.png" alt="Overall UI" width="960"></a>
+
+<img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_kt.png" alt="Kotlin highlighting"> <img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_py.png" alt="Python highlighting">
 
 | | |
 | --- | --- |
-| <img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/large_kt.png" alt="Kotlin highlighting" width="480"> | <img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/large_py.png" alt="Python highlighting" width="480"> |
-
-Click any thumbnail below to view the full-size image.
-
-| | |
-| --- | --- |
-| <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/kt.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/kt.png" alt="Kotlin" width="400"></a> | <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/java.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/java.png" alt="Java" width="400"></a> |
+| <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/kt.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/kt.png" alt="Kotlin" width="400"></a> | <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/java.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/java.png" alt="Java" width="400"></a> |
 | Kotlin | Java |
-| <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/ts.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/ts.png" alt="TypeScript" width="400"></a> | <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/js.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/js.png" alt="JavaScript" width="400"></a> |
+| <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/ts.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/ts.png" alt="TypeScript" width="400"></a> | <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/js.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/js.png" alt="JavaScript" width="400"></a> |
 | TypeScript | JavaScript |
-| <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/py.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/py.png" alt="Python" width="400"></a> | <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/md.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/md.png" alt="Markdown" width="400"></a> |
+| <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/py.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/py.png" alt="Python" width="400"></a> | <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/md.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/md.png" alt="Markdown" width="400"></a> |
 | Python | Markdown |
-| <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/yaml.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/yaml.png" alt="YAML" width="400"></a> | <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/json.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/json.png" alt="JSON" width="400"></a> |
+| <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/yaml.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/yaml.png" alt="YAML" width="400"></a> | <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/json.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/json.png" alt="JSON" width="400"></a> |
 | YAML | JSON |
-| <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/html.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/html.png" alt="HTML" width="400"></a> | <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/css.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/main/img/css.png" alt="CSS" width="400"></a> |
+| <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/html.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/html.png" alt="HTML" width="400"></a> | <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/css.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/code/css.png" alt="CSS" width="400"></a> |
 | HTML | CSS |
 
 ## Features
@@ -43,14 +39,14 @@ Click any thumbnail below to view the full-size image.
 
 | Role | Color |
 | --- | --- |
-| Functions | <span style="color:#007561">Green</span> |
-| Types / Classes | <span style="color:#7922A7">Purple</span> |
-| Keywords | <span style="color:#305EDD">Blue</span> |
-| Fields / Properties | <span style="color:#00819D">Teal</span> |
-| Strings | <span style="color:#A26955">Brown</span> |
-| Numbers | <span style="color:#C24C82">Magenta</span> |
-| Comments | <span style="color:#5C822E">Muted green</span> |
-| Metadata / Annotations | <span style="color:#977100">Olive</span> |
+| Functions | ![#007561](https://placehold.co/15x15/007561/007561.png) Green |
+| Types / Classes | ![#7922A7](https://placehold.co/15x15/7922A7/7922A7.png) Purple |
+| Keywords | ![#305EDD](https://placehold.co/15x15/305EDD/305EDD.png) Blue |
+| Fields / Properties | ![#00819D](https://placehold.co/15x15/00819D/00819D.png) Teal |
+| Strings | ![#A26955](https://placehold.co/15x15/A26955/A26955.png) Brown |
+| Numbers | ![#C24C82](https://placehold.co/15x15/C24C82/C24C82.png) Magenta |
+| Comments | ![#5C822E](https://placehold.co/15x15/5C822E/5C822E.png) Muted green |
+| Metadata / Annotations | ![#977100](https://placehold.co/15x15/977100/977100.png) Olive |
 
 ## Installation
 

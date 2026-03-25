@@ -93,3 +93,27 @@ async def py_showcase(obj: object, repo: PyUserRepository) -> str:
     ch = "P"
     raw = math.sqrt(2.0)
     return f"{kind} {hex_val} {fp} {ch} {raw} {names if users else []}"
+
+
+# In-memory user repository with pagination support
+type PyPredicate[U] = Callable[[U], bool]
+
+
+class InMemoryUserRepository(PyUserRepository):
+    """In-memory user repository with pagination support."""
+
+    def find_by_role(self, role: PyRole) -> list[PyUser]:
+        return [u for u in self._store.values() if role in u.roles]
+
+    def find_all_filtered(self, predicate: PyPredicate[PyUser] = lambda _: True) -> list[PyUser]:
+        return [u for u in self._store.values() if predicate(u)]
+
+    @property
+    def count(self) -> int:
+        return len(self._store)
+
+    def summary(self) -> str:
+        total = self.count
+        admin_count = len(self.find_by_role(PyRole.ADMIN))
+        ratio = admin_count * 100 // total if total > 0 else 0
+        return f"Repository: {total} users, {admin_count} admins ({ratio}%)"
