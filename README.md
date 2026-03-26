@@ -6,19 +6,15 @@ A class is always purple, a function is always green, a keyword is always blue -
 
 Includes dedicated highlighting scopes for [Kotlin LSP][kotlin-lsp] and [basedpyright][basedpyright].
 
-## Light
-
 <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/ui.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/ui.png" alt="Light theme UI" width="960"></a>
-
-<img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_kt.png" alt="Kotlin highlighting (light)">
-
-<img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_py.png" alt="Python highlighting (light)">
-
-## Dark
 
 <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/ui_dark.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/ui_dark.png" alt="Dark theme UI" width="960"></a>
 
+<img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_kt.png" alt="Kotlin highlighting (light)">
+
 <img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_kt_dark.png" alt="Kotlin highlighting (dark)">
+
+<img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_py.png" alt="Python highlighting (light)">
 
 <img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_py_dark.png" alt="Python highlighting (dark)">
 
