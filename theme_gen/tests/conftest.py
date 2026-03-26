@@ -32,9 +32,9 @@ from ui.vcs import VcsSection
 from ui.widgets import WidgetSection
 
 
-def generate_theme_dict() -> dict[str, object]:
+def generate_theme_dict(*, is_dark: bool = False) -> dict[str, object]:
     """Full generation pipeline matching main.py -- single source of truth for tests."""
-    theme = Theme.create()
+    theme = Theme.create(is_dark=is_dark)
 
     composition = ColorMapComposition(
         [
@@ -74,10 +74,13 @@ def generate_theme_dict() -> dict[str, object]:
     token_colors = [rule.to_dict() for rule in registry.build_token_colors(theme)]
     semantic_tokens = registry.build_semantic_tokens(theme)
 
+    name = "Kiro Rider Dark" if is_dark else "Kiro Rider Light"
+    theme_type = "dark" if is_dark else "light"
+
     return {
         "$schema": "vscode://schemas/color-theme",
-        "name": "Kiro Rider Light",
-        "type": "light",
+        "name": name,
+        "type": theme_type,
         "semanticHighlighting": True,
         "colors": colors,
         "tokenColors": token_colors,
@@ -87,5 +90,11 @@ def generate_theme_dict() -> dict[str, object]:
 
 @pytest.fixture(scope="session")
 def theme_output() -> dict[str, object]:
-    """Session-scoped fixture: full theme dict generated once per test run."""
+    """Session-scoped fixture: full light theme dict generated once per test run."""
     return generate_theme_dict()
+
+
+@pytest.fixture(scope="session")
+def dark_theme_output() -> dict[str, object]:
+    """Session-scoped fixture: full dark theme dict generated once per test run."""
+    return generate_theme_dict(is_dark=True)

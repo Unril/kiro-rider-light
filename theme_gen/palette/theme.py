@@ -24,22 +24,18 @@ class Theme:
         accent_hue: float = 262.0,
         is_dark: bool = False,
     ) -> Self:
-        """Build full theme chain from accent_hue + variant.
+        """Build full theme chain from accent_hue + variant."""
+        palette = Palette.for_dark(accent_hue) if is_dark else Palette.for_light(accent_hue)
 
-        Palette.for_light -> SyntaxPalette -> EditorPalette -> Theme.
-        Raises NotImplementedError for is_dark=True.
-        """
-        if is_dark:
-            raise NotImplementedError("Dark variant out of scope")
-
-        palette = Palette.for_light(accent_hue)
         syntax = SyntaxPalette.create(
             background=palette.background,
+            foreground=palette.foreground,
+            is_dark=is_dark,
         )
         editor = EditorPalette.create(syntax, palette)
         return cls(
             palette=palette,
             syntax=syntax,
             editor=editor,
-            is_dark=False,
+            is_dark=is_dark,
         )

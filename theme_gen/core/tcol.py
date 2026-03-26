@@ -22,7 +22,7 @@ _CH_G = "green"
 _CH_B = "blue"
 _HEX_ALPHA_LEN = 8
 _LAB_D65 = "lab-d65"
-_MIDPOINT_LIGHTNESS = 0.5
+MIDPOINT_LIGHTNESS = 0.5
 
 
 def _to_oklch(c: Color) -> Color:
@@ -90,9 +90,6 @@ class TCol:
     def from_oklch(cls, lightness: float, chroma: float, hue: float) -> Self:
         """Create from OKLCH components. Hue normalized to 0-360."""
         return cls(Color(_OKLCH, [lightness, chroma, hue % 360]))
-
-    def _oklch_clone(self) -> Color:
-        return self._color.clone()
 
     @property
     def hex(self) -> str:
@@ -206,7 +203,7 @@ class TCol:
 
     def _at_step(self, target_l: float, chroma_scale: float) -> Self:
         """New TCol at target lightness with scaled chroma, preserving hue and alpha."""
-        c = self._oklch_clone()
+        c = self.color
         _ = c.set(_CH_L, target_l)
         _ = c.set(_CH_C, self._c * chroma_scale)
         return type(self)(c)
@@ -258,13 +255,13 @@ class TCol:
 
     def lighten(self, amount: float) -> Self:
         """Increase OKLCH lightness by amount. Clamped to 0.0-1.0."""
-        c = self._oklch_clone()
+        c = self.color
         _ = c.set(_CH_L, min(1.0, c.get(_CH_L) + abs(amount)))
         return type(self)(c)
 
     def darken(self, amount: float) -> Self:
         """Decrease OKLCH lightness by amount. Clamped to 0.0-1.0."""
-        c = self._oklch_clone()
+        c = self.color
         _ = c.set(_CH_L, max(0.0, c.get(_CH_L) - abs(amount)))
         return type(self)(c)
 
@@ -272,7 +269,7 @@ class TCol:
         """Rotate hue by degrees. Returns self unchanged when shift is a full rotation."""
         if math.isclose(degrees % 360, 0.0):
             return self
-        c = self._oklch_clone()
+        c = self.color
         _ = c.set(_CH_H, (self._h + degrees) % 360)
         return type(self)(c)
 
@@ -280,13 +277,18 @@ class TCol:
         """New TCol with absolute chroma value."""
         if chroma < 0.0:
             raise ValueError(f"chroma must be >= 0.0, got {chroma}")
-        c = self._oklch_clone()
+        c = self.color
         _ = c.set(_CH_C, chroma)
         return type(self)(c)
 
     def contrast(self, other: "TCol") -> float:
         """WCAG 2.1 contrast ratio (1.0 to 21.0)."""
-        return self._color.contrast(other._color)  # noqa: SLF001  # pylint: disable=protected-access
+        return self._color.contrast(other.color)
+
+    def mix(self, other: "TCol", amount: float = 0.5) -> Self:
+        """Blend self with other in sRGB space. amount=0 returns self, amount=1 returns other."""
+        mixed = self._color.mix(other.color, amount, space=_SRGB)
+        return type(self)(mixed)
 
     @classmethod
     def from_lab_l(cls, target_lab_l: float, chroma: float, hue: float) -> Self:
@@ -308,8 +310,10 @@ class TCol:
         return cls.from_oklch(ok_l, chroma, hue)
 
     def with_min_contrast(self, bg: "TCol", min_ratio: float) -> Self:
-        """Return self darkened until contrast against bg meets min_ratio.
+        """Return self adjusted until contrast against bg meets min_ratio.
 
+        On a light background (L >= 0.5), darkens the color (searches L downward).
+        On a dark background (L < 0.5), lightens the color (searches L upward).
         Uses scipy.optimize.brentq to find the exact OkLCh L where contrast
         equals min_ratio, preserving hue and chroma precisely.
         Returns self unchanged if it already passes or min_ratio <= 0.
@@ -317,14 +321,16 @@ class TCol:
         if min_ratio <= 0.0 or self.contrast(bg) >= min_ratio:
             return self
 
-        # Contrast is monotonically decreasing as L increases on a light bg.
-        # Find the L where contrast(L) == min_ratio.
         h, c = self._h, self._c
 
         def residual(ok_l: float) -> float:
             return type(self).from_oklch(ok_l, c, h).contrast(bg) - min_ratio
 
-        return type(self).from_oklch(brentq(residual, 0.0, self._l), c, h)
+        if bg.lightness >= MIDPOINT_LIGHTNESS:
+            # Light bg: darken text (search downward from current L to 0)
+            return type(self).from_oklch(brentq(residual, 0.0, self._l), c, h)
+        # Dark bg: lighten text (search upward from current L to 1)
+        return type(self).from_oklch(brentq(residual, self._l, 1.0), c, h)
 
     @override
     def __eq__(self, other: object) -> bool:

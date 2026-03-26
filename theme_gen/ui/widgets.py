@@ -41,6 +41,11 @@ class WidgetSection(UISection):
             "peekViewResult.background": p.panel_bg,
             "peekViewTitle.background": p.panel_bg,
             "peekViewResult.selectionBackground": p.selection_bg,
+            "peekViewResult.selectionForeground": fg,
+            "peekViewTitleLabel.foreground": fg,
+            "peekViewTitleDescription.foreground": p.fg_muted,
+            "peekViewResult.fileForeground": fg,
+            "peekViewResult.lineForeground": p.fg_muted,
             "peekViewEditor.matchHighlightBackground": e.widgets.peek_match_hl,
             "peekViewResult.matchHighlightBackground": e.widgets.peek_match_hl,
             # Notifications — white bg, NO border (shadow handles it)
@@ -52,6 +57,8 @@ class WidgetSection(UISection):
             "notificationsWarningIcon.foreground": p.warning,
             "notificationsInfoIcon.foreground": p.accent,
             "notificationLink.foreground": p.accent,
+            "notificationCenter.border": p.border,
+            "notificationToast.border": p.border,
             # Quick picker
             "quickInputList.focusBackground": p.selection_bg,
             "pickerGroup.border": p.border,

@@ -24,12 +24,12 @@ class VcsSection(UISection):
             "diffEditorOverview.removedForeground": p.gutter_del,
             "diffEditor.unchangedRegionBackground": p.panel_bg,
             # Minimap
-            "minimap.background": p.panel_bg,
+            "minimap.background": p.background,
             "minimap.findMatchHighlight": e.selection.find_hl,
             "minimap.selectionHighlight": e.selection.primary,
             "minimap.errorHighlight": p.minimap_error,
             "minimap.warningHighlight": p.minimap_warning,
-            "minimap.infoHighlight": e.chrome.info_fg,
+            "minimap.infoHighlight": p.accent.a50,
             "minimapSlider.background": p.minimap_slider,
             "minimapSlider.hoverBackground": p.scrollbar_thumb,
             "minimapSlider.activeBackground": p.scrollbar_hover,
@@ -44,6 +44,8 @@ class VcsSection(UISection):
             "gitDecoration.ignoredResourceForeground": p.fg_disabled,
             "gitDecoration.conflictingResourceForeground": p.error,
             "gitDecoration.renamedResourceForeground": p.success,
+            "gitDecoration.stageModifiedResourceForeground": p.accent.mix(p.foreground),
+            "gitDecoration.stageDeletedResourceForeground": p.error.mix(p.foreground),
             # Git blame -- warm muted for historical annotations
             "git.blame.editorDecorationForeground": p.secondary.a50,
             # Merge conflicts

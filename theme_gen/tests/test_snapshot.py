@@ -54,6 +54,42 @@ class TestSnapshot:
         assert gen_text == fix_text, "Full JSON mismatch -- run main.py and update fixture"
 
 
+_DARK_FIXTURE = Path(__file__).parent / "fixtures" / "kiro-rider-dark.snapshot.json"
+
+
+class TestDarkSnapshot:
+    """Regenerate the dark theme and compare against the committed fixture."""
+
+    @pytest.fixture(scope="class")
+    def generated(self) -> dict[str, object]:
+        return generate_theme_dict(is_dark=True)
+
+    @pytest.fixture(scope="class")
+    def fixture(self) -> dict[str, object]:
+        return cast("dict[str, object]", json.loads(_DARK_FIXTURE.read_text()))
+
+    def test_fixture_exists(self) -> None:
+        assert _DARK_FIXTURE.exists(), f"Fixture missing: {_DARK_FIXTURE}"
+
+    def test_colors_match(self, generated: dict[str, object], fixture: dict[str, object]) -> None:
+        gen_colors = cast("dict[str, object]", generated["colors"])
+        fix_colors = cast("dict[str, object]", fixture["colors"])
+        assert gen_colors == fix_colors, _diff_dicts(gen_colors, fix_colors, "dark colors")
+
+    def test_token_colors_match(self, generated: dict[str, object], fixture: dict[str, object]) -> None:
+        assert generated["tokenColors"] == fixture["tokenColors"], "dark tokenColors mismatch"
+
+    def test_semantic_tokens_match(self, generated: dict[str, object], fixture: dict[str, object]) -> None:
+        gen_sem = cast("dict[str, object]", generated["semanticTokenColors"])
+        fix_sem = cast("dict[str, object]", fixture["semanticTokenColors"])
+        assert gen_sem == fix_sem, _diff_dicts(gen_sem, fix_sem, "dark semanticTokenColors")
+
+    def test_full_json_round_trip(self, generated: dict[str, object], fixture: dict[str, object]) -> None:
+        gen_text = json.dumps(generated, indent=2)
+        fix_text = json.dumps(fixture, indent=2)
+        assert gen_text == fix_text, "Dark full JSON mismatch -- run main.py and update fixture"
+
+
 def _diff_dicts(gen: dict[str, object], fix: dict[str, object], label: str) -> str:
     """Build a human-readable diff summary for assertion messages."""
     lines: list[str] = [f"{label} mismatch:"]

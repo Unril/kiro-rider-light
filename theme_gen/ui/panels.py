@@ -19,12 +19,12 @@ class PanelSection(UISection):
         fg = p.foreground
 
         return {
-            # Panel — white content, muted section headers
+            # Panel -- white content, muted section headers
             "panel.background": p.background,
             "panel.border": p.border,
             "panelTitle.activeBorder": p.accent,
             "panelTitle.activeForeground": fg,
-            "panelTitle.activeBackground": p.panel_bg,
+            "panelTitle.activeBackground": p.background,
             "panelTitle.inactiveForeground": p.fg_muted,
             "panelTitle.border": p.border,
             "panelInput.border": p.border,
@@ -37,7 +37,7 @@ class PanelSection(UISection):
             # Sticky scroll in panel
             "panelStickyScroll.background": p.background,
             "panelStickyScroll.border": p.border,
-            # Status Bar — WHITE background (bgColor-default)
+            # Status Bar -- WHITE background (bgColor-default)
             "statusBar.background": p.background,
             "statusBar.foreground": fg,
             "statusBar.border": p.border,
@@ -51,10 +51,13 @@ class PanelSection(UISection):
             "statusBarItem.compactHoverBackground": p.border,
             "statusBarItem.focusBorder": p.accent,
             "statusBarItem.errorBackground": e.widgets.status_error_bg,
+            "statusBarItem.errorForeground": p.fg_on_accent,
+            "statusBarItem.warningBackground": p.warning,
+            "statusBarItem.warningForeground": p.fg_on_accent,
             "statusBarItem.prominentBackground": p.hover_bg,
             "statusBarItem.remoteBackground": p.hover_bg,
             "statusBarItem.remoteForeground": fg,
-            # Title Bar — white, stays white when unfocused (only text dims)
+            # Title Bar -- white, stays white when unfocused (only text dims)
             "titleBar.activeBackground": p.background,
             "titleBar.activeForeground": fg,
             "titleBar.inactiveBackground": p.background,
@@ -64,6 +67,7 @@ class PanelSection(UISection):
             "menu.selectionBackground": p.selection_bg,
             "menu.selectionForeground": fg,
             "menu.separatorBackground": p.border,
+            "menu.border": p.border,
             "menubar.selectionBackground": p.selection_bg,
             "menubar.selectionForeground": fg,
             # Command Center

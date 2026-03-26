@@ -7,7 +7,7 @@ from core.tcol import TCol
 
 # Status color hues (OKLCH, fixed by convention)
 _HUE_ERROR = 20.0
-_HUE_WARNING = 75.0
+_HUE_WARNING = 55.0
 _HUE_SUCCESS = 150.0
 
 # Chroma levels (base chroma is at s500 peak; steps scale from this)
@@ -15,6 +15,13 @@ _CHROMA_VIVID = 0.163
 
 # Secondary accent offset (complementary hue)
 _SECONDARY_HUE_OFFSET = 180.0
+
+# Foreground lightness per variant (OKLCH L)
+_FG_LIGHTNESS_LIGHT = 0.20
+_FG_LIGHTNESS_DARK = 0.83
+
+# Dark variant background tint
+_DARK_BG_CHROMA = 0.018
 
 
 @dataclass(frozen=True)
@@ -85,6 +92,9 @@ class Palette:
     accent_wash: TCol  # accent @ 5% -- very faint accent tint (chat request bg)
     hover_bg_opaque: TCol  # accent s100 -- opaque accent tint for terminal/sticky hover
 
+    # Variant flag
+    is_dark: bool
+
     @classmethod
     def for_light(cls, accent_hue: float = 262.0) -> Self:
         """Light variant: derive all fields from accent_hue.
@@ -110,8 +120,8 @@ class Palette:
         line_hl = TCol.from_oklch(0.98, 0.0, 0.0)  # editor line highlight
         border_val = TCol.from_oklch(0.88, 0.0, 0.0)  # borders, dividers
 
-        # Foregrounds — darker than before for better contrast (Rider uses #000000)
-        fg = TCol.from_oklch(0.20, 0.0, 0.0)
+        # Foregrounds -- darker than before for better contrast (Rider uses #000000)
+        fg = TCol.from_oklch(_FG_LIGHTNESS_LIGHT, 0.0, 0.0)
 
         accent = accent_base.s600
         secondary = secondary_base.s600
@@ -165,9 +175,90 @@ class Palette:
             drop_bg=accent.a15,
             accent_wash=accent.a05,
             hover_bg_opaque=accent.s100,
+            is_dark=False,
         )
 
     @classmethod
-    def for_dark(cls, _accent_hue: float = 262.0) -> Self:
-        """Dark variant -- not yet implemented."""
-        raise NotImplementedError("Dark variant out of scope")
+    def for_dark(cls, accent_hue: float = 262.0) -> Self:
+        """Dark variant: derive all fields from accent_hue.
+
+        Surface hierarchy (blue-tinted, H=260, C=0.015):
+          L=0.20  editor background, inputs, active tab
+          L=0.22  line highlight
+          L=0.17  sidebar, tabs container, panel, inactive tab
+          L=0.25  borders, dividers
+
+        Foreground hierarchy:
+          L=0.83  foreground, icons (near-white)
+          L=0.56  muted text (descriptions, inactive tabs, line numbers)
+          L=0.40  disabled text (placeholders, ghost text)
+        """
+        _bg_hue = accent_hue + _SECONDARY_HUE_OFFSET  # warm tint from secondary hue
+
+        accent_base = TCol.from_oklch(0.50, _CHROMA_VIVID, accent_hue)
+        secondary_base = TCol.from_oklch(0.50, _CHROMA_VIVID, accent_hue + _SECONDARY_HUE_OFFSET)
+        neutral = TCol.from_oklch(0.50, 0.0, 0.0)
+
+        # Surfaces -- warm-tinted dark backgrounds
+        editor_bg = TCol.from_oklch(0.25, _DARK_BG_CHROMA, _bg_hue)
+        panel = TCol.from_oklch(0.20, _DARK_BG_CHROMA, _bg_hue)
+        line_hl = TCol.from_oklch(0.27, _DARK_BG_CHROMA, _bg_hue)
+        border_val = TCol.from_oklch(0.35, _DARK_BG_CHROMA, _bg_hue)
+
+        # Foregrounds -- light for dark bg
+        fg = TCol.from_oklch(_FG_LIGHTNESS_DARK, 0.0, 0.0)
+
+        accent = accent_base.s400
+        secondary = secondary_base.s400
+        error_base = TCol.from_oklch(0.50, _CHROMA_VIVID, _HUE_ERROR)
+        warning_base = TCol.from_oklch(0.50, _CHROMA_VIVID, _HUE_WARNING)
+        success_base = TCol.from_oklch(0.50, _CHROMA_VIVID, _HUE_SUCCESS)
+        error = error_base.s400.with_min_contrast(editor_bg, 4.5)
+        warning = warning_base.s400.with_min_contrast(editor_bg, 4.5)
+        success = success_base.s400.with_min_contrast(editor_bg, 4.5)
+
+        return cls(
+            accent=accent,
+            secondary=secondary,
+            error=error,
+            warning=warning,
+            success=success,
+            foreground=fg,
+            background=editor_bg,
+            panel_bg=panel,
+            border=border_val,
+            fg_muted=neutral.s400.with_min_contrast(editor_bg, 4.5),
+            fg_disabled=neutral.s600,
+            fg_icon=fg,
+            fg_on_accent=editor_bg,
+            hover_bg=accent.with_alpha(0.12),
+            selection_bg=accent.with_alpha(0.22),
+            line_highlight=line_hl,
+            link=accent_base.s500,
+            accent_hover=accent_base.s300,
+            error_bg=error.a15,
+            error_border=error.a50,
+            warn_bg=warning.a15,
+            warn_border=warning.a50,
+            info_bg=accent.a15,
+            info_border=accent.a50,
+            gutter_add=success.a50,
+            gutter_mod=accent.a50,
+            gutter_del=error.a50,
+            diff_insert=success.a25,
+            diff_remove=error.a25,
+            minimap_error=error.a80,
+            minimap_warning=warning.a80,
+            minimap_slider=neutral.s600.a15,
+            scrollbar_thumb=fg.a15,
+            scrollbar_hover=fg.a25,
+            scrollbar_active=fg.a50,
+            btn_secondary_bg=neutral.s800,
+            text_separator=border_val,
+            status_prominent_bg=accent.muted.s400.a50,
+            shadow=TCol.from_oklch(0.0, 0.0, 0.0).with_alpha(0.35),
+            drop_bg=accent.a25,
+            accent_wash=accent.a15,
+            hover_bg_opaque=accent.s800,
+            is_dark=True,
+        )

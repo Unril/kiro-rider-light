@@ -1,7 +1,5 @@
 """Tests for TCol ramp steps and Palette."""
 
-import pytest
-
 from core.tcol import TCol
 from palette.palette import Palette
 
@@ -14,6 +12,9 @@ _HUE_TOLERANCE = 2.0
 
 
 _FG_MAX_LIGHTNESS = 0.36
+_WCAG_AA_FLOOR = 4.5
+_DARK_BG_MAX_LIGHTNESS = 0.3
+_FG_DARK_MIN_LIGHTNESS = 0.7
 
 
 class TestTColRampSteps:
@@ -92,9 +93,37 @@ class TestPalette:
         p = Palette.for_light()
         assert p.selection_bg.lightness < p.panel_bg.lightness
 
-    def test_for_dark_raises(self) -> None:
-        with pytest.raises(NotImplementedError):
-            _ = Palette.for_dark()
+    def test_for_dark_produces_valid_fields(self) -> None:
+        p = Palette.for_dark()
+        assert isinstance(p.accent, TCol)
+        assert isinstance(p.error, TCol)
+        assert isinstance(p.foreground, TCol)
+        assert isinstance(p.background, TCol)
+        assert isinstance(p.panel_bg, TCol)
+        assert isinstance(p.shadow, TCol)
+
+    def test_for_dark_background_is_dark(self) -> None:
+        p = Palette.for_dark()
+        assert p.background.lightness < _DARK_BG_MAX_LIGHTNESS
+
+    def test_for_dark_foreground_is_light(self) -> None:
+        p = Palette.for_dark()
+        assert p.foreground.lightness > _FG_DARK_MIN_LIGHTNESS
+
+    def test_for_dark_accent_contrast(self) -> None:
+        p = Palette.for_dark()
+        assert p.accent.contrast(p.background) >= _WCAG_AA_FLOOR
+
+    def test_for_dark_panel_darker_than_editor(self) -> None:
+        p = Palette.for_dark()
+        assert p.panel_bg.lightness < p.background.lightness
+
+    def test_for_dark_derived_alpha_fields(self) -> None:
+        p = Palette.for_dark()
+        assert p.gutter_add.a < 1.0
+        assert p.diff_insert.a < 1.0
+        assert p.error_bg.a < 1.0
+        assert p.scrollbar_thumb.a < 1.0
 
     def test_neutral_derived_fields(self) -> None:
         p = Palette.for_light()

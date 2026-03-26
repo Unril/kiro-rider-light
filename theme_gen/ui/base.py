@@ -23,7 +23,7 @@ class BaseSection(UISection):
             "widget.border": p.border,
             "selection.background": p.selection_bg,
             "icon.foreground": p.fg_icon,
-            "descriptionForeground": fg,
+            "descriptionForeground": p.fg_muted,
             "errorForeground": p.error,
             "disabledForeground": p.fg_disabled,
             # Text
@@ -32,6 +32,12 @@ class BaseSection(UISection):
             "textBlockQuote.background": p.panel_bg,
             "textBlockQuote.border": p.border,
             "textCodeBlock.background": p.panel_bg,
+            # Markdown preview alerts
+            "markdownAlert.note.foreground": p.accent,
+            "markdownAlert.tip.foreground": p.success,
+            "markdownAlert.important.foreground": p.secondary,
+            "markdownAlert.warning.foreground": p.warning,
+            "markdownAlert.caution.foreground": p.error,
             "textPreformat.foreground": fg,
             "textPreformat.background": p.shadow,
             "textSeparator.foreground": p.text_separator,

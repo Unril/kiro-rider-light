@@ -18,6 +18,22 @@ from core.tcol import TCol
 from palette.palette import Palette
 from palette.syntax import SyntaxPalette
 
+# Dark themes need higher alpha for overlays to be visible on dark backgrounds.
+# Light alpha -> dark alpha mapping (roughly 1.5x).
+_ALPHA_LIGHT = (0.05, 0.15, 0.25)
+_ALPHA_DARK = (0.10, 0.22, 0.35)
+
+
+def _tint(color: TCol, *, is_dark: bool) -> TCol:
+    """Shift a color toward the background: darker on dark, lighter on light."""
+    return color.much_darker if is_dark else color.much_lighter
+
+
+def _overlay(color: TCol, level: int, *, is_dark: bool) -> TCol:
+    """Apply alpha overlay at level 0/1/2, scaled for dark backgrounds."""
+    alphas = _ALPHA_DARK if is_dark else _ALPHA_LIGHT
+    return color.with_alpha(alphas[level])
+
 
 @dataclass(frozen=True)
 class SymbolColors:
@@ -122,8 +138,14 @@ class EditorPalette:
         success = palette.success
         error = palette.error
 
-        # Bracket match uses a pink-shifted accent for visual distinction
-        bracket_base = secondary.much_lighter
+        is_dark = palette.is_dark
+
+        # Subtle tinted backgrounds: shift toward bg, then apply modifier.
+        bracket_base = _tint(secondary, is_dark=is_dark)
+        stack_frame_base = _tint(warning, is_dark=is_dark).muted
+        stack_focused_base = _tint(success, is_dark=is_dark).muted
+        find_match_base = _tint(accent, is_dark=is_dark).soft
+        notebook_base = _tint(accent, is_dark=is_dark).muted.a80
 
         return cls(
             symbols=SymbolColors(
@@ -148,40 +170,40 @@ class EditorPalette:
             ),
             chrome=EditorChrome(
                 caret=accent,
-                caret_row=palette.foreground.a05,
+                caret_row=_overlay(palette.foreground, 0, is_dark=is_dark),
                 line_num=palette.fg_disabled,
                 indent_guide=palette.foreground.a15,
                 indent_guide_active=palette.foreground.a25,
                 whitespace=palette.fg_disabled,
                 ruler=palette.foreground.a15,
-                inlay_bg=palette.panel_bg,
+                inlay_bg=palette.foreground.a05 if is_dark else palette.panel_bg,
                 inlay_fg=palette.fg_muted,
                 codelens=palette.fg_muted,
                 info_fg=palette.fg_muted,
                 bracket_match=bracket_base.muted,
                 bracket_match_border=bracket_base.soft,
-                stack_frame=warning.much_lighter.muted,
-                stack_focused=success.much_lighter.muted,
+                stack_frame=stack_frame_base,
+                stack_focused=stack_focused_base,
                 debug_bg=success.muted,
             ),
             selection=SelectionColors(
-                primary=accent.a15,
+                primary=_overlay(accent, 1, is_dark=is_dark),
                 inactive=accent.a50,
-                highlight=accent.a15,
-                word_read=accent.a25,
-                word_write=accent.a25,
-                word_text=secondary.a15,
-                hover_bg=accent.a05,
-                find_match=accent.much_lighter.soft,
-                find_hl=warning.a25,
+                highlight=_overlay(accent, 1, is_dark=is_dark),
+                word_read=_overlay(accent, 2, is_dark=is_dark),
+                word_write=_overlay(accent, 2, is_dark=is_dark),
+                word_text=_overlay(secondary, 1, is_dark=is_dark),
+                hover_bg=_overlay(accent, 0, is_dark=is_dark),
+                find_match=find_match_base,
+                find_hl=_overlay(warning, 2, is_dark=is_dark),
                 find_ruler=warning.a50,
             ),
             widgets=WidgetColors(
                 status_error_bg=error.vivid,
                 peek_match_hl=warning.a25,
                 settings_modified=secondary.vivid,
-                chat_edited_fg=secondary.s700,
-                notebook_cell_bg=accent.much_lighter.muted.a80,
+                chat_edited_fg=secondary.s700 if not is_dark else secondary.s300,
+                notebook_cell_bg=notebook_base,
                 slash_cmd_fg=accent.darker.vivid,
                 chat_lines_add=success.a80,
                 chat_lines_remove=error.a80,

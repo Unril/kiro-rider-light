@@ -44,7 +44,7 @@ class ListSection(UISection):
             "activityBar.inactiveForeground": p.fg_muted,
             "activityBar.border": p.border,
             "activityBar.activeBorder": p.accent,
-            "activityBar.activeBackground": p.hover_bg,
+            "activityBar.activeBackground": p.selection_bg,
             "activityBarBadge.background": p.accent,
             "activityBarBadge.foreground": p.fg_on_accent,
             # Activity Bar Top (when positioned at top)
@@ -52,7 +52,7 @@ class ListSection(UISection):
             "activityBarTop.inactiveForeground": p.fg_muted,
             "activityBarTop.activeBorder": p.accent,
             "activityBarTop.background": p.background,
-            "activityBarTop.activeBackground": p.hover_bg,
+            "activityBarTop.activeBackground": p.selection_bg,
             # Side Bar — white tree area, muted header
             "sideBar.background": p.background,
             "sideBar.foreground": fg,

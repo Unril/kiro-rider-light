@@ -1,6 +1,6 @@
 #!/usr/bin/env -S uv run --script
 
-"""Generate the Kiro Rider Light VS Code color theme JSON."""
+"""Generate the Kiro Rider Light and Dark VS Code color theme JSON files."""
 
 import json
 from pathlib import Path
@@ -34,47 +34,53 @@ from ui.testing import TestingSection
 from ui.vcs import VcsSection
 from ui.widgets import WidgetSection
 
-_OUTPUT = Path(__file__).resolve().parent.parent / "themes" / "Kiro Rider Light-color-theme.json"
+_THEMES_DIR = Path(__file__).resolve().parent.parent / "themes"
+
+_VARIANTS: list[tuple[bool, str, str]] = [
+    (False, "Kiro Rider Light", "light"),
+    (True, "Kiro Rider Dark", "dark"),
+]
 
 
-def main() -> None:
-    theme = Theme.create()
+_LANG_CLASSES = [
+    BaseSyntax,
+    JavaLang,
+    KotlinLang,
+    PythonLang,
+    JavaScriptLang,
+    TypeScriptLang,
+    CssLang,
+    HtmlLang,
+    MarkdownLang,
+    YamlLang,
+    JsonLang,
+    ScriptLang,
+]
 
-    # UI colors
-    composition = ColorMapComposition(
-        [
-            BaseSection(),
-            ListSection(),
-            EditorSection(),
-            TabSection(),
-            WidgetSection(),
-            PanelSection(),
-            VcsSection(),
-            ChatSection(),
-            SymbolSection(),
-            TerminalSection(),
-            DebugSection(),
-            TestingSection(),
-        ],
-    )
+_UI_SECTIONS = [
+    BaseSection,
+    ListSection,
+    EditorSection,
+    TabSection,
+    WidgetSection,
+    PanelSection,
+    VcsSection,
+    ChatSection,
+    SymbolSection,
+    TerminalSection,
+    DebugSection,
+    TestingSection,
+]
+
+
+def _generate_variant(*, is_dark: bool, name: str, theme_type: str) -> None:
+    theme = Theme.create(is_dark=is_dark)
+
+    composition = ColorMapComposition([cls() for cls in _UI_SECTIONS])
     colors = {k: v.hex for k, v in composition.build(theme).items()}
 
-    # Language tokens
     registry = LanguageRegistry(GlobalSemanticTokens(theme.syntax))
-    for lang_cls in [
-        BaseSyntax,
-        JavaLang,
-        KotlinLang,
-        PythonLang,
-        JavaScriptLang,
-        TypeScriptLang,
-        CssLang,
-        HtmlLang,
-        MarkdownLang,
-        YamlLang,
-        JsonLang,
-        ScriptLang,
-    ]:
+    for lang_cls in _LANG_CLASSES:
         registry.register(lang_cls())
 
     token_colors = [rule.to_dict() for rule in registry.build_token_colors(theme)]
@@ -82,18 +88,24 @@ def main() -> None:
 
     output = {
         "$schema": "vscode://schemas/color-theme",
-        "name": "Kiro Rider Light",
-        "type": "light",
+        "name": name,
+        "type": theme_type,
         "semanticHighlighting": True,
         "colors": colors,
         "tokenColors": token_colors,
         "semanticTokenColors": semantic_tokens,
     }
 
-    _OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    _ = _OUTPUT.write_text(json.dumps(output, indent=2) + "\n")
+    out_path = _THEMES_DIR / f"{name}-color-theme.json"
+    _THEMES_DIR.mkdir(parents=True, exist_ok=True)
+    _ = out_path.write_text(json.dumps(output, indent=2) + "\n")
     nc, nt, ns = len(colors), len(token_colors), len(semantic_tokens)
-    print(f"Wrote {nc} colors, {nt} tokenColors, {ns} semanticTokenColors to {_OUTPUT}")
+    print(f"Wrote {nc} colors, {nt} tokenColors, {ns} semanticTokenColors to {out_path}")
+
+
+def main() -> None:
+    for is_dark, name, theme_type in _VARIANTS:
+        _generate_variant(is_dark=is_dark, name=name, theme_type=theme_type)
 
 
 if __name__ == "__main__":

@@ -135,3 +135,20 @@ class TestColorMapComposition:
             "titleBar.activeBackground",
         ]:
             assert key in colors, f"Missing required key: {key}"
+
+
+class TestTerminalDark:
+    def test_terminal_section_builds_with_dark_theme(self) -> None:
+        dark_theme = Theme.create(is_dark=True)
+        colors = TerminalSection().build(dark_theme)
+        assert isinstance(colors, dict)
+        assert len(colors) > 0
+
+    def test_all_ansi_colors_valid_hex(self) -> None:
+        dark_theme = Theme.create(is_dark=True)
+        colors = TerminalSection().build(dark_theme)
+        ansi_keys = [k for k in colors if k.startswith("terminal.ansi")]
+        assert len(ansi_keys) == 16  # noqa: PLR2004
+        for key in ansi_keys:
+            assert isinstance(colors[key], TCol)
+            assert HEX_RE.match(colors[key].hex), f"{key}: invalid hex '{colors[key].hex}'"

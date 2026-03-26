@@ -41,13 +41,37 @@ from coloraide import Color
 
 from core.tcol import TCol
 
-# CIELab L* targets per lightness tier.
+# CIELab L* targets per lightness tier (light variant).
 # These produce consistent visual weight across all hues (10-point steps).
-_LAB_BRIGHT = 54.0  # string, metadata, number, field — prominent literals
+_LAB_BRIGHT = 54.0  # string, metadata, number, field -- prominent literals
 _LAB_MID = 44.0  # comment, function, keyword, control, escape, enum_member
-_LAB_DARK = 34.0  # type, namespace, function_decl, punct — structural anchors
-_LAB_IDENT = 28.0  # param — dark base text; identifiers sit below colored roles
-_LAB_ANCHOR = 24.0  # field_const — deepest anchor, constants are visually fixed
+_LAB_DARK = 34.0  # type, namespace, function_decl, punct -- structural anchors
+_LAB_IDENT = 28.0  # param -- dark base text; identifiers sit below colored roles
+_LAB_ANCHOR = 24.0  # field_const -- deepest anchor, constants are visually fixed
+
+# CIELab L* targets for dark variant.
+# Calibrated to produce clear visual hierarchy on dark backgrounds.
+# Bright bumped to 56 for WCAG AA margin; Mid at 64 gives 8-unit gap
+# (matching the 10-unit gap in light theme for similar visual separation).
+_DARK_LAB_BRIGHT = 60.0
+_DARK_LAB_MID = 62.0
+_DARK_LAB_DARK = 70.0
+_DARK_LAB_IDENT = 76.0
+_DARK_LAB_ANCHOR = 80.0
+
+# Chroma reduction for dark variant (Hunt effect: colors appear more
+# saturated at lower luminance levels, so we reduce chroma to match
+# the perceived saturation of the light theme).
+_DARK_CHROMA_SCALE = 0.85
+
+# Mapping from light tier -> dark tier for substitution
+_LIGHT_TO_DARK_LAB: dict[float, float] = {
+    _LAB_BRIGHT: _DARK_LAB_BRIGHT,
+    _LAB_MID: _DARK_LAB_MID,
+    _LAB_DARK: _DARK_LAB_DARK,
+    _LAB_IDENT: _DARK_LAB_IDENT,
+    _LAB_ANCHOR: _DARK_LAB_ANCHOR,
+}
 
 # Chroma bands (scaled by chroma_scale)
 _C_ZERO = 0.00
@@ -133,11 +157,13 @@ class SyntaxPalette:
     background: TCol
 
     @classmethod
-    def create(
+    def create(  # noqa: PLR0913
         cls,
         *,
         string_hue: float = 40.0,
         background: TCol,
+        foreground: TCol | None = None,
+        is_dark: bool = False,
         lightness: float = 0.50,
         chroma_scale: float = 1.0,
     ) -> Self:
@@ -148,6 +174,7 @@ class SyntaxPalette:
         placed at 45° intervals by coloraide's wheel harmony in OkLCh space.
 
         background is the editor background -- used for WCAG AA correction.
+        foreground overrides the default foreground (black for light, light gray for dark).
         Lightness per role is set by targeting CIELab L* (see _SPECS).
         Contrast floors are per-role (see _SPECS and module docstring).
         """
@@ -158,12 +185,19 @@ class SyntaxPalette:
 
         def _make(role: str) -> TCol:
             cluster_idx, lab_l_target, c_band, floor = _SPECS[role]
+            if is_dark:
+                lab_l_target = _LIGHT_TO_DARK_LAB[lab_l_target]
             hue = hues[cluster_idx]
             chrom = c_band * chroma_scale
+            if is_dark:
+                chrom *= _DARK_CHROMA_SCALE
             col = TCol.from_lab_l(lab_l_target, chrom, hue)
             return col.with_min_contrast(background, floor)
 
         colors = {role: _make(role) for role in _SPECS}
-        colors["foreground"] = TCol.from_hex("#000000")
+        if foreground is None:
+            # Fallback foreground -- normally provided by Theme.create() from Palette
+            foreground = TCol.from_oklch(0.83, 0.0, 0.0) if is_dark else TCol.from_oklch(0.0, 0.0, 0.0)
+        colors["foreground"] = foreground
         colors["background"] = background
         return cls(**colors)

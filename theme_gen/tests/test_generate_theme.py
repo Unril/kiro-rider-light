@@ -80,3 +80,47 @@ class TestThemeStructure:
         sem = cast("dict[str, object]", theme_output["semanticTokenColors"])
         count = len(sem)
         assert count >= _SEMANTIC_TOKEN_COUNT_MIN, f"Only {count} semanticTokenColors"
+
+    class TestDarkThemeStructure:
+        """Structural validation for the dark theme variant."""
+
+        def test_has_required_top_level_keys(self, dark_theme_output: dict[str, object]) -> None:
+            for key in [
+                "$schema",
+                "name",
+                "type",
+                "semanticHighlighting",
+                "colors",
+                "tokenColors",
+                "semanticTokenColors",
+            ]:
+                assert key in dark_theme_output, f"Missing top-level key: {key}"
+
+        def test_type_is_dark(self, dark_theme_output: dict[str, object]) -> None:
+            assert dark_theme_output["type"] == "dark"
+
+        def test_name_is_dark(self, dark_theme_output: dict[str, object]) -> None:
+            assert dark_theme_output["name"] == "Kiro Rider Dark"
+
+        def test_colors_are_hex_strings(self, dark_theme_output: dict[str, object]) -> None:
+            colors = cast("dict[str, str]", dark_theme_output["colors"])
+            for key, val in colors.items():
+                assert HEX_RE.match(val), f"colors[{key}]: invalid hex '{val}'"
+
+        def test_color_count_in_range(self, dark_theme_output: dict[str, object]) -> None:
+            colors = cast("dict[str, str]", dark_theme_output["colors"])
+            count = len(colors)
+            assert _COLOR_COUNT_MIN <= count <= _COLOR_COUNT_MAX, f"Color count {count} outside expected range"
+
+        def test_token_color_count(self, dark_theme_output: dict[str, object]) -> None:
+            token_colors = cast("list[dict[str, object]]", dark_theme_output["tokenColors"])
+            assert len(token_colors) >= _TOKEN_COLOR_COUNT_MIN
+
+        def test_semantic_token_count(self, dark_theme_output: dict[str, object]) -> None:
+            sem = cast("dict[str, object]", dark_theme_output["semanticTokenColors"])
+            assert len(sem) >= _SEMANTIC_TOKEN_COUNT_MIN
+
+        def test_json_serializable(self, dark_theme_output: dict[str, object]) -> None:
+            text = json.dumps(dark_theme_output, indent=2)
+            parsed = cast("dict[str, object]", json.loads(text))
+            assert parsed["name"] == "Kiro Rider Dark"

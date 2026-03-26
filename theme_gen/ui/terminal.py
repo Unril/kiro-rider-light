@@ -83,13 +83,50 @@ class AnsiColors:
             bright_white=TCol.from_oklch(0.95, 0.0, 0.0),
         )
 
+    @classmethod
+    def for_dark(cls, background: TCol) -> "AnsiColors":
+        """Generate 16 ANSI colors for a dark terminal background."""
+        dark_normal_lab_l = 60.0
+        dark_normal_chroma = 0.13
+        dark_bright_lab_l = 68.0
+        dark_bright_chroma = 0.15
+
+        def _normal(hue: float) -> TCol:
+            return TCol.from_lab_l(dark_normal_lab_l, dark_normal_chroma, hue).with_min_contrast(
+                background, _NORMAL_FLOOR
+            )
+
+        def _bright(hue: float) -> TCol:
+            return TCol.from_lab_l(dark_bright_lab_l, dark_bright_chroma, hue).with_min_contrast(
+                background, _BRIGHT_FLOOR
+            )
+
+        return cls(
+            black=TCol.from_oklch(0.20, 0.0, 0.0),
+            red=_normal(_HUE_RED),
+            green=_normal(_HUE_GREEN),
+            yellow=_normal(_HUE_YELLOW),
+            blue=_normal(_HUE_BLUE),
+            magenta=_normal(_HUE_MAGENTA),
+            cyan=_normal(_HUE_CYAN),
+            white=TCol.from_oklch(0.75, 0.0, 0.0),
+            bright_black=TCol.from_oklch(0.45, 0.0, 0.0),
+            bright_red=_bright(_HUE_RED),
+            bright_green=_bright(_HUE_GREEN),
+            bright_yellow=_bright(_HUE_YELLOW),
+            bright_blue=_bright(_HUE_BLUE),
+            bright_magenta=_bright(_HUE_MAGENTA),
+            bright_cyan=_bright(_HUE_CYAN),
+            bright_white=TCol.from_oklch(0.90, 0.0, 0.0),
+        )
+
 
 class TerminalSection(UISection):
     @override
     def build(self, theme: Theme) -> dict[str, TCol]:
         p = theme.palette
         sel = theme.editor.selection
-        ansi = AnsiColors.for_light(p.background)
+        ansi = AnsiColors.for_dark(p.background) if theme.is_dark else AnsiColors.for_light(p.background)
 
         return {
             # Terminal foreground

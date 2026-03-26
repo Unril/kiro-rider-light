@@ -1,8 +1,8 @@
 {
   "name": "kiro-rider-light",
-  "displayName": "Kiro Rider Light",
-  "description": "Light color theme for VS Code and Kiro IDE inspired by JetBrains Rider Light. OKLCH-based syntax palette with WCAG AA contrast, 465 UI colors, and full terminal ANSI support.",
-  "version": "0.1.0",
+  "displayName": "Kiro Rider",
+  "description": "Light and dark color themes for VS Code and Kiro IDE inspired by JetBrains Rider. OKLCH-based syntax palette with WCAG AA contrast and consistent highlighting across languages.",
+  "version": "0.2.0",
   "publisher": "NikolaiFedorov",
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   "keywords": [
     "theme",
     "light",
+    "dark",
     "rider",
     "jetbrains",
     "kiro",
@@ -40,6 +41,11 @@
         "label": "Kiro Rider Light",
         "uiTheme": "vs",
         "path": "./themes/Kiro Rider Light-color-theme.json"
+      },
+      {
+        "label": "Kiro Rider Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Kiro Rider Dark-color-theme.json"
       }
     ]
   }

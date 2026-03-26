@@ -3,5 +3,8 @@
         "*"
     ],
     "pylint.cwd": "${workspaceFolder}/theme_gen",
-    "basedpyright.analysis.configFilePath": "${workspaceFolder}/theme_gen"
+    "basedpyright.analysis.configFilePath": "${workspaceFolder}/theme_gen",
+    "workbench.colorCustomizations": { 
+        // "editorGroupHeader.tabsBackground1": "#FF2118"
+    }
 }

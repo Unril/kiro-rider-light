@@ -4,6 +4,33 @@ All notable changes to the "kiro-rider-light" extension will be documented in th
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.2.0] - 2026-03-26
+
+### Added
+
+- Dark theme variant ("Kiro Rider Dark") with warm-tinted background (OKLCH H=82)
+- Same 8 syntax hues as light theme with contrast-matched dark lightness tiers
+- Bidirectional `with_min_contrast` -- lightens on dark backgrounds, darkens on light
+- `TCol.mix` for blending two colors in sRGB space
+- Dark-aware ANSI terminal colors (Lab L*=60 normal, L*=68 bright)
+- Dark-aware editor highlights with scaled alpha overlays
+- Staged git decoration colors using accent/foreground mix
+- Missing UI keys: peek view foregrounds, editor marker navigation, notification borders, markdown alert colors, status bar warning/error states, menu border
+
+### Changed
+
+- Extension renamed to "Kiro Rider" (covers both variants)
+- `SyntaxPalette.create` accepts `is_dark` and `foreground` parameters
+- `Palette` includes `is_dark` field
+- `EditorPalette.create` uses `_tint` and `_overlay` helpers instead of inline conditionals
+- `editorInfo.foreground` uses accent blue instead of muted gray
+- `descriptionForeground` uses muted foreground instead of full foreground
+- `button.hoverBackground` is lighter than button on dark theme
+- Warning hue shifted from olive (H=75) to orange-amber (H=55)
+- `minimap.background` and `editorOverviewRuler.background` match editor background
+- Scrollbar/minimap slider alpha reduced for dark theme
+- `panelTitle.activeBackground` matches panel background
+
 ## [0.1.0] - 2026-03-25
 
 ### Added
