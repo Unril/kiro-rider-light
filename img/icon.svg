@@ -1,63 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
-  <!-- Background: rounded square, light panel bg -->
-  <rect width="128" height="128" rx="22" fill="#F2F2F2"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <clipPath id="clip">
+      <rect x="8" y="8" width="112" height="112" rx="24"/>
+    </clipPath>
+  </defs>
 
-  <!-- Editor window chrome: white editor area -->
-  <rect x="12" y="20" width="104" height="88" rx="6" fill="#FFFFFF"/>
+  <!-- Base tile -->
+  <rect x="8" y="8" width="112" height="112" rx="24" fill="#FFFFFF"/>
 
-  <!-- Top bar (tab strip) -->
-  <rect x="12" y="20" width="104" height="14" rx="6" fill="#F2F2F2"/>
-  <rect x="12" y="27" width="104" height="7" fill="#F2F2F2"/>
+  <!-- Dark theme area: pushed right so the left bracket has breathing room -->
+  <g clip-path="url(#clip)">
+    <path d="M120 8H90L8 90V120H120V8Z" fill="#262118"/>
+  </g>
 
-  <!-- Active tab indicator (accent blue top border) -->
-  <rect x="18" y="20" width="32" height="3" rx="1.5" fill="#4371C9"/>
+  <!-- Border -->
+  <rect x="8" y="8" width="112" height="112" rx="24" stroke="#A8B6D4" stroke-width="3.5"/>
 
-  <!-- Gutter strip -->
-  <rect x="12" y="34" width="14" height="74" rx="0" fill="#F8F8F8"/>
-  <rect x="26" y="34" width="1" height="74" fill="#D7D7D7"/>
+  <!-- Left bracket -->
+  <path d="M39 44L25 64L39 84"
+        stroke="#305EDD"
+        stroke-width="9"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
 
-  <!-- Line number dots (muted) -->
-  <rect x="16" y="42" width="6" height="2" rx="1" fill="#A4A4A4"/>
-  <rect x="16" y="52" width="6" height="2" rx="1" fill="#A4A4A4"/>
-  <rect x="16" y="62" width="6" height="2" rx="1" fill="#A4A4A4"/>
-  <rect x="16" y="72" width="6" height="2" rx="1" fill="#A4A4A4"/>
-  <rect x="16" y="82" width="6" height="2" rx="1" fill="#A4A4A4"/>
-  <rect x="16" y="92" width="6" height="2" rx="1" fill="#A4A4A4"/>
+  <!-- Right bracket -->
+  <path d="M89 44L103 64L89 84"
+        stroke="#7CA4ED"
+        stroke-width="9"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
 
-  <!-- Code lines — row 1: keyword + type -->
-  <rect x="31" y="40" width="14" height="4" rx="2" fill="#305EDD"/>
-  <rect x="48" y="40" width="18" height="4" rx="2" fill="#7922A7"/>
-  <rect x="69" y="40" width="8" height="4" rx="2" fill="#161616"/>
-  <rect x="80" y="40" width="22" height="4" rx="2" fill="#007561"/>
-
-  <!-- Row 2: field + string -->
-  <rect x="31" y="50" width="6" height="4" rx="2" fill="#161616"/>
-  <rect x="40" y="50" width="16" height="4" rx="2" fill="#00819D"/>
-  <rect x="59" y="50" width="4" height="4" rx="2" fill="#747474"/>
-  <rect x="66" y="50" width="28" height="4" rx="2" fill="#A26955"/>
-
-  <!-- Row 3: comment (italic-ish, muted green, shorter) -->
-  <rect x="31" y="60" width="52" height="4" rx="2" fill="#5C822E" opacity="0.7"/>
-
-  <!-- Row 4: keyword + function call -->
-  <rect x="31" y="70" width="10" height="4" rx="2" fill="#305EDD"/>
-  <rect x="44" y="70" width="20" height="4" rx="2" fill="#007561"/>
-  <rect x="67" y="70" width="4" height="4" rx="2" fill="#747474"/>
-  <rect x="74" y="70" width="14" height="4" rx="2" fill="#A26955"/>
-  <rect x="91" y="70" width="4" height="4" rx="2" fill="#747474"/>
-
-  <!-- Row 5: number + metadata -->
-  <rect x="31" y="80" width="8" height="4" rx="2" fill="#747474"/>
-  <rect x="42" y="80" width="16" height="4" rx="2" fill="#C24C82"/>
-  <rect x="61" y="80" width="4" height="4" rx="2" fill="#747474"/>
-  <rect x="68" y="80" width="22" height="4" rx="2" fill="#977100"/>
-
-  <!-- Row 6: closing brace, shorter -->
-  <rect x="31" y="90" width="6" height="4" rx="2" fill="#747474"/>
-
-  <!-- Caret (accent blue, blinking cursor position) -->
-  <rect x="40" y="90" width="2" height="4" rx="1" fill="#4371C9"/>
-
-  <!-- Bottom border of editor area -->
-  <rect x="12" y="108" width="104" height="1" fill="#D7D7D7"/>
+  <!-- Syntax lines -->
+  <rect x="47" y="42" width="34" height="10" rx="5" fill="#D190FF"/>
+  <rect x="47" y="59" width="40" height="10" rx="5" fill="#3FA68E"/>
+  <rect x="47" y="76" width="28" height="10" rx="5" fill="#B88573"/>
 </svg>
