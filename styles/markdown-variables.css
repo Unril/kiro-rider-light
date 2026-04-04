@@ -1,0 +1,76 @@
+/*
+ * Kiro Rider -- Generated CSS custom properties for markdown preview.
+ * Do not edit by hand. Regenerate with: cd theme_gen && uv run main.py
+ */
+
+/* Light variant */
+
+body.vscode-light {
+    --kiro-bg: #FFFFFF;
+    --kiro-fg: #161616;
+    --kiro-accent: #4371C9;
+    --kiro-border: #D7D7D7;
+    --kiro-panel: #F2F2F2;
+    --kiro-muted: #747474;
+    --kiro-keyword: #305EDD;
+    --kiro-type: #7922A7;
+    --kiro-function: #007561;
+    --kiro-string: #A26955;
+    --kiro-number: #C24C82;
+    --kiro-comment: #5C822E;
+    --kiro-field: #00819D;
+    --kiro-metadata: #977100;
+    --kiro-escape: #8A4DB1;
+    --kiro-error: #BA4A50;
+    --kiro-warning: #AD652E;
+    --kiro-success: #158941;
+    --kiro-h1: #00718A;
+    --kiro-h2: #0F6BA5;
+    --kiro-h3: #4861AA;
+    --kiro-h4: #6856A4;
+    --kiro-h5: #804E93;
+    --kiro-h6: #91477B;
+    --kiro-h1-quote: #B5D7E3;
+    --kiro-h2-quote: #BBD4E9;
+    --kiro-h3-quote: #C5D0EC;
+    --kiro-h4-quote: #D0CCE9;
+    --kiro-h5-quote: #DBC9E3;
+    --kiro-h6-quote: #E3C7D9;
+    --kiro-quote-fg: #747474;
+}
+
+/* Dark variant */
+
+body.vscode-dark {
+    --kiro-bg: #262118;
+    --kiro-fg: #C7C7C7;
+    --kiro-accent: #7CA4ED;
+    --kiro-border: #3F3A30;
+    --kiro-panel: #1A150D;
+    --kiro-muted: #A4A4A4;
+    --kiro-keyword: #6492FF;
+    --kiro-type: #D190FF;
+    --kiro-function: #3FA68E;
+    --kiro-string: #B88573;
+    --kiro-number: #D6709A;
+    --kiro-comment: #7A9B56;
+    --kiro-field: #339CB9;
+    --kiro-metadata: #AE8C41;
+    --kiro-escape: #B481D9;
+    --kiro-error: #E48686;
+    --kiro-warning: #DC905A;
+    --kiro-success: #6CB97D;
+    --kiro-h1: #3AA2BF;
+    --kiro-h2: #599ACE;
+    --kiro-h3: #7991D3;
+    --kiro-h4: #9588CD;
+    --kiro-h5: #AC80BE;
+    --kiro-h6: #BD7AA7;
+    --kiro-h1-quote: #17363F;
+    --kiro-h2-quote: #1F3444;
+    --kiro-h3-quote: #293146;
+    --kiro-h4-quote: #322E44;
+    --kiro-h5-quote: #392B3F;
+    --kiro-h6-quote: #3F2938;
+    --kiro-quote-fg: #A4A4A4;
+}

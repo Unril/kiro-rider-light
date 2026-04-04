@@ -1,0 +1,186 @@
+/*
+ * Kiro Rider -- Syntax highlighting for markdown preview code blocks.
+ * Maps highlight.js scopes to Kiro Rider syntax colors via CSS variables.
+ * Scoped to .kiro-rider-preview for the enable/disable toggle.
+ *
+ * Scope reference: https://highlightjs.readthedocs.io/en/latest/css-classes-reference.html
+ * Theme guide: https://highlightjs.readthedocs.io/en/latest/theme-guide.html
+ */
+
+/* ── Root: default text + .subst reset (theme guide requirement) ── */
+
+.kiro-rider-preview .hljs,
+.kiro-rider-preview .hljs-subst {
+    color: var(--kiro-fg);
+}
+
+.kiro-rider-preview pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    background: var(--kiro-panel);
+}
+
+.kiro-rider-preview code.hljs {
+    padding: 3px 5px;
+}
+
+/* ── Keywords ── */
+
+.kiro-rider-preview .hljs-keyword,
+.kiro-rider-preview .hljs-doctag,
+.kiro-rider-preview .hljs-template-tag,
+.kiro-rider-preview .hljs-template-variable,
+.kiro-rider-preview .hljs-variable.language_ {
+    color: var(--kiro-keyword);
+}
+
+/* ── Titles: generic fallback (functions), then specific overrides ── */
+/* hljs uses title for both function and class names.
+   title.function -> hljs-title function_   (function color)
+   title.class    -> hljs-title class_      (type color)
+   bare title     -> hljs-title             (function color fallback) */
+
+.kiro-rider-preview .hljs-title,
+.kiro-rider-preview .hljs-title.function_ {
+    color: var(--kiro-function);
+}
+
+/* ── Types / classes (higher specificity overrides bare .hljs-title) ── */
+
+.kiro-rider-preview .hljs-type,
+.kiro-rider-preview .hljs-title.class_,
+.kiro-rider-preview .hljs-title.class_.inherited__ {
+    color: var(--kiro-type);
+}
+
+/* ── Strings ── */
+
+.kiro-rider-preview .hljs-string,
+.kiro-rider-preview .hljs-regexp {
+    color: var(--kiro-string);
+}
+
+/* ── Numbers, literals, operators ── */
+
+.kiro-rider-preview .hljs-number,
+.kiro-rider-preview .hljs-literal {
+    color: var(--kiro-number);
+}
+
+.kiro-rider-preview .hljs-operator {
+    color: var(--kiro-fg);
+}
+
+/* ── Properties, attributes, variables ── */
+
+.kiro-rider-preview .hljs-property,
+.kiro-rider-preview .hljs-attr,
+.kiro-rider-preview .hljs-attribute {
+    color: var(--kiro-field);
+}
+
+.kiro-rider-preview .hljs-variable,
+.kiro-rider-preview .hljs-variable.constant_ {
+    color: var(--kiro-field);
+}
+
+/* ── Built-ins, symbols ── */
+
+.kiro-rider-preview .hljs-built_in,
+.kiro-rider-preview .hljs-symbol {
+    color: var(--kiro-field);
+}
+
+/* ── Comments ── */
+
+.kiro-rider-preview .hljs-comment,
+.kiro-rider-preview .hljs-quote {
+    color: var(--kiro-comment);
+    font-style: italic;
+}
+
+/* ── Meta / annotations ── */
+
+.kiro-rider-preview .hljs-meta,
+.kiro-rider-preview .hljs-meta .hljs-keyword,
+.kiro-rider-preview .hljs-meta .hljs-string {
+    color: var(--kiro-metadata);
+}
+
+/* ── Escape characters ── */
+
+.kiro-rider-preview .hljs-char.escape_ {
+    color: var(--kiro-escape);
+}
+
+/* ── HTML/XML tags ── */
+
+.kiro-rider-preview .hljs-name,
+.kiro-rider-preview .hljs-tag {
+    color: var(--kiro-function);
+}
+
+/* ── CSS selectors ── */
+
+.kiro-rider-preview .hljs-selector-tag,
+.kiro-rider-preview .hljs-selector-id,
+.kiro-rider-preview .hljs-selector-class,
+.kiro-rider-preview .hljs-selector-attr,
+.kiro-rider-preview .hljs-selector-pseudo {
+    color: var(--kiro-number);
+}
+
+/* ── Markdown-specific scopes ── */
+
+.kiro-rider-preview .hljs-section {
+    color: var(--kiro-accent);
+    font-weight: bold;
+}
+
+.kiro-rider-preview .hljs-bullet {
+    color: var(--kiro-field);
+}
+
+.kiro-rider-preview .hljs-link {
+    color: var(--kiro-accent);
+    text-decoration: underline;
+}
+
+.kiro-rider-preview .hljs-code,
+.kiro-rider-preview .hljs-formula {
+    color: var(--kiro-comment);
+}
+
+/* ── Emphasis ── */
+
+.kiro-rider-preview .hljs-emphasis {
+    font-style: italic;
+}
+
+.kiro-rider-preview .hljs-strong {
+    font-weight: bold;
+}
+
+/* ── Diff ── */
+
+.kiro-rider-preview .hljs-addition {
+    color: var(--kiro-success);
+    background-color: rgba(21, 137, 65, 0.1);
+}
+
+.kiro-rider-preview .hljs-deletion {
+    color: var(--kiro-error);
+    background-color: rgba(186, 74, 80, 0.1);
+}
+
+/* ── Punctuation (newer scope, subtle) ── */
+
+.kiro-rider-preview .hljs-punctuation {
+    color: var(--kiro-muted);
+}
+
+/* ── Function params: default text color ── */
+
+.kiro-rider-preview .hljs-params {
+    color: var(--kiro-fg);
+}

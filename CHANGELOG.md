@@ -4,6 +4,22 @@ All notable changes to the "kiro-rider-light" extension will be documented in th
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.3.0] - 2026-04-03
+
+### Added
+
+- Markdown preview styling with theme-matched colors for both light and dark variants
+- Colored heading hierarchy (H1-H6) using the same hue-shifted series as bracket pairs and SCM graph
+- Syntax highlighting in preview code blocks via highlight.js scope mapping to theme colors
+- Inline code colored with comment-green to match editor styling
+- Colored list markers, blockquote accent borders, and nested blockquote distinction
+- Table styling: rounded corners, zebra striping, horizontal-only separators
+- Task list styling: checked items get line-through and reduced opacity
+- Max-width (980px) layout for comfortable reading on wide monitors
+- Setting `kiro-rider.markdownPreview.enabled` to toggle preview styling (default: on)
+- CSS variables generated on `body.vscode-light` / `body.vscode-dark` for reliable theming
+- `SyntaxPalette.hue_shifted` field: single source for bracket, SCM graph, heading, and preview heading colors
+
 ## [0.2.0] - 2026-03-26
 
 ### Added

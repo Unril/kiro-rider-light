@@ -39,7 +39,11 @@ from typing import Self
 
 from coloraide import Color
 
+from core.hue_series import hue_series
 from core.tcol import TCol
+
+# Bracket pairs, SCM graph, and markdown headings all share this count.
+_HUE_SERIES_COUNT = 6
 
 # CIELab L* targets per lightness tier (light variant).
 # These produce consistent visual weight across all hues (10-point steps).
@@ -155,6 +159,8 @@ class SyntaxPalette:
     deprecated: TCol
     foreground: TCol
     background: TCol
+    hue_shifted: list[TCol]
+    """6 hue-rotated colors from enum_member for brackets, SCM graph, and headings."""
 
     @classmethod
     def create(  # noqa: PLR0913
@@ -200,4 +206,5 @@ class SyntaxPalette:
             foreground = TCol.from_oklch(0.83, 0.0, 0.0) if is_dark else TCol.from_oklch(0.0, 0.0, 0.0)
         colors["foreground"] = foreground
         colors["background"] = background
+        colors["hue_shifted"] = hue_series(colors["enum_member"], _HUE_SERIES_COUNT)
         return cls(**colors)

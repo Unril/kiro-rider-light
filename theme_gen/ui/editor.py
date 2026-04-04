@@ -2,7 +2,6 @@
 
 from typing import override
 
-from core.hue_series import hue_series
 from core.tcol import TCol
 from palette.theme import Theme
 from ui.protocol import UISection
@@ -75,10 +74,7 @@ class EditorSection(UISection):
             "editorGhostText.foreground": p.fg_disabled,
             "editorHint.foreground": p.fg_muted,
             # Bracket pair colorization — hue-shifted series matching heading colors
-            **{
-                f"editorBracketHighlight.foreground{i + 1}": color
-                for i, color in enumerate(hue_series(theme.syntax.enum_member, 6))
-            },
+            **{f"editorBracketHighlight.foreground{i + 1}": color for i, color in enumerate(theme.syntax.hue_shifted)},
             "editorBracketHighlight.unexpectedBracket.foreground": p.error,
             # Stack frames
             "editor.stackFrameHighlightBackground": c.stack_frame,

@@ -2,7 +2,6 @@
 
 from typing import override
 
-from core.hue_series import hue_series
 from core.tcol import TCol
 from palette.theme import Theme
 from ui.protocol import UISection
@@ -56,5 +55,5 @@ class VcsSection(UISection):
             "merge.commonHeaderBackground": p.fg_muted.a25,
             "merge.commonContentBackground": p.fg_muted.a15,
             # SCM graph -- same hue-shifted series as bracket pair colorization
-            **{f"scmGraph.foreground{i + 1}": color for i, color in enumerate(hue_series(theme.syntax.enum_member, 5))},
+            **{f"scmGraph.foreground{i + 1}": color for i, color in enumerate(theme.syntax.hue_shifted[:5])},
         }

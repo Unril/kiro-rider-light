@@ -9,22 +9,21 @@ from collections.abc import Iterator
 from typing import override
 
 from core.font_style import FontStyle
-from core.hue_series import hue_series
 from core.tcol import TCol
 from lang.protocol import BaseLanguage, TokenColorRule, tcr
 from palette.theme import Theme
 
 
-def _heading_rules(base: TCol) -> Iterator[TokenColorRule]:
-    """Heading rules with progressive hue shift: H1 = base, H6 = base + 120°."""
+def _heading_rules(colors: list[TCol], fallback: TCol) -> Iterator[TokenColorRule]:
+    """Heading rules using the theme's hue-shifted series."""
     style = FontStyle.BOLD
-    for level, color in enumerate(hue_series(base, 6), start=1):
+    for level, color in enumerate(colors, start=1):
         prefix = f"heading.{level}.markdown"
         yield tcr(f"Markdown H{level} text", f"{prefix} entity.name.section.markdown", color, style)
         yield tcr(f"Markdown H{level} markers", f"{prefix} punctuation.definition.heading.markdown", color, style)
     # Fallback for headings without level scope
-    yield tcr("Markdown heading text", "entity.name.section.markdown", base, style)
-    yield tcr("Markdown heading markers", "punctuation.definition.heading.markdown", base, style)
+    yield tcr("Markdown heading text", "entity.name.section.markdown", fallback, style)
+    yield tcr("Markdown heading markers", "punctuation.definition.heading.markdown", fallback, style)
 
 
 class MarkdownLang(BaseLanguage):
@@ -39,7 +38,7 @@ class MarkdownLang(BaseLanguage):
         p = theme.palette
 
         return [
-            *_heading_rules(s.enum_member),
+            *_heading_rules(theme.syntax.hue_shifted, theme.syntax.hue_shifted[0]),
             # ── Inline code ──
             tcr(
                 "Markdown inline code",

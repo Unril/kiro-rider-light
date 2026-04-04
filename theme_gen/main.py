@@ -5,6 +5,7 @@
 import json
 from pathlib import Path
 
+from css.markdown_variables import build_css as build_markdown_css
 from lang.base import BaseSyntax
 from lang.css import CssLang
 from lang.html import HtmlLang
@@ -35,7 +36,8 @@ from ui.vcs import VcsSection
 from ui.widgets import WidgetSection
 
 _THEMES_DIR = Path(__file__).resolve().parent.parent / "themes"
-
+_STYLES_DIR = Path(__file__).resolve().parent.parent / "styles"
+_MARKDOWN_VARS_OUTPUT = _STYLES_DIR / "markdown-variables.css"
 _VARIANTS: list[tuple[bool, str, str]] = [
     (False, "Kiro Rider Light", "light"),
     (True, "Kiro Rider Dark", "dark"),
@@ -106,6 +108,10 @@ def _generate_variant(*, is_dark: bool, name: str, theme_type: str) -> None:
 def main() -> None:
     for is_dark, name, theme_type in _VARIANTS:
         _generate_variant(is_dark=is_dark, name=name, theme_type=theme_type)
+
+    _STYLES_DIR.mkdir(parents=True, exist_ok=True)
+    _ = _MARKDOWN_VARS_OUTPUT.write_text(build_markdown_css())
+    print(f"Wrote markdown variables to {_MARKDOWN_VARS_OUTPUT}")
 
 
 if __name__ == "__main__":
