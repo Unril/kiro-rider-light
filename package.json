@@ -1,8 +1,8 @@
 {
   "name": "kiro-rider-light",
   "displayName": "Kiro Rider",
-  "description": "Light and dark color themes for VS Code and Kiro IDE inspired by JetBrains Rider. OKLCH-based syntax palette with WCAG AA contrast and consistent highlighting across languages.",
-  "version": "0.3.0",
+  "description": "Light and dark color themes built for Kiro IDE and VS Code. Consistent syntax highlighting across languages with a themed markdown preview style. Inspired by JetBrains Rider.",
+  "version": "0.3.1",
   "publisher": "NikolaiFedorov",
   "repository": {
     "type": "git",
@@ -39,8 +39,9 @@
     "kotlin",
     "basedpyright",
     "markdown-preview",
-    "oklch",
-    "wcag"
+    "markdown-style",
+    "markdown-theme",
+    "syntax-highlighting"
   ],
   "contributes": {
     "markdown.markdownItPlugins": true,

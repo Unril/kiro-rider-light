@@ -4,6 +4,32 @@ All notable changes to the "kiro-rider-light" extension will be documented in th
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.3.1] - 2026-04-04
+
+### Fixed
+
+- CSS variables now defined on `body.vscode-light` / `body.vscode-dark` directly, fixing preview styling not applying when the markdown-it plugin hadn't activated yet
+- Code block highlight.js scope ordering: `title.class` (type color) now correctly overrides bare `title` (function color)
+- Removed font-size/font-family overrides that broke user `--markdown-font-size` settings
+
+### Added
+
+- Colored heading hierarchy (H1-H6) using hue-shifted series shared with bracket pairs and SCM graph
+- `SyntaxPalette.hue_shifted` field as single source for bracket, heading, and SCM graph colors
+- Lighter quote variants (`--kiro-h*-quote`) for blockquote borders by nesting depth (up to 6 levels)
+- Heading colors (`--kiro-h*`) for list markers by nesting depth (up to 6 levels)
+- Alternating disc/square bullet shapes for nested unordered lists
+- Inline code colored with comment-green to match editor styling
+- Table styling: rounded corners, zebra striping, horizontal-only separators
+- Task list styling: checked items get line-through and reduced opacity
+- Max-width (980px) layout for comfortable reading on wide monitors
+- Consistent 16px block spacing for paragraphs, lists, tables, and code blocks
+- Markdown preview screenshots in README
+
+### Changed
+
+- Moved installation, generator, and testing docs from README to CONTRIBUTING.md
+
 ## [0.3.0] - 2026-04-03
 
 ### Added

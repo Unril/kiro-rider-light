@@ -9,7 +9,7 @@ Install from the [VS Code Marketplace](https://marketplace.visualstudio.com/item
 Or install a `.vsix` directly:
 
 ```bash
-code --install-extension kiro-rider-light-0.3.0.vsix
+code --install-extension kiro-rider-light-*.vsix
 ```
 
 ## Generator

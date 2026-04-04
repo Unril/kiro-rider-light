@@ -2,17 +2,21 @@
 
 Light and dark color themes for VS Code and Kiro IDE, inspired by JetBrains Rider.
 
-A class is always purple, a function is always green, a keyword is always blue -- regardless of whether you're in Kotlin, Java, TypeScript, or Python. The palette is generated from an OKLCH harmony wheel so every syntax color passes WCAG AA contrast in both variants.
+A class is always purple, a function is always green, a keyword is always blue -- regardless of whether you're in Kotlin, Java, TypeScript, or Python. Includes a themed markdown preview with colored headings, syntax-highlighted code blocks, and styled tables.
 
-Includes dedicated highlighting scopes for [Kotlin LSP][kotlin-lsp] and [basedpyright][basedpyright], plus a themed markdown preview with colored headings, syntax-highlighted code blocks, and styled tables.
+Dedicated highlighting scopes for [Kotlin LSP][kotlin-lsp], [basedpyright][basedpyright], and [highlight.js](https://highlightjs.org) in the markdown preview.
 
 <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/ui.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/ui.png" alt="Light theme UI" width="960"></a>
 
 <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/ui_dark.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/ui_dark.png" alt="Dark theme UI" width="960"></a>
 
+Kotlin with semantic highlighting from [Kotlin LSP][kotlin-lsp]:
+
 <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_kt.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_kt.png" alt="Kotlin highlighting (light)" width="960"></a>
 
 <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_kt_dark.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_kt_dark.png" alt="Kotlin highlighting (dark)" width="960"></a>
+
+Python with semantic highlighting from [basedpyright][basedpyright]:
 
 <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_py.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/large_py.png" alt="Python highlighting (light)" width="960"></a>
 
@@ -22,11 +26,15 @@ Includes dedicated highlighting scopes for [Kotlin LSP][kotlin-lsp] and [basedpy
 
 The markdown preview uses the same syntax palette for code blocks, colored headings that follow the hue-shifted series, and styled tables, blockquotes, and lists. Toggle with `kiro-rider.markdownPreview.enabled`.
 
+Colored headings, syntax-highlighted code blocks, and endpoint table:
+
 <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/preview/light-top.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/preview/light-top.png" alt="Markdown preview (light, top)" width="960"></a>
 
-<a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/preview/light-bottom.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/preview/light-bottom.png" alt="Markdown preview (light, bottom)" width="960"></a>
-
 <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/preview/dark-top.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/preview/dark-top.png" alt="Markdown preview (dark, top)" width="960"></a>
+
+Nested lists with colored markers, styled blockquotes, and depth-adapted coloring:
+
+<a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/preview/light-bottom.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/preview/light-bottom.png" alt="Markdown preview (light, bottom)" width="960"></a>
 
 <a href="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/preview/dark-bottom.png"><img src="https://raw.githubusercontent.com/Unril/kiro-rider-light/master/img/preview/dark-bottom.png" alt="Markdown preview (dark, bottom)" width="960"></a>
 
@@ -42,15 +50,15 @@ The markdown preview uses the same syntax palette for code blocks, colored headi
 
 ## Syntax Palette
 
-| Role | Light | Dark |
-| --- | --- | --- |
-| Functions | ![#007561](https://placehold.co/15x15/007561/007561.png) `#007561` | ![#3FA68E](https://placehold.co/15x15/3FA68E/3FA68E.png) `#3FA68E` |
-| Types / Classes | ![#7922A7](https://placehold.co/15x15/7922A7/7922A7.png) `#7922A7` | ![#D190FF](https://placehold.co/15x15/D190FF/D190FF.png) `#D190FF` |
-| Keywords | ![#305EDD](https://placehold.co/15x15/305EDD/305EDD.png) `#305EDD` | ![#6492FF](https://placehold.co/15x15/6492FF/6492FF.png) `#6492FF` |
-| Fields / Properties | ![#00819D](https://placehold.co/15x15/00819D/00819D.png) `#00819D` | ![#339CB9](https://placehold.co/15x15/339CB9/339CB9.png) `#339CB9` |
-| Strings | ![#A26955](https://placehold.co/15x15/A26955/A26955.png) `#A26955` | ![#B88573](https://placehold.co/15x15/B88573/B88573.png) `#B88573` |
-| Numbers | ![#C24C82](https://placehold.co/15x15/C24C82/C24C82.png) `#C24C82` | ![#D6709A](https://placehold.co/15x15/D6709A/D6709A.png) `#D6709A` |
-| Comments | ![#5C822E](https://placehold.co/15x15/5C822E/5C822E.png) `#5C822E` | ![#7A9B56](https://placehold.co/15x15/7A9B56/7A9B56.png) `#7A9B56` |
+| Role                   | Light                                                              | Dark                                                               |
+| ---------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| Functions              | ![#007561](https://placehold.co/15x15/007561/007561.png) `#007561` | ![#3FA68E](https://placehold.co/15x15/3FA68E/3FA68E.png) `#3FA68E` |
+| Types / Classes        | ![#7922A7](https://placehold.co/15x15/7922A7/7922A7.png) `#7922A7` | ![#D190FF](https://placehold.co/15x15/D190FF/D190FF.png) `#D190FF` |
+| Keywords               | ![#305EDD](https://placehold.co/15x15/305EDD/305EDD.png) `#305EDD` | ![#6492FF](https://placehold.co/15x15/6492FF/6492FF.png) `#6492FF` |
+| Fields / Properties    | ![#00819D](https://placehold.co/15x15/00819D/00819D.png) `#00819D` | ![#339CB9](https://placehold.co/15x15/339CB9/339CB9.png) `#339CB9` |
+| Strings                | ![#A26955](https://placehold.co/15x15/A26955/A26955.png) `#A26955` | ![#B88573](https://placehold.co/15x15/B88573/B88573.png) `#B88573` |
+| Numbers                | ![#C24C82](https://placehold.co/15x15/C24C82/C24C82.png) `#C24C82` | ![#D6709A](https://placehold.co/15x15/D6709A/D6709A.png) `#D6709A` |
+| Comments               | ![#5C822E](https://placehold.co/15x15/5C822E/5C822E.png) `#5C822E` | ![#7A9B56](https://placehold.co/15x15/7A9B56/7A9B56.png) `#7A9B56` |
 | Metadata / Annotations | ![#977100](https://placehold.co/15x15/977100/977100.png) `#977100` | ![#AE8C41](https://placehold.co/15x15/AE8C41/AE8C41.png) `#AE8C41` |
 
 ## Screenshots
