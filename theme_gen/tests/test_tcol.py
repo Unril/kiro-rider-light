@@ -147,9 +147,9 @@ class TestTColEquality:
 
 class TestFontStyle:
     def test_values(self) -> None:
-        assert FontStyle.ITALIC == "italic"
-        assert FontStyle.BOLD == "bold"
-        assert FontStyle.NONE == ""
+        assert FontStyle.ITALIC.value == "italic"
+        assert FontStyle.BOLD.value == "bold"
+        assert FontStyle.NONE.value == ""
 
     def test_is_str(self) -> None:
         assert isinstance(FontStyle.ITALIC, str)

@@ -2,6 +2,7 @@
 
 # pylint: disable=redefined-outer-name
 
+from collections.abc import Callable
 from typing import override
 
 import pytest
@@ -33,7 +34,7 @@ def theme() -> Theme:
 @pytest.fixture
 def full_registry(theme: Theme) -> LanguageRegistry:
     reg = LanguageRegistry(GlobalSemanticTokens(theme.syntax))
-    for lang_cls in [
+    lang_factories: list[Callable[[], BaseLanguage]] = [
         BaseSyntax,
         JavaLang,
         KotlinLang,
@@ -46,14 +47,15 @@ def full_registry(theme: Theme) -> LanguageRegistry:
         YamlLang,
         JsonLang,
         ScriptLang,
-    ]:
+    ]
+    for lang_cls in lang_factories:
         reg.register(lang_cls())
     return reg
 
 
 # ── Per-language classes ──
 
-ALL_LANGS = [
+ALL_LANGS: list[Callable[[], BaseLanguage]] = [
     BaseSyntax,
     JavaLang,
     KotlinLang,
@@ -74,19 +76,19 @@ _MIN_SEMANTIC_COUNT = 55
 
 class TestPerLanguageClasses:
     @pytest.mark.parametrize("lang_cls", ALL_LANGS)
-    def test_has_id(self, lang_cls: type[BaseLanguage]) -> None:
+    def test_has_id(self, lang_cls: Callable[[], BaseLanguage]) -> None:
         lang = lang_cls()
         assert isinstance(lang.id, str)
         assert len(lang.id) > 0
 
     @pytest.mark.parametrize("lang_cls", ALL_LANGS)
-    def test_returns_token_color_rules(self, lang_cls: type[BaseLanguage], theme: Theme) -> None:
+    def test_returns_token_color_rules(self, lang_cls: Callable[[], BaseLanguage], theme: Theme) -> None:
         rules = lang_cls().textmate_rules(theme)
         assert isinstance(rules, list)
         assert all(isinstance(r, TokenColorRule) for r in rules)
 
     @pytest.mark.parametrize("lang_cls", ALL_LANGS)
-    def test_inherits_base_language(self, lang_cls: type[BaseLanguage]) -> None:
+    def test_inherits_base_language(self, lang_cls: Callable[[], BaseLanguage]) -> None:
         assert isinstance(lang_cls(), BaseLanguage)
 
     def test_unique_ids(self) -> None:

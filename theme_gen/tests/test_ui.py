@@ -3,6 +3,7 @@
 # pylint: disable=redefined-outer-name
 
 import re
+from collections.abc import Callable
 
 import pytest
 
@@ -23,7 +24,7 @@ from ui.testing import TestingSection
 from ui.vcs import VcsSection
 from ui.widgets import WidgetSection
 
-ALL_SECTIONS = [
+ALL_SECTIONS: list[Callable[[], UISection]] = [
     BaseSection,
     ListSection,
     EditorSection,
@@ -61,25 +62,25 @@ def composition(all_sections: list[UISection]) -> ColorMapComposition:
 
 class TestUISections:
     @pytest.mark.parametrize("section_cls", ALL_SECTIONS)
-    def test_returns_dict(self, section_cls: type[UISection], theme: Theme) -> None:
+    def test_returns_dict(self, section_cls: Callable[[], UISection], theme: Theme) -> None:
         colors = section_cls().build(theme)
         assert isinstance(colors, dict)
         assert len(colors) > 0
 
     @pytest.mark.parametrize("section_cls", ALL_SECTIONS)
-    def test_values_are_tcol(self, section_cls: type[UISection], theme: Theme) -> None:
+    def test_values_are_tcol(self, section_cls: Callable[[], UISection], theme: Theme) -> None:
         colors = section_cls().build(theme)
         for key, val in colors.items():
             assert isinstance(val, TCol), f"{key}: expected TCol, got {type(val)}"
 
     @pytest.mark.parametrize("section_cls", ALL_SECTIONS)
-    def test_tcol_hex_is_valid(self, section_cls: type[UISection], theme: Theme) -> None:
+    def test_tcol_hex_is_valid(self, section_cls: Callable[[], UISection], theme: Theme) -> None:
         colors = section_cls().build(theme)
         for key, val in colors.items():
             assert HEX_RE.match(val.hex), f"{key}: invalid hex '{val.hex}'"
 
     @pytest.mark.parametrize("section_cls", ALL_SECTIONS)
-    def test_keys_are_dotted_strings(self, section_cls: type[UISection], theme: Theme) -> None:
+    def test_keys_are_dotted_strings(self, section_cls: Callable[[], UISection], theme: Theme) -> None:
         colors = section_cls().build(theme)
         for key in colors:
             assert isinstance(key, str)

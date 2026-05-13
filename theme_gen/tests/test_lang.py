@@ -71,7 +71,7 @@ class TestTokenColorRule:
     def test_frozen(self) -> None:
         rule = TokenColorRule(name="X", scope="y")
         with pytest.raises(AttributeError):
-            rule.name = "Z"  # pyright: ignore[reportAttributeAccessIssue]
+            rule.name = "Z"  # type: ignore[misc]  # pyright: ignore[reportAttributeAccessIssue]  # frozen dataclass
 
 
 # ── SemanticTokenStyle ──
@@ -94,7 +94,7 @@ class TestSemanticTokenStyle:
     def test_frozen(self) -> None:
         style = SemanticTokenStyle(foreground=TCol("#000000"), font_style=FontStyle.BOLD)
         with pytest.raises(AttributeError):
-            style.foreground = TCol("#FFFFFF")  # pyright: ignore[reportAttributeAccessIssue]
+            style.foreground = TCol("#FFFFFF")  # type: ignore[misc]  # pyright: ignore[reportAttributeAccessIssue]  # frozen dataclass
 
 
 # ── BaseLanguage ──
@@ -109,7 +109,7 @@ class TestBaseLanguage:
 
     def test_is_abstract(self) -> None:
         with pytest.raises(TypeError):
-            _ = BaseLanguage()  # pyright: ignore[reportAbstractUsage]  # pylint: disable=abstract-class-instantiated
+            _ = BaseLanguage()  # type: ignore[abstract]  # pyright: ignore[reportAbstractUsage]  # pylint: disable=abstract-class-instantiated  # intentional: asserting abstractness
 
 
 # ── BaseSyntax ──

@@ -1,5 +1,7 @@
 """Shared test fixtures and helpers."""
 
+from typing import TYPE_CHECKING
+
 import pytest
 
 from lang.base import BaseSyntax
@@ -31,6 +33,11 @@ from ui.testing import TestingSection
 from ui.vcs import VcsSection
 from ui.widgets import WidgetSection
 
+if TYPE_CHECKING:
+    from collections.abc import Callable
+
+    from lang.protocol import Language
+
 
 def generate_theme_dict(*, is_dark: bool = False) -> dict[str, object]:
     """Full generation pipeline matching main.py -- single source of truth for tests."""
@@ -55,7 +62,7 @@ def generate_theme_dict(*, is_dark: bool = False) -> dict[str, object]:
     colors = {k: v.hex for k, v in composition.build(theme).items()}
 
     registry = LanguageRegistry(GlobalSemanticTokens(theme.syntax))
-    for lang_cls in [
+    lang_factories: list[Callable[[], Language]] = [
         BaseSyntax,
         JavaLang,
         KotlinLang,
@@ -68,7 +75,8 @@ def generate_theme_dict(*, is_dark: bool = False) -> dict[str, object]:
         YamlLang,
         JsonLang,
         ScriptLang,
-    ]:
+    ]
+    for lang_cls in lang_factories:
         registry.register(lang_cls())
 
     token_colors = [rule.to_dict() for rule in registry.build_token_colors(theme)]

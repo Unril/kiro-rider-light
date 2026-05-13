@@ -3,6 +3,7 @@
 """Generate the Kiro Rider Light and Dark VS Code color theme JSON files."""
 
 import json
+from collections.abc import Callable
 from pathlib import Path
 
 from css.markdown_variables import build_css as build_markdown_css
@@ -14,6 +15,7 @@ from lang.js import JavaScriptLang
 from lang.json_lang import JsonLang
 from lang.kotlin import KotlinLang
 from lang.markdown import MarkdownLang
+from lang.protocol import Language
 from lang.python import PythonLang
 from lang.registry import LanguageRegistry
 from lang.script import ScriptLang
@@ -28,6 +30,7 @@ from ui.debug import DebugSection
 from ui.editor import EditorSection
 from ui.lists import ListSection
 from ui.panels import PanelSection
+from ui.protocol import UISection
 from ui.symbols import SymbolSection
 from ui.tabs import TabSection
 from ui.terminal import TerminalSection
@@ -44,7 +47,7 @@ _VARIANTS: list[tuple[bool, str, str]] = [
 ]
 
 
-_LANG_CLASSES = [
+_LANG_CLASSES: list[Callable[[], Language]] = [
     BaseSyntax,
     JavaLang,
     KotlinLang,
@@ -59,7 +62,7 @@ _LANG_CLASSES = [
     ScriptLang,
 ]
 
-_UI_SECTIONS = [
+_UI_SECTIONS: list[Callable[[], UISection]] = [
     BaseSection,
     ListSection,
     EditorSection,

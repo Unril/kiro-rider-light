@@ -204,7 +204,9 @@ class SyntaxPalette:
         if foreground is None:
             # Fallback foreground -- normally provided by Theme.create() from Palette
             foreground = TCol.from_oklch(0.83, 0.0, 0.0) if is_dark else TCol.from_oklch(0.0, 0.0, 0.0)
-        colors["foreground"] = foreground
-        colors["background"] = background
-        colors["hue_shifted"] = hue_series(colors["enum_member"], _HUE_SERIES_COUNT)
-        return cls(**colors)
+        return cls(
+            **colors,
+            foreground=foreground,
+            background=background,
+            hue_shifted=hue_series(colors["enum_member"], _HUE_SERIES_COUNT),
+        )

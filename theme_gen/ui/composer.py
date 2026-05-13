@@ -1,5 +1,7 @@
 """ColorMapComposition -- merges UI sections and detects key conflicts."""
 
+from collections.abc import Sequence
+
 from core.tcol import TCol
 from palette.theme import Theme
 from ui.protocol import UISection
@@ -8,8 +10,8 @@ from ui.protocol import UISection
 class ColorMapComposition:
     """Collects UISection instances and merges their dicts."""
 
-    def __init__(self, sections: list[UISection]) -> None:
-        self._sections: list[UISection] = sections
+    def __init__(self, sections: Sequence[UISection]) -> None:
+        self._sections: Sequence[UISection] = sections
 
     def build(self, theme: Theme) -> dict[str, TCol]:
         result: dict[str, TCol] = {}

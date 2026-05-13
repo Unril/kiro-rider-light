@@ -74,7 +74,10 @@ class EditorSection(UISection):
             "editorGhostText.foreground": p.fg_disabled,
             "editorHint.foreground": p.fg_muted,
             # Bracket pair colorization — hue-shifted series matching heading colors
-            **{f"editorBracketHighlight.foreground{i + 1}": color for i, color in enumerate(theme.syntax.hue_shifted)},
+            **{
+                f"editorBracketHighlight.foreground{i}": color
+                for i, color in enumerate(theme.syntax.hue_shifted, start=1)
+            },
             "editorBracketHighlight.unexpectedBracket.foreground": p.error,
             # Stack frames
             "editor.stackFrameHighlightBackground": c.stack_frame,

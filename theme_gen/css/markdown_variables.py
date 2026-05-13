@@ -19,7 +19,7 @@ def _extract_vars(theme: Theme) -> list[str]:
     """Extract CSS custom properties from a theme."""
     p = theme.palette
     s = theme.syntax
-    h = list(enumerate(s.hue_shifted))
+    h = list(enumerate(s.hue_shifted, start=1))
 
     pairs = [
         # Surfaces
@@ -44,8 +44,8 @@ def _extract_vars(theme: Theme) -> list[str]:
         ("warning", p.warning),
         ("success", p.success),
         # Headings + quote variants: same hue-shifted series
-        *((f"h{i + 1}", c) for i, c in h),
-        *((f"h{i + 1}-quote", c.much_darker.muted if theme.is_dark else c.much_lighter.muted) for i, c in h),
+        *((f"h{i}", c) for i, c in h),
+        *((f"h{i}-quote", c.much_darker.muted if theme.is_dark else c.much_lighter.muted) for i, c in h),
         # Blockquote / list chrome
         ("quote-fg", p.fg_muted),
     ]
